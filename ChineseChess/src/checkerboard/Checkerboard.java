@@ -44,7 +44,7 @@ public class Checkerboard {
 		frame.setBounds(100, 100, 650, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		ImageIcon image=new ImageIcon("D:\\JAVAPROJECT\\WORKSPACE\\ChineseChess\\images\\homepage.jpg");
+		ImageIcon image=new ImageIcon("images/homepage.jpg");
 		JLabel label=new JLabel(image); frame.getContentPane().setLayout(null); 
 		frame.getContentPane().add(label); label.setBounds(0,0,650,800);
 		frame.setVisible(true); 
