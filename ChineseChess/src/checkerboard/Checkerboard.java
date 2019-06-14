@@ -50,5 +50,6 @@ public class Checkerboard {
 		frame.setVisible(true); 
 		frame.setResizable(false);
 //https://github.com/Elpsys/HomeWork.git
+		System.out.println("hello ");
 	}
 }
