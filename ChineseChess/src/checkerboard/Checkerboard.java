@@ -53,8 +53,6 @@ public class Checkerboard {
 		System.out.println("hello ");
 		System.out.println("hello ");
 		System.out.println("hello ");
-		System.out.println("hello ");
-		System.out.println("hello ");
-		System.out.println("hello ");
+
 	}
 }
