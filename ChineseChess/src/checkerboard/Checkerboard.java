@@ -49,10 +49,6 @@ public class Checkerboard {
 		frame.getContentPane().add(label); label.setBounds(0,0,650,800);
 		frame.setVisible(true); 
 		frame.setResizable(false);
-//https://github.com/Elpsys/HomeWork.git
-		System.out.println("hello ");
-		System.out.println("hello ");
-		System.out.println("hello ");
 
 	}
 }
