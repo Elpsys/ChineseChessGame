@@ -59,6 +59,6 @@ public class Checkerboard {
 		button.setBounds(155,503,340,48);
 		frame.setVisible(true); 
 		frame.setResizable(false);
-		System.out.println("hahah");
+		System.out.println("°´Å¥");
 	}
 }
