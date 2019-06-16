@@ -1,5 +1,7 @@
 package homepage;
 
+import java.awt.BorderLayout;
+import java.awt.Container;
 import java.awt.EventQueue;
 import java.awt.Image;
 import java.awt.Insets;
@@ -48,32 +50,44 @@ public class Homepage {
 		frame.setBounds(100, 100, 650, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//首页
-		ImageIcon imagehome=new ImageIcon("images/homepage.jpg");
-		JLabel label=new JLabel(imagehome);
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		
+		ImageIcon imagehome = new ImageIcon("images/homepage.jpg");
+		JLabel label = new JLabel(imagehome);
+		frame.getLayeredPane().add(label, new Integer(Integer.MIN_VALUE));
 		label.setBounds(0, 0, 650, 800);
-		frame.getContentPane().setLayout(null);
-		frame.getContentPane().add(label);
+		Container cp=frame.getContentPane();
+		cp.setLayout(new BorderLayout());
+		((JPanel)cp).setOpaque(false);
+		frame.setVisible(true); 
+		frame.setResizable(false);
 		//开始按钮
 		
-		ImageIcon imagebutton1=new ImageIcon("images/buttonstart.png");
+		ImageIcon imagebutton1 = new ImageIcon("images/buttonstart.png");
 		JButton button=new JButton(imagebutton1);
 		button.setBounds(247, 504, 156, 48);
 		frame.getContentPane().setLayout(null); 
 		frame.getContentPane().add(button);
+		frame.setVisible(true); 
+		frame.setResizable(false);
 
-		frame.validate();
 		
-		ImageIcon imagebutton2=new ImageIcon("images/buttonexplain.png");
+		ImageIcon imagebutton2 = new ImageIcon("images/buttonexplain.png");
 		JButton btnNewButton = new JButton(imagebutton2);
 		btnNewButton.setBounds(247, 570, 156, 48);
 		frame.getContentPane().setLayout(null); 
 		frame.getContentPane().add(btnNewButton);
-		frame.validate();
-		ImageIcon imagebutton3=new ImageIcon("images/buttonend.png");
+		frame.setVisible(true); 
+		frame.setResizable(false);
+		btnNewButton.validate();
+		
+		ImageIcon imagebutton3 = new ImageIcon("images/buttonend.png");
 		JButton btnNewButton2 = new JButton(imagebutton3);
 		btnNewButton2.setBounds(247, 635, 156, 48);
 		frame.getContentPane().setLayout(null); 
 		frame.getContentPane().add(btnNewButton2);
+		frame.validate();
 		frame.repaint();
 		frame.setVisible(true); 
 		frame.setResizable(false);
