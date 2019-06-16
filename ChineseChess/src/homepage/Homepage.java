@@ -53,8 +53,6 @@ public class Homepage {
 		label.setBounds(0, 0, 650, 800);
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().add(label);
-		frame.setVisible(true); 
-		frame.setResizable(false);
 		//¿ªÊ¼°´Å¥
 		
 		ImageIcon imagebutton1=new ImageIcon("images/buttonstart.png");
@@ -62,7 +60,7 @@ public class Homepage {
 		button.setBounds(247, 504, 156, 48);
 		frame.getContentPane().setLayout(null); 
 		frame.getContentPane().add(button);
-		frame.repaint();
+
 		frame.validate();
 		
 		ImageIcon imagebutton2=new ImageIcon("images/buttonexplain.png");
