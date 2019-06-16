@@ -5,6 +5,8 @@ import java.awt.Container;
 import java.awt.EventQueue;
 import java.awt.Image;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -17,7 +19,7 @@ import javax.swing.JLayeredPane;
 
 public class Homepage {
 
-	private JFrame frame;
+	private static JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -49,9 +51,7 @@ public class Homepage {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 650, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//首页
-		JPanel panel = new JPanel();
-		panel.setLayout(null);
+		//首页的背景图片
 		
 		ImageIcon imagehome = new ImageIcon("images/homepage.jpg");
 		JLabel label = new JLabel(imagehome);
@@ -62,6 +62,7 @@ public class Homepage {
 		((JPanel)cp).setOpaque(false);
 		frame.setVisible(true); 
 		frame.setResizable(false);
+		
 		//开始按钮
 		
 		ImageIcon imagebutton1 = new ImageIcon("images/buttonstart.png");
@@ -71,16 +72,34 @@ public class Homepage {
 		frame.getContentPane().add(button);
 		frame.setVisible(true); 
 		frame.setResizable(false);
-
+		
+		//说明按钮
 		
 		ImageIcon imagebutton2 = new ImageIcon("images/buttonexplain.png");
 		JButton btnNewButton = new JButton(imagebutton2);
 		btnNewButton.setBounds(247, 570, 156, 48);
 		frame.getContentPane().setLayout(null); 
 		frame.getContentPane().add(btnNewButton);
+		btnNewButton.addActionListener(new ActionListener(){
+			//单击按钮执行的方法
+			public void actionPerformed(ActionEvent e) {
+			closeThis();
+			//创建新的窗口
+			JFrame frame = new JFrame("游戏说明");
+			//设置在屏幕的位置
+			frame.setLocation(100,100);
+			// 窗体大小
+			frame.setSize(650,800);
+			// 显示窗体
+			frame.setVisible(true);
+			}
+
+			});
+
 		frame.setVisible(true); 
 		frame.setResizable(false);
-		btnNewButton.validate();
+		
+		//退出游戏按钮
 		
 		ImageIcon imagebutton3 = new ImageIcon("images/buttonend.png");
 		JButton btnNewButton2 = new JButton(imagebutton3);
@@ -94,5 +113,8 @@ public class Homepage {
 		//游戏说明按钮
 
 
+	}
+	public static void closeThis(){
+		frame.dispose();
 	}
 }
