@@ -28,19 +28,13 @@ public class Homepage {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) 
-	{
-		EventQueue.invokeLater(new Runnable() 
-		{
-			public void run() 
-			{
-				try 
-				{
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
 					Homepage window = new Homepage();
 					window.frame.setVisible(true);
-				} 
-				catch (Exception e) 
-				{
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
@@ -50,16 +44,14 @@ public class Homepage {
 	/**
 	 * Create the application.
 	 */
-	public Homepage() 
-	{
+	public Homepage() {
 		homepage();
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	public static void homepage() 
-	{
+	public static void homepage() {
 		frame = new JFrame("中国象棋");
 		frame.setBounds(100, 100, 650, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -82,10 +74,8 @@ public class Homepage {
 		frame.getContentPane().setLayout(null); 
 		//添加按钮控件
 		frame.getContentPane().add(button);
-		button.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent e) 
-			{
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				
 				Gamestart.chessboard();
 				closeThis();
@@ -102,11 +92,9 @@ public class Homepage {
 		frame.getContentPane().setLayout(null); 
 		frame.getContentPane().add(btnNewButton);
 		//开始使用监听器监听
-		btnNewButton.addActionListener(new ActionListener()
-		{    
+		btnNewButton.addActionListener(new ActionListener() {    
 			//单击按钮执行的方法
-			public void actionPerformed(ActionEvent e)
-			{
+			public void actionPerformed(ActionEvent e) {
 			//打开一个新窗口
 			Gameexplain.Gameexplain();
 			//关闭当前窗口
@@ -122,11 +110,9 @@ public class Homepage {
 		btnNewButton2.setBounds(247, 635, 156, 48);
 		frame.getContentPane().setLayout(null); 
 		frame.getContentPane().add(btnNewButton2);
-		btnNewButton2.addActionListener(new ActionListener()
-		{    
+		btnNewButton2.addActionListener(new ActionListener() {    
 			//单击按钮执行的方法
-			public void actionPerformed(ActionEvent e) 
-			{
+			public void actionPerformed(ActionEvent e) {
 			//关闭当前窗口
 			closeThis();
 			}
@@ -139,8 +125,7 @@ public class Homepage {
 
 
 	}
-	public static void closeThis()
-	{
+	public static void closeThis() {
 		frame.dispose();
 	}
 }

@@ -15,8 +15,7 @@ import homepage.Homepage;
 
 public class Gameexplain extends JFrame{
 	public static JFrame frame;
-	public static void Gameexplain()
-	{
+	public static void Gameexplain() {
 		//closeThis();
 		//创建新的窗口
 		frame = new JFrame("游戏说明");
@@ -36,11 +35,9 @@ public class Gameexplain extends JFrame{
 		frame.getContentPane().setLayout(null); 
 		frame.getContentPane().add(btnNewButton);
 		//开始使用监听器监听
-		btnNewButton.addActionListener(new ActionListener()
-		{    
+		btnNewButton.addActionListener(new ActionListener() {    
 			//单击按钮执行的方法
-			public void actionPerformed(ActionEvent e) 
-			{
+			public void actionPerformed(ActionEvent e) {
 			//打开一个新窗口
 			Homepage.homepage();
 			//关闭当前窗口
@@ -50,12 +47,10 @@ public class Gameexplain extends JFrame{
 		});
 		frame.setVisible(true);
 	}
-	public static void main(String[] args) 
-	{
+	public static void main(String[] args) {
 		Gameexplain();
 	}
-	public static void closeThis()
-	{
+	public static void closeThis() {
 		frame.dispose();
 	}
 }
