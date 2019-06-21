@@ -19,7 +19,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import gamestart.TestFrame.MyFrameMouse;
 
 public class Gamestart extends JFrame{
 	public static JFrame frame;
@@ -65,13 +64,5 @@ public class Gamestart extends JFrame{
 		chessboard();
 	}
 	
-	class MyFrameMouse extends MouseAdapter{
-        public void mouseClicked(MouseEvent e) {
-            if(isClicked){
-                Point dp = e.getPoint();//得到点击的位置
-                soldierbutton1.setLocation(dp.x-26,dp.y-26);//重新设置jbt的位置,以及修正偏移量,让鼠标处于按钮中间
-                isClicked=false;//按钮点击设置为false
-            }
-        }
-    }
+
 }
