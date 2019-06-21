@@ -19,13 +19,16 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import gamestart.TestFrame.MyFrameMouse;
+
 public class Gamestart extends JFrame{
 	public static JFrame frame;
 	static boolean isClicked;
 	static ImageIcon imagechesssoldier;
 	static JButton soldierbutton1;
-	public void 
-
+	static int x;
+	static int y;
+	
 	public static void chessboard()
 	{
 		frame=new JFrame("中国象棋"); 
@@ -40,7 +43,7 @@ public class Gamestart extends JFrame{
 		((JPanel)cp).setOpaque(false);	
 		
 		// 
-		 
+
 		imagechesssoldier = new ImageIcon("images/redsoldier.png");
 		soldierbutton1 = new JButton(imagechesssoldier);	
 		soldierbutton1.setBounds(71, 397, 52, 52);
@@ -48,45 +51,27 @@ public class Gamestart extends JFrame{
 		soldierbutton1.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
 		frame.getContentPane().add(soldierbutton1);
-		soldierbutton1.addMouseListener(new MouseListener() {
-
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
+		soldierbutton1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				isClicked = true;
-				System.out.println(isClicked);
 			}
-
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
 		});
+		frame.addMouseListener(new MyFrameMouse());
+
 		frame.setVisible(true); 
 		frame.setResizable(false);
 	}
 	public static void main(String[] args) {
 		chessboard();
 	}
-    
+	
+	class MyFrameMouse extends MouseAdapter{
+        public void mouseClicked(MouseEvent e) {
+            if(isClicked){
+                Point dp = e.getPoint();//得到点击的位置
+                soldierbutton1.setLocation(dp.x-26,dp.y-26);//重新设置jbt的位置,以及修正偏移量,让鼠标处于按钮中间
+                isClicked=false;//按钮点击设置为false
+            }
+        }
+    }
 }
