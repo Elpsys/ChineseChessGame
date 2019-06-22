@@ -3,6 +3,7 @@ package gamestart;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.MouseInfo;
 import java.awt.Point;
@@ -42,7 +43,6 @@ public class Gamestart extends JFrame{
 		((JPanel)cp).setOpaque(false);	
 		
 		// 
-
 		imagechesssoldier = new ImageIcon("images/redsoldier.png");
 		soldierbutton1 = new JButton(imagechesssoldier);	
 		soldierbutton1.setBounds(71, 397, 52, 52);
