@@ -20,15 +20,17 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import homepage.Homepage;
+
 
 public class Gamestart extends JFrame{
 	public static JFrame frame;
-	static boolean rdClicked;
+	static boolean rdClicked,bdClicked;
 	static JButton redsoldier1,redsoldier2,redsoldier3,redsoldier4,redsoldier5,Lredgun,Rredgun,Lredcar,Rredcar,Lredhorse,Rredhorse,Lredelephant,Rredelephant,Lredknight,Rredknight,redcommander;
 	static JButton blacksoldier1,blacksoldier2,blacksoldier3,blacksoldier4,blacksoldier5,Lblackgun,Rblackgun,Lblackcar,Rblackcar,Lblackhorse,Rblackhorse,Lblackelephant,Rblackelephant,Lblackknight,Rblackknight,blackcommander;
-	static int rd;//判断兵的不同
-	static int x;
-	static int y;
+	static int rd,bd;//判断兵的不同
+	static int x,y;
+
 	
 	public static void chessboard()
 	{
@@ -42,7 +44,51 @@ public class Gamestart extends JFrame{
 		Container cp=frame.getContentPane();   
 		cp.setLayout(new BorderLayout());		
 		((JPanel)cp).setOpaque(false);	
-		
+		//悔棋按钮
+		ImageIcon imagebutton1 = new ImageIcon("images/backchess.png");
+		JButton btnNewButton1 = new JButton(imagebutton1);
+		btnNewButton1.setBounds(248, 652, 156, 48);
+		frame.getContentPane().setLayout(null); 
+		frame.getContentPane().add(btnNewButton1);
+		btnNewButton1.addActionListener(new ActionListener() {    
+			//单击按钮执行的方法
+			public void actionPerformed(ActionEvent e) {
+			//关闭当前窗口
+			
+			}
+
+		});
+		//返回主界面按钮
+		ImageIcon imagebutton2 = new ImageIcon("images/buttonback.png");
+		JButton btnNewButton = new JButton(imagebutton2);		//将图片载入按钮中
+		btnNewButton.setBounds(64, 652, 156, 48);
+		frame.getContentPane().setLayout(null); 
+		frame.getContentPane().add(btnNewButton);
+		//开始使用监听器监听
+		btnNewButton.addActionListener(new ActionListener() {    
+			//单击按钮执行的方法
+			public void actionPerformed(ActionEvent e) {
+			//打开一个新窗口
+			Homepage.homepage();
+			//关闭当前窗口
+			closeThis();
+			}
+
+		});
+		//退出游戏按钮
+		ImageIcon imagebutton3 = new ImageIcon("images/buttonend.png");
+		JButton btnNewButton2 = new JButton(imagebutton3);
+		btnNewButton2.setBounds(431, 652, 156, 48);
+		frame.getContentPane().setLayout(null); 
+		frame.getContentPane().add(btnNewButton2);
+		btnNewButton2.addActionListener(new ActionListener() {    
+			//单击按钮执行的方法
+			public void actionPerformed(ActionEvent e) {
+			//关闭当前窗口
+			closeThis();
+			}
+
+		});
 		//红方兵1
 		ImageIcon imagerd;
 		imagerd = new ImageIcon("images/redsoldier.png");
@@ -279,8 +325,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(blacksoldier1);
 		blacksoldier1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 1;
+				bdClicked = true;
+				bd = 1;
 			}
 		});
 		//黑方兵2
@@ -292,8 +338,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(blacksoldier2);
 		blacksoldier2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 2;
+				bdClicked = true;
+				bd = 2;
 			}
 		});
 		//黑方兵3
@@ -305,8 +351,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(blacksoldier3);
 		blacksoldier3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 3;
+				bdClicked = true;
+				bd = 3;
 			}
 		});
 		//黑方兵4
@@ -318,8 +364,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(blacksoldier4);
 		blacksoldier4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 4;
+				bdClicked = true;
+				bd = 4;
 			}
 		});
 		//黑方兵5
@@ -331,8 +377,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(blacksoldier5);
 		blacksoldier5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				bdClicked = true;
+				bd = 5;
 			}
 		});
 		//黑方炮左
@@ -498,6 +544,8 @@ public class Gamestart extends JFrame{
 	public static void main(String[] args) {
 		chessboard();
 	}
-	
+	public static void closeThis() {
+		frame.dispose();
+	}
 
 }
