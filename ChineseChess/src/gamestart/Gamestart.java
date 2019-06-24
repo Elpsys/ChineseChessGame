@@ -25,10 +25,10 @@ import homepage.Homepage;
 
 public class Gamestart extends JFrame{
 	public static JFrame frame;
-	static boolean rdClicked,bdClicked;
+	static boolean rdClicked,bdClicked,rgClicked,bgClicked,rcClicked,bcClicked,rhClicked,bhClicked,reClicked,beClicked,rkClicked,bkClicked,rmClicked,bmClicked;
 	static JButton redsoldier1,redsoldier2,redsoldier3,redsoldier4,redsoldier5,Lredgun,Rredgun,Lredcar,Rredcar,Lredhorse,Rredhorse,Lredelephant,Rredelephant,Lredknight,Rredknight,redcommander;
 	static JButton blacksoldier1,blacksoldier2,blacksoldier3,blacksoldier4,blacksoldier5,Lblackgun,Rblackgun,Lblackcar,Rblackcar,Lblackhorse,Rblackhorse,Lblackelephant,Rblackelephant,Lblackknight,Rblackknight,blackcommander;
-	static int rd,bd;//ÅÐ¶Ï±øµÄ²»Í¬
+	static int rd,bd,rg,bg,rc,bc,rh,bh,re,be,rk,bk,;//ÅÐ¶Ï±øµÄ²»Í¬
 	static int x,y;
 
 	
@@ -167,8 +167,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(Lredgun);
 		Lredgun.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				rgClicked = true;
+				rg = 1;
 			}
 		});		
 		//ºì·½ÅÚÓÒ
@@ -180,8 +180,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(Rredgun);
 		Rredgun.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				rgClicked = true;
+				rg = 2;
 			}
 		});	
 		//ºì³µ×ó
@@ -195,8 +195,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(Lredcar);
 		Lredcar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				rcClicked = true;
+				rc = 1;
 			}
 		});	
 		//ºì³µÓÒ
@@ -208,8 +208,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(Rredcar);
 		Rredcar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				rcClicked = true;
+				rc = 2;
 			}
 		});	
 		//ºìÂí×ó
@@ -223,8 +223,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(Lredhorse);
 		Lredhorse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				rhClicked = true;
+				rh = 1;
 			}
 		});		
 		//ºìÂíÓÒ
@@ -236,8 +236,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(Rredhorse);
 		Rredhorse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				rhClicked = true;
+				rh = 2;
 			}
 		});	
 		//ºìÏó×ó
@@ -251,8 +251,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(Lredelephant);
 		Lredelephant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				reClicked = true;
+				re = 1;
 			}
 		});		
 		//ºìÏóÓÒ
@@ -264,8 +264,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(Rredelephant);
 		Rredelephant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				reClicked = true;
+				re = 2;
 			}
 		});	
 		//ºìÊ¿×ó
@@ -279,8 +279,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(Lredknight);
 		Lredknight.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				rkClicked = true;
+				rk = 1;
 			}
 		});		
 		//ºìÊ¿ÓÒ
@@ -292,8 +292,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(Rredknight);
 		Rredknight.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				rkClicked = true;
+				rk = 2;
 			}
 		});	
 		//ºìË§
@@ -307,8 +307,7 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(redcommander);
 		redcommander.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				rmClicked = true;
 			}
 		});			
 		
