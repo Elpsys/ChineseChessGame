@@ -6,51 +6,54 @@ import java.awt.event.MouseListener;
 
 
 public class MyFrameMouse implements MouseListener {
+	static int [] clx = {68,126,184,242,300,358,416,474,532};
+
+	static int [] cly = {87,139,191,243,295,347,399,451,503,555};
 
 	 public void mouseClicked(MouseEvent e) {
 		 int x,y;
 		 Point dp = e.getPoint();//得到点击的位置
          x=dp.x;
-         y=dp.y-33;
+         y=dp.y-35;
 		 if(Gamestart.rdClicked) {
 	         
 //	         System.out.println(y);
 	         if(Gamestart.rd == 1) {	//判断棋子
-		         if(x > 71 && x < 123 && y > 348 && y < 397) {//设置范围
-		        	 if(Gamestart.redsoldier1.getX() == 71 && Gamestart.redsoldier1.getY() == 399) {
-				         Gamestart.redsoldier1.setLocation(71,348);		//设置位置
+		         if(x > 68 && x < 120 && y > 347 && y < 400) {//设置范围
+		        	 if(Gamestart.redsoldier1.getX() == clx[0] && Gamestart.redsoldier1.getY() == cly[6]) {
+				         Gamestart.redsoldier1.setLocation(clx[0],cly[5]);		//设置位置
 				         Gamestart.rdClicked = false;
 		        	 }
 		         }
 	         }
 	         if(Gamestart.rd == 2) {
-		         if(x > 184 && x < 235 && y > 348 && y < 397) {
-		        	 if(Gamestart.redsoldier2.getX() == 184 && Gamestart.redsoldier2.getY() == 399) {
-				         Gamestart.redsoldier2.setLocation(184,348);
+		         if(x > 184 && x < 236 && y > 347 && y < 400) {
+		        	 if(Gamestart.redsoldier2.getX() == clx[2] && Gamestart.redsoldier2.getY() == cly[6]) {
+				         Gamestart.redsoldier2.setLocation(clx[2],cly[5]);
 				         Gamestart.rdClicked = false;
 		        	 }
 		         }
 	         }
 	         if(Gamestart.rd == 3) {
-		         if(x > 299 && x < 351 && y > 348 && y < 397) {
-		        	 if(Gamestart.redsoldier3.getX() == 299 && Gamestart.redsoldier3.getY() == 399) {
-				         Gamestart.redsoldier3.setLocation(299,348);
+		         if(x > 300 && x < 352 && y > 347 && y < 400) {
+		        	 if(Gamestart.redsoldier3.getX() == clx[4] && Gamestart.redsoldier3.getY() == cly[6]) {
+				         Gamestart.redsoldier3.setLocation(clx[4],cly[5]);
 				         Gamestart.rdClicked = false;
 		        	 }
 		         }
 	         }
 	         if(Gamestart.rd == 4) {
-		         if(x > 415 && x < 467 && y > 348 && y < 397) {
-		        	 if(Gamestart.redsoldier4.getX() == 415 && Gamestart.redsoldier4.getY() == 399) {
-				         Gamestart.redsoldier4.setLocation(415,348);
+		         if(x > 416 && x < 468 && y > 347 && y < 400) {
+		        	 if(Gamestart.redsoldier4.getX() == clx[6] && Gamestart.redsoldier4.getY() == cly[6]) {
+				         Gamestart.redsoldier4.setLocation(clx[6],cly[5]);
 				         Gamestart.rdClicked = false;
 		        	 }
 		         }
 	         }
 	         if(Gamestart.rd == 5) {
-		         if(x > 530 && x < 582 && y > 348 && y < 397) {
-		        	 if(Gamestart.redsoldier5.getX() == 530 && Gamestart.redsoldier5.getY() == 399) {
-				         Gamestart.redsoldier5.setLocation(530,348);
+		         if(x > 532 && x < 584 && y > 347 && y < 400) {
+		        	 if(Gamestart.redsoldier5.getX() == clx[8] && Gamestart.redsoldier5.getY() == cly[6]) {
+				         Gamestart.redsoldier5.setLocation(clx[8],cly[5]);
 				         Gamestart.rdClicked = false;
 		        	 }
 		         }
@@ -59,41 +62,41 @@ public class MyFrameMouse implements MouseListener {
 		 //黑色棋子
 		 if(Gamestart.bdClicked) {
 	         if(Gamestart.bd == 1) {	//判断棋子
-		         if(x > 71 && x < 123 && y > 298 && y < 348) {		//设置范围
-		        	 if(Gamestart.blacksoldier1.getX() == 71 && Gamestart.blacksoldier1.getY() == 247) {
-				         Gamestart.blacksoldier1.setLocation(71,298);		//设置位置
+		         if(x > 68 && x < 120 && y > 295 && y < 347) {		//设置范围
+		        	 if(Gamestart.blacksoldier1.getX() == clx[0] && Gamestart.blacksoldier1.getY() == cly[3]) {
+				         Gamestart.blacksoldier1.setLocation(clx[0],cly[4]);		//设置位置
 				         Gamestart.bdClicked = false;
 		        	 }
 		         }
 	         }
 	         if(Gamestart.bd == 2) {
-		         if(x > 184 && x < 235 && y > 298 && y < 348) {
-		        	 if(Gamestart.blacksoldier2.getX() == 184 && Gamestart.blacksoldier2.getY() == 247) {
-				         Gamestart.blacksoldier2.setLocation(184,298);
+		         if(x > 184 && x < 236 && y > 295 && y < 347) {
+		        	 if(Gamestart.blacksoldier2.getX() == clx[2] && Gamestart.blacksoldier2.getY() == cly[3]) {
+				         Gamestart.blacksoldier2.setLocation(clx[2],cly[4]);
 				         Gamestart.bdClicked = false;
 		        	 }
 		         }
 	         }
 	         if(Gamestart.bd == 3) {
-		         if(x > 299 && x < 351 && y > 298 && y < 348) {
-		        	 if(Gamestart.blacksoldier3.getX() == 299 && Gamestart.blacksoldier3.getY() == 247) {
-				         Gamestart.blacksoldier3.setLocation(299,298);
+		         if(x > 300 && x < 352 && y > 295 && y < 347) {
+		        	 if(Gamestart.blacksoldier3.getX() == clx[4] && Gamestart.blacksoldier3.getY() == cly[3]) {
+				         Gamestart.blacksoldier3.setLocation(clx[4],cly[4]);
 				         Gamestart.bdClicked = false;
 		        	 }
 		         }
 	         }
 	         if(Gamestart.bd == 4) {
-		         if(x > 415 && x < 467 && y > 298 && y < 348) {
-		        	 if(Gamestart.blacksoldier4.getX() == 415 && Gamestart.blacksoldier4.getY() == 247) {
-				         Gamestart.blacksoldier4.setLocation(415,298);
+		         if(x > 416 && x < 468 && y > 295 && y < 347) {
+		        	 if(Gamestart.blacksoldier4.getX() == clx[6] && Gamestart.blacksoldier4.getY() == cly[3]) {
+				         Gamestart.blacksoldier4.setLocation(clx[6],cly[4]);
 				         Gamestart.bdClicked = false;
 		        	 }
 		         }
 	         }
 	         if(Gamestart.bd == 5) {
-		         if(x > 530 && x < 582 && y > 298 && y < 348) {
-		        	 if(Gamestart.blacksoldier5.getX() == 530 && Gamestart.blacksoldier5.getY() == 247) {
-				         Gamestart.blacksoldier5.setLocation(530,298);
+		         if(x > 532 && x < 584 && y > 295 && y < 347) {
+		        	 if(Gamestart.blacksoldier5.getX() == clx[8] && Gamestart.blacksoldier5.getY() == cly[3]) {
+				         Gamestart.blacksoldier5.setLocation(clx[8],cly[4]);
 				         Gamestart.bdClicked = false;
 		        	 }
 		         }

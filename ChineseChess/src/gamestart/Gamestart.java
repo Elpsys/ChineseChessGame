@@ -93,7 +93,7 @@ public class Gamestart extends JFrame{
 		ImageIcon imagerd;
 		imagerd = new ImageIcon("images/redsoldier.png");
 		redsoldier1 = new JButton(imagerd);	
-		redsoldier1.setBounds(70, 399, 52, 52);
+		redsoldier1.setBounds(68, 399, 52, 52);
 		redsoldier1.setContentAreaFilled(false);
 		redsoldier1.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -106,7 +106,7 @@ public class Gamestart extends JFrame{
 		});
 		//ºì·½±ø2
 		redsoldier2 = new JButton(imagerd);	
-		redsoldier2.setBounds(185, 399, 52, 52);
+		redsoldier2.setBounds(184, 399, 52, 52);
 		redsoldier2.setContentAreaFilled(false);
 		redsoldier2.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -132,7 +132,7 @@ public class Gamestart extends JFrame{
 		});
 		//ºì·½±ø4
 		redsoldier4 = new JButton(imagerd);	
-		redsoldier4.setBounds(414, 399, 52, 52);
+		redsoldier4.setBounds(416, 399, 52, 52);
 		redsoldier4.setContentAreaFilled(false);
 		redsoldier4.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -145,7 +145,7 @@ public class Gamestart extends JFrame{
 		});
 		//ºì·½±ø5
 		redsoldier5 = new JButton(imagerd);	
-		redsoldier5.setBounds(529, 399, 52, 52);
+		redsoldier5.setBounds(532, 399, 52, 52);
 		redsoldier5.setContentAreaFilled(false);
 		redsoldier5.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -160,7 +160,7 @@ public class Gamestart extends JFrame{
 		ImageIcon imagegun;
 		imagegun = new ImageIcon("images/redgun.png");
 		Lredgun = new JButton(imagegun);	
-		Lredgun.setBounds(127, 450, 52, 52);
+		Lredgun.setBounds(126, 451, 52, 52);
 		Lredgun.setContentAreaFilled(false);
 		Lredgun.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -173,7 +173,7 @@ public class Gamestart extends JFrame{
 		});		
 		//ºì·½ÅÚÓÒ
 		Rredgun = new JButton(imagegun);	
-		Rredgun.setBounds(472, 450, 52, 52);
+		Rredgun.setBounds(474, 451, 52, 52);
 		Rredgun.setContentAreaFilled(false);
 		Rredgun.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -188,7 +188,7 @@ public class Gamestart extends JFrame{
 		ImageIcon imagecar;
 		imagecar = new ImageIcon("images/redcar.png");
 		Lredcar = new JButton(imagecar);	
-		Lredcar.setBounds(70, 554, 52, 52);
+		Lredcar.setBounds(68, 555, 52, 52);
 		Lredcar.setContentAreaFilled(false);
 		Lredcar.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -201,7 +201,7 @@ public class Gamestart extends JFrame{
 		});	
 		//ºì³µÓÒ
 		Rredcar = new JButton(imagecar);	
-		Rredcar.setBounds(529, 554, 52, 52);
+		Rredcar.setBounds(532, 555, 52, 52);
 		Rredcar.setContentAreaFilled(false);
 		Rredcar.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -216,7 +216,7 @@ public class Gamestart extends JFrame{
 		ImageIcon imagehorse;
 		imagehorse = new ImageIcon("images/redhorse.png");
 		Lredhorse = new JButton(imagehorse);	
-		Lredhorse.setBounds(127, 554, 52, 52);
+		Lredhorse.setBounds(126, 555, 52, 52);
 		Lredhorse.setContentAreaFilled(false);
 		Lredhorse.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -229,7 +229,7 @@ public class Gamestart extends JFrame{
 		});		
 		//ºìÂíÓÒ
 		Rredhorse = new JButton(imagehorse);	
-		Rredhorse.setBounds(472, 554, 52, 52);
+		Rredhorse.setBounds(474, 555, 52, 52);
 		Rredhorse.setContentAreaFilled(false);
 		Rredhorse.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -244,7 +244,7 @@ public class Gamestart extends JFrame{
 		ImageIcon imageelephant;
 		imageelephant = new ImageIcon("images/redelephant.png");
 		Lredelephant = new JButton(imageelephant);	
-		Lredelephant.setBounds(185, 554, 52, 52);
+		Lredelephant.setBounds(184, 555, 52, 52);
 		Lredelephant.setContentAreaFilled(false);
 		Lredelephant.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -257,7 +257,7 @@ public class Gamestart extends JFrame{
 		});		
 		//ºìÏóÓÒ
 		Rredelephant = new JButton(imageelephant);	
-		Rredelephant.setBounds(414, 554, 52, 52);
+		Rredelephant.setBounds(416, 555, 52, 52);
 		Rredelephant.setContentAreaFilled(false);
 		Rredelephant.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -272,7 +272,7 @@ public class Gamestart extends JFrame{
 		ImageIcon imageknight;
 		imageknight = new ImageIcon("images/redknight.png");
 		Lredknight = new JButton(imageknight);	
-		Lredknight.setBounds(242, 554, 52, 52);
+		Lredknight.setBounds(242, 555, 52, 52);
 		Lredknight.setContentAreaFilled(false);
 		Lredknight.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -285,7 +285,7 @@ public class Gamestart extends JFrame{
 		});		
 		//ºìÊ¿ÓÒ
 		Rredknight = new JButton(imageknight);	
-		Rredknight.setBounds(357, 554, 52, 52);
+		Rredknight.setBounds(358, 555, 52, 52);
 		Rredknight.setContentAreaFilled(false);
 		Rredknight.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -300,7 +300,7 @@ public class Gamestart extends JFrame{
 		ImageIcon imagecommander;
 		imagecommander = new ImageIcon("images/redcommander.png");
 		redcommander = new JButton(imagecommander);	
-		redcommander.setBounds(300, 554, 52, 52);
+		redcommander.setBounds(300, 555, 52, 52);
 		redcommander.setContentAreaFilled(false);
 		redcommander.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -318,7 +318,7 @@ public class Gamestart extends JFrame{
 		ImageIcon imagebd;
 		imagebd = new ImageIcon("images/blacksoldier.png");
 		blacksoldier1 = new JButton(imagebd);	
-		blacksoldier1.setBounds(70, 243, 52, 52);
+		blacksoldier1.setBounds(68, 243, 52, 52);
 		blacksoldier1.setContentAreaFilled(false);
 		blacksoldier1.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -331,7 +331,7 @@ public class Gamestart extends JFrame{
 		});
 		//ºÚ·½±ø2
 		blacksoldier2 = new JButton(imagebd);	
-		blacksoldier2.setBounds(185, 243, 52, 52);
+		blacksoldier2.setBounds(184, 243, 52, 52);
 		blacksoldier2.setContentAreaFilled(false);
 		blacksoldier2.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -357,7 +357,7 @@ public class Gamestart extends JFrame{
 		});
 		//ºÚ·½±ø4
 		blacksoldier4 = new JButton(imagebd);	
-		blacksoldier4.setBounds(414, 243, 52, 52);
+		blacksoldier4.setBounds(416, 243, 52, 52);
 		blacksoldier4.setContentAreaFilled(false);
 		blacksoldier4.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -370,7 +370,7 @@ public class Gamestart extends JFrame{
 		});
 		//ºÚ·½±ø5
 		blacksoldier5 = new JButton(imagebd);	
-		blacksoldier5.setBounds(529, 243, 52, 52);
+		blacksoldier5.setBounds(532, 243, 52, 52);
 		blacksoldier5.setContentAreaFilled(false);
 		blacksoldier5.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -385,7 +385,7 @@ public class Gamestart extends JFrame{
 		ImageIcon imagegun1;
 		imagegun1 = new ImageIcon("images/blackgun.png");
 		Lblackgun = new JButton(imagegun1);	
-		Lblackgun.setBounds(127, 192, 52, 52);
+		Lblackgun.setBounds(126, 191, 52, 52);
 		Lblackgun.setContentAreaFilled(false);
 		Lblackgun.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -398,7 +398,7 @@ public class Gamestart extends JFrame{
 		});		
 		//ºÚ·½ÅÚÓÒ
 		Rblackgun = new JButton(imagegun1);	
-		Rblackgun.setBounds(472, 192, 52, 52);
+		Rblackgun.setBounds(474, 191, 52, 52);
 		Rblackgun.setContentAreaFilled(false);
 		Rblackgun.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -413,7 +413,7 @@ public class Gamestart extends JFrame{
 		ImageIcon imagecar1;
 		imagecar1 = new ImageIcon("images/blackcar.png");
 		Lblackcar = new JButton(imagecar1);	
-		Lblackcar.setBounds(70, 88, 52, 52);
+		Lblackcar.setBounds(68, 87, 52, 52);
 		Lblackcar.setContentAreaFilled(false);
 		Lblackcar.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -426,7 +426,7 @@ public class Gamestart extends JFrame{
 		});	
 		//ºÚ³µÓÒ
 		Rblackcar = new JButton(imagecar1);	
-		Rblackcar.setBounds(529, 88, 52, 52);
+		Rblackcar.setBounds(532, 87, 52, 52);
 		Rblackcar.setContentAreaFilled(false);
 		Rblackcar.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -441,7 +441,7 @@ public class Gamestart extends JFrame{
 		ImageIcon imagehorse1;
 		imagehorse1 = new ImageIcon("images/blackhorse.png");
 		Lblackhorse = new JButton(imagehorse1);	
-		Lblackhorse.setBounds(127, 88, 52, 52);
+		Lblackhorse.setBounds(126, 87, 52, 52);
 		Lblackhorse.setContentAreaFilled(false);
 		Lblackhorse.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -454,7 +454,7 @@ public class Gamestart extends JFrame{
 		});		
 		//ºÚÂíÓÒ
 		Rblackhorse = new JButton(imagehorse1);	
-		Rblackhorse.setBounds(472, 88, 52, 52);
+		Rblackhorse.setBounds(474, 87, 52, 52);
 		Rblackhorse.setContentAreaFilled(false);
 		Rblackhorse.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -469,7 +469,7 @@ public class Gamestart extends JFrame{
 		ImageIcon imageelephant1;
 		imageelephant1 = new ImageIcon("images/blackelep.png");
 		Lblackelephant = new JButton(imageelephant1);	
-		Lblackelephant.setBounds(185, 88, 52, 52);
+		Lblackelephant.setBounds(184, 87, 52, 52);
 		Lblackelephant.setContentAreaFilled(false);
 		Lblackelephant.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -497,7 +497,7 @@ public class Gamestart extends JFrame{
 		ImageIcon imageknight1;
 		imageknight1 = new ImageIcon("images/blackknight.png");
 		Lblackknight = new JButton(imageknight1);	
-		Lblackknight.setBounds(242, 88, 52, 52);
+		Lblackknight.setBounds(242, 87, 52, 52);
 		Lblackknight.setContentAreaFilled(false);
 		Lblackknight.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
@@ -525,7 +525,7 @@ public class Gamestart extends JFrame{
 		ImageIcon imagecommander1;
 		imagecommander1 = new ImageIcon("images/blackcommander.png");
 		blackcommander = new JButton(imagecommander1);	
-		blackcommander.setBounds(300, 88, 52, 52);
+		blackcommander.setBounds(300, 87, 52, 52);
 		blackcommander.setContentAreaFilled(false);
 		blackcommander.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
