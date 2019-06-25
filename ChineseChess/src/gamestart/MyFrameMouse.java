@@ -15,93 +15,101 @@ public class MyFrameMouse implements MouseListener {
 		 Point dp = e.getPoint();//µÃµ½µã»÷µÄÎ»ÖÃ
          x=dp.x;
          y=dp.y-35;
-		 if(Gamestart.rdClicked) {
-	         
-//	         System.out.println(y);
-	         if(Gamestart.rd == 1) {	//ÅÐ¶ÏÆå×Ó
-		         if(x > 68 && x < 120 && y > 347 && y < 400) {//ÉèÖÃ·¶Î§
-		        	 if(Gamestart.redsoldier1.getX() == clx[0] && Gamestart.redsoldier1.getY() == cly[6]) {
-				         Gamestart.redsoldier1.setLocation(clx[0],cly[5]);		//ÉèÖÃÎ»ÖÃ
-				         Gamestart.rdClicked = false;
-		        	 }
+         System.out.println(Gamestart.rmove);
+         if(Gamestart.rmove) {
+			 if(Gamestart.rdClicked) {
+		         
+		         if(Gamestart.rd == 1) {	//ÅÐ¶ÏÆå×Ó
+			         if(x > 68 && x < 120 && y > 347 && y < 400) {//ÉèÖÃ·¶Î§
+			        	 if(Gamestart.redsoldier1.getX() == clx[0] && Gamestart.redsoldier1.getY() == cly[6]) {
+					         Gamestart.redsoldier1.setLocation(clx[0],cly[5]);		//ÉèÖÃÎ»ÖÃ
+					         Gamestart.rdClicked = false;
+			        	 }
+			         }
 		         }
-	         }
-	         if(Gamestart.rd == 2) {
-		         if(x > 184 && x < 236 && y > 347 && y < 400) {
-		        	 if(Gamestart.redsoldier2.getX() == clx[2] && Gamestart.redsoldier2.getY() == cly[6]) {
-				         Gamestart.redsoldier2.setLocation(clx[2],cly[5]);
-				         Gamestart.rdClicked = false;
-		        	 }
+		         if(Gamestart.rd == 2) {
+			         if(x > 184 && x < 236 && y > 347 && y < 400) {
+			        	 if(Gamestart.redsoldier2.getX() == clx[2] && Gamestart.redsoldier2.getY() == cly[6]) {
+					         Gamestart.redsoldier2.setLocation(clx[2],cly[5]);
+					         Gamestart.rdClicked = false;
+			        	 }
+			         }
 		         }
-	         }
-	         if(Gamestart.rd == 3) {
-		         if(x > 300 && x < 352 && y > 347 && y < 400) {
-		        	 if(Gamestart.redsoldier3.getX() == clx[4] && Gamestart.redsoldier3.getY() == cly[6]) {
-				         Gamestart.redsoldier3.setLocation(clx[4],cly[5]);
-				         Gamestart.rdClicked = false;
-		        	 }
+		         if(Gamestart.rd == 3) {
+			         if(x > 300 && x < 352 && y > 347 && y < 400) {
+			        	 if(Gamestart.redsoldier3.getX() == clx[4] && Gamestart.redsoldier3.getY() == cly[6]) {
+					         Gamestart.redsoldier3.setLocation(clx[4],cly[5]);
+					         Gamestart.rdClicked = false;
+			        	 }
+			         }
 		         }
-	         }
-	         if(Gamestart.rd == 4) {
-		         if(x > 416 && x < 468 && y > 347 && y < 400) {
-		        	 if(Gamestart.redsoldier4.getX() == clx[6] && Gamestart.redsoldier4.getY() == cly[6]) {
-				         Gamestart.redsoldier4.setLocation(clx[6],cly[5]);
-				         Gamestart.rdClicked = false;
-		        	 }
+		         if(Gamestart.rd == 4) {
+			         if(x > 416 && x < 468 && y > 347 && y < 400) {
+			        	 if(Gamestart.redsoldier4.getX() == clx[6] && Gamestart.redsoldier4.getY() == cly[6]) {
+					         Gamestart.redsoldier4.setLocation(clx[6],cly[5]);
+					         Gamestart.rdClicked = false;
+			        	 }
+			         }
 		         }
-	         }
-	         if(Gamestart.rd == 5) {
-		         if(x > 532 && x < 584 && y > 347 && y < 400) {
-		        	 if(Gamestart.redsoldier5.getX() == clx[8] && Gamestart.redsoldier5.getY() == cly[6]) {
-				         Gamestart.redsoldier5.setLocation(clx[8],cly[5]);
-				         Gamestart.rdClicked = false;
-		        	 }
+		         if(Gamestart.rd == 5) {
+			         if(x > 532 && x < 584 && y > 347 && y < 400) {
+			        	 if(Gamestart.redsoldier5.getX() == clx[8] && Gamestart.redsoldier5.getY() == cly[6]) {
+					         Gamestart.redsoldier5.setLocation(clx[8],cly[5]);
+					         Gamestart.rdClicked = false;
+			        	 }
+			         }
 		         }
-	         }
-		 }
+			 }
+			 Gamestart.rmove = false;
+			 Gamestart.bmove = true;
+         }
 		 //ºÚÉ«Æå×Ó
-		 if(Gamestart.bdClicked) {
-	         if(Gamestart.bd == 1) {	//ÅÐ¶ÏÆå×Ó
-		         if(x > 68 && x < 120 && y > 295 && y < 347) {		//ÉèÖÃ·¶Î§
-		        	 if(Gamestart.blacksoldier1.getX() == clx[0] && Gamestart.blacksoldier1.getY() == cly[3]) {
-				         Gamestart.blacksoldier1.setLocation(clx[0],cly[4]);		//ÉèÖÃÎ»ÖÃ
-				         Gamestart.bdClicked = false;
-		        	 }
+         if(Gamestart.bmove) {
+			 if(Gamestart.bdClicked) {
+		         if(Gamestart.bd == 1) {	//ÅÐ¶ÏÆå×Ó
+			         if(x > 68 && x < 120 && y > 295 && y < 347) {		//ÉèÖÃ·¶Î§
+			        	 if(Gamestart.blacksoldier1.getX() == clx[0] && Gamestart.blacksoldier1.getY() == cly[3]) {
+					         Gamestart.blacksoldier1.setLocation(clx[0],cly[4]);		//ÉèÖÃÎ»ÖÃ
+					         Gamestart.bdClicked = false;
+			        	 }
+			         }
 		         }
-	         }
-	         if(Gamestart.bd == 2) {
-		         if(x > 184 && x < 236 && y > 295 && y < 347) {
-		        	 if(Gamestart.blacksoldier2.getX() == clx[2] && Gamestart.blacksoldier2.getY() == cly[3]) {
-				         Gamestart.blacksoldier2.setLocation(clx[2],cly[4]);
-				         Gamestart.bdClicked = false;
-		        	 }
+		         if(Gamestart.bd == 2) {
+			         if(x > 184 && x < 236 && y > 295 && y < 347) {
+			        	 if(Gamestart.blacksoldier2.getX() == clx[2] && Gamestart.blacksoldier2.getY() == cly[3]) {
+					         Gamestart.blacksoldier2.setLocation(clx[2],cly[4]);
+					         Gamestart.bdClicked = false;
+			        	 }
+			         }
 		         }
-	         }
-	         if(Gamestart.bd == 3) {
-		         if(x > 300 && x < 352 && y > 295 && y < 347) {
-		        	 if(Gamestart.blacksoldier3.getX() == clx[4] && Gamestart.blacksoldier3.getY() == cly[3]) {
-				         Gamestart.blacksoldier3.setLocation(clx[4],cly[4]);
-				         Gamestart.bdClicked = false;
-		        	 }
+		         if(Gamestart.bd == 3) {
+			         if(x > 300 && x < 352 && y > 295 && y < 347) {
+			        	 if(Gamestart.blacksoldier3.getX() == clx[4] && Gamestart.blacksoldier3.getY() == cly[3]) {
+					         Gamestart.blacksoldier3.setLocation(clx[4],cly[4]);
+					         Gamestart.bdClicked = false;
+			        	 }
+			         }
 		         }
-	         }
-	         if(Gamestart.bd == 4) {
-		         if(x > 416 && x < 468 && y > 295 && y < 347) {
-		        	 if(Gamestart.blacksoldier4.getX() == clx[6] && Gamestart.blacksoldier4.getY() == cly[3]) {
-				         Gamestart.blacksoldier4.setLocation(clx[6],cly[4]);
-				         Gamestart.bdClicked = false;
-		        	 }
+		         if(Gamestart.bd == 4) {
+			         if(x > 416 && x < 468 && y > 295 && y < 347) {
+			        	 if(Gamestart.blacksoldier4.getX() == clx[6] && Gamestart.blacksoldier4.getY() == cly[3]) {
+					         Gamestart.blacksoldier4.setLocation(clx[6],cly[4]);
+					         Gamestart.bdClicked = false;
+			        	 }
+			         }
 		         }
-	         }
-	         if(Gamestart.bd == 5) {
-		         if(x > 532 && x < 584 && y > 295 && y < 347) {
-		        	 if(Gamestart.blacksoldier5.getX() == clx[8] && Gamestart.blacksoldier5.getY() == cly[3]) {
-				         Gamestart.blacksoldier5.setLocation(clx[8],cly[4]);
-				         Gamestart.bdClicked = false;
-		        	 }
+		         if(Gamestart.bd == 5) {
+			         if(x > 532 && x < 584 && y > 295 && y < 347) {
+			        	 if(Gamestart.blacksoldier5.getX() == clx[8] && Gamestart.blacksoldier5.getY() == cly[3]) {
+					         Gamestart.blacksoldier5.setLocation(clx[8],cly[4]);
+					         Gamestart.bdClicked = false;
+			        	 }
+			         }
 		         }
-	         }
-		 }
+			 }
+			 Gamestart.bmove = false;
+			 Gamestart.rmove = true;
+         }
      }
 	@Override
 	public void mouseEntered(MouseEvent e) {

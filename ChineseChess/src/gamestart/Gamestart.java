@@ -26,14 +26,19 @@ import homepage.Homepage;
 public class Gamestart extends JFrame{
 	public static JFrame frame;
 	static boolean rdClicked,bdClicked,rgClicked,bgClicked,rcClicked,bcClicked,rhClicked,bhClicked,reClicked,beClicked,rkClicked,bkClicked,rmClicked,bmClicked;
+	static boolean rmove,bmove;
 	static JButton redsoldier1,redsoldier2,redsoldier3,redsoldier4,redsoldier5,Lredgun,Rredgun,Lredcar,Rredcar,Lredhorse,Rredhorse,Lredelephant,Rredelephant,Lredknight,Rredknight,redcommander;
 	static JButton blacksoldier1,blacksoldier2,blacksoldier3,blacksoldier4,blacksoldier5,Lblackgun,Rblackgun,Lblackcar,Rblackcar,Lblackhorse,Rblackhorse,Lblackelephant,Rblackelephant,Lblackknight,Rblackknight,blackcommander;
-	static int rd,bd,rg,bg,rc,bc,rh,bh,re,be,rk,bk,;//判断兵的不同
+	static int rd,bd,rg,bg,rc,bc,rh,bh,re,be,rk,bk;//判断棋子的不同
 	static int x,y;
-
+	static int tips = 1;
 	
 	public static void chessboard()
 	{
+		if(tips == 1) {
+			rmove = true;
+			bmove = false;
+		}
 		frame=new JFrame("中国象棋"); 
 		frame.setBounds(100, 100, 650, 800);
 		//背景图与棋盘
@@ -101,7 +106,7 @@ public class Gamestart extends JFrame{
 		redsoldier1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				rdClicked = true;
-				rd = 1;
+				rd = 1;   
 			}
 		});
 		//红方兵2
@@ -538,6 +543,10 @@ public class Gamestart extends JFrame{
 		frame.addMouseListener(new MyFrameMouse());
 		frame.setVisible(true); 
 		frame.setResizable(false);		
+		if(tips == 1) {
+			Tip.tip();
+			tips = 2;
+		}
 		
 	}
 	public static void main(String[] args) {
