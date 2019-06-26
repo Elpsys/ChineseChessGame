@@ -78,7 +78,24 @@ public class MyFrameMouse implements MouseListener {
          if(Gamestart.rgClicked) {
 			 if(Gamestart.rmove) {
 		        if(Gamestart.rg == 1) {	//ÅÐ¶ÏÆå×Ó
-			         if(x > 126 && x < 178 && y > 398 && y < 451) {//ÉèÖÃ·¶Î§
+		        	//ÊúÏòÎ»ÖÃ------------------------------------------------------------------------
+		        	if(x > 126 && x < 178 && y > 555 && y < 607) {//ÉèÖÃ·¶Î§
+			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
+					         Gamestart.Lredgun.setLocation(clx[1],cly[9]);		//ÉèÖÃÎ»ÖÃ
+					         Gamestart.rgClicked = false;
+					         Gamestart.rmove = false;
+							 Gamestart.bmove = true;
+			        	 }
+			         }
+		        	if(x > 126 && x < 178 && y > 503 && y < 555) {//ÉèÖÃ·¶Î§
+			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
+					         Gamestart.Lredgun.setLocation(clx[1],cly[8]);		//ÉèÖÃÎ»ÖÃ
+					         Gamestart.rgClicked = false;
+					         Gamestart.rmove = false;
+							 Gamestart.bmove = true;
+			        	 }
+			         }
+			         if(x > 126 && x < 178 && y > 399 && y < 451) {//ÉèÖÃ·¶Î§
 			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
 					         Gamestart.Lredgun.setLocation(clx[1],cly[6]);		//ÉèÖÃÎ»ÖÃ
 					         Gamestart.rgClicked = false;
@@ -126,7 +143,7 @@ public class MyFrameMouse implements MouseListener {
 							 Gamestart.bmove = true;
 			        	 }
 			         }
-			         if(x > 126 && x < 178 && y > 139 && y < 191) {//ÉèÖÃ·¶Î§
+			         if(x > 126 && x < 178 && y > 87 && y < 139) {//ÉèÖÃ·¶Î§
 			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
 					         Gamestart.Lredgun.setLocation(clx[1],cly[0]);		//ÉèÖÃÎ»ÖÃ
 					         Gamestart.rgClicked = false;
@@ -134,6 +151,56 @@ public class MyFrameMouse implements MouseListener {
 							 Gamestart.bmove = true;
 			        	 }
 			         }
+			         //ºáÏòÎ»ÖÃ------------------------------------------------------------------------------
+			         if(x > 184 && x < 242 && y > 451 && y < 503) {//ÉèÖÃ·¶Î§
+			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
+					         Gamestart.Lredgun.setLocation(clx[2],cly[7]);		//ÉèÖÃÎ»ÖÃ
+					         Gamestart.rgClicked = false;
+					         Gamestart.rmove = false;
+							 Gamestart.bmove = true;
+			        	 }
+			         }
+			         if(x > 242 && x < 300 && y > 451 && y < 503) {//ÉèÖÃ·¶Î§
+			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
+					         Gamestart.Lredgun.setLocation(clx[3],cly[7]);		//ÉèÖÃÎ»ÖÃ
+					         Gamestart.rgClicked = false;
+					         Gamestart.rmove = false;
+							 Gamestart.bmove = true;
+			        	 }
+			         }
+			         if(x > 300 && x < 358 && y > 451 && y < 503) {//ÉèÖÃ·¶Î§
+			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
+					         Gamestart.Lredgun.setLocation(clx[4],cly[7]);		//ÉèÖÃÎ»ÖÃ
+					         Gamestart.rgClicked = false;
+					         Gamestart.rmove = false;
+							 Gamestart.bmove = true;
+			        	 }
+			         }
+			         if(x > 358 && x < 416 && y > 451 && y < 503) {//ÉèÖÃ·¶Î§
+			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
+					         Gamestart.Lredgun.setLocation(clx[5],cly[7]);		//ÉèÖÃÎ»ÖÃ
+					         Gamestart.rgClicked = false;
+					         Gamestart.rmove = false;
+							 Gamestart.bmove = true;
+			        	 }
+			         }
+			         if(x > 416 && x < 474 && y > 451 && y < 503) {//ÉèÖÃ·¶Î§
+			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
+					         Gamestart.Lredgun.setLocation(clx[6],cly[7]);		//ÉèÖÃÎ»ÖÃ
+					         Gamestart.rgClicked = false;
+					         Gamestart.rmove = false;
+							 Gamestart.bmove = true;
+			        	 }
+			         }
+			         if(x > 474 && x < 532 && y > 451 && y < 503) {//ÉèÖÃ·¶Î§
+			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
+					         Gamestart.Lredgun.setLocation(clx[7],cly[7]);		//ÉèÖÃÎ»ÖÃ
+					         Gamestart.rgClicked = false;
+					         Gamestart.rmove = false;
+							 Gamestart.bmove = true;
+			        	 }
+			         }
+			         
 		         }
 		         if(Gamestart.rg == 2) {
 			         if(x > 184 && x < 236 && y > 347 && y < 400) {
