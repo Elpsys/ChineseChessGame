@@ -19,6 +19,7 @@ public class MyFrameMouse implements MouseListener {
          y=dp.y-35;
          System.out.println(Gamestart.rmove);
          //------------红色棋子--------------
+         //红兵-----------
          if(Gamestart.rdClicked) {
 			 if(Gamestart.rmove) {
 				 if(Gamestart.rd == 1) {
@@ -35,32 +36,216 @@ public class MyFrameMouse implements MouseListener {
 			        				 }
 			        			 }else {
 			        				 //判断向前走的位置
-			        			//	 if(Gamestart.redsoldier1.getX() == clx[0])
-			        				 System.out.println("******************************");
-			        				 if(x > clx[i] && x < clx[i+1] && y > cly[j-1] && y < cly[j]) {
-				        				 Gamestart.redsoldier1.setLocation(clx[i],cly[j-1]);		//设置位置
-								         Gamestart.rdClicked = false;
-								         Gamestart.rmove = false;
-										 Gamestart.bmove = true;
+			        				 if(Gamestart.redsoldier1.getY() != cly[0]) {
+				        				 if(x > clx[i] && x < clx[i+1] && y > cly[j-1] && y < cly[j]) {
+					        				 Gamestart.redsoldier1.setLocation(clx[i],cly[j-1]);		//设置位置
+									         Gamestart.rdClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;
+				        				 }
 			        				 }
 			        				 //判断右走的位置
-			        				 if(x > clx[i+1] && x < clx[i+2] && y > cly[j] && y < cly[j+1]) {
-				        				 Gamestart.redsoldier1.setLocation(clx[i+1],cly[j]);		
-								         Gamestart.rdClicked = false;
-								         Gamestart.rmove = false;
-										 Gamestart.bmove = true;
+			        				 if(Gamestart.redsoldier1.getX() != clx[8]) {
+				        				 if(x > clx[i+1] && x < clx[i+2] && y > cly[j] && y < cly[j+1]) {
+					        				 Gamestart.redsoldier1.setLocation(clx[i+1],cly[j]);		
+									         Gamestart.rdClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;
+				        				 }
 			        				 }
 			        				//判断左走的位置
-			        			/*	 if(x > clx[i-1] && x < clx[i-2] && y > cly[j] && y < cly[j+1]) {
-			        					 Gamestart.redsoldier1.setLocation(clx[i-1],cly[j]);		
-								         Gamestart.rdClicked = false;
-								         Gamestart.rmove = false;
-										 Gamestart.bmove = true;
-			        				 }*/
+			        				 if(Gamestart.redsoldier1.getX() != clx[0]) {
+				        				 if(x > clx[i-1] && x < clx[i-2] && y > cly[j] && y < cly[j+1]) {
+				        					 Gamestart.redsoldier1.setLocation(clx[i-1],cly[j]);		
+									         Gamestart.rdClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;
+				        				 }
+			        				 }
 			        			 }
 			        		 }
 			        		 
 			        	 }
+			         }
+				 }
+				 if(Gamestart.rd == 2) {
+			         for(i = 0;i <= 8;i ++) {
+			        	 for(j = 0;j <=9;j ++) {
+			        		 if(Gamestart.redsoldier2.getX() == clx[i] && Gamestart.redsoldier2.getY() == cly[j]) {
+			        			 if(cly[j] > 295) {
+			        				 //过河之前只能向前走
+			        				 if(x > clx[i] && x < clx[i+1] && y > cly[j-1] && y < cly[j]) {
+				        				 Gamestart.redsoldier2.setLocation(clx[i],cly[j-1]);		//设置位置
+								         Gamestart.rdClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;
+			        				 }
+			        			 }else {
+			        				 //判断向前走的位置
+			        				 if(Gamestart.redsoldier2.getY() != cly[0]) {
+				        				 if(x > clx[i] && x < clx[i+1] && y > cly[j-1] && y < cly[j]) {
+					        				 Gamestart.redsoldier2.setLocation(clx[i],cly[j-1]);		//设置位置
+									         Gamestart.rdClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;
+				        				 }
+			        				 }
+			        				 //判断右走的位置
+			        				 if(Gamestart.redsoldier2.getX() != clx[8]) {
+				        				 if(x > clx[i+1] && x < clx[i+2] && y > cly[j] && y < cly[j+1]) {
+					        				 Gamestart.redsoldier2.setLocation(clx[i+1],cly[j]);		
+									         Gamestart.rdClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;
+				        				 }
+			        				 }
+			        				//判断左走的位置
+			        				 if(Gamestart.redsoldier2.getX() != clx[0]) {
+				        				 if(x > clx[i-1] && x < clx[i-2] && y > cly[j] && y < cly[j+1]) {
+				        					 Gamestart.redsoldier2.setLocation(clx[i-1],cly[j]);		
+									         Gamestart.rdClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;
+				        				 }
+			        				 }
+			        			 }
+			        		 }
+			        	}
+			         }
+				 }
+				 if(Gamestart.rd == 3) {
+			         for(i = 0;i <= 8;i ++) {
+			        	 for(j = 0;j <=9;j ++) {
+			        		 if(Gamestart.redsoldier3.getX() == clx[i] && Gamestart.redsoldier3.getY() == cly[j]) {
+			        			 if(cly[j] > 295) {
+			        				 //过河之前只能向前走
+			        				 if(x > clx[i] && x < clx[i+1] && y > cly[j-1] && y < cly[j]) {
+				        				 Gamestart.redsoldier3.setLocation(clx[i],cly[j-1]);		//设置位置
+								         Gamestart.rdClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;
+			        				 }
+			        			 }else {
+			        				 //判断向前走的位置
+			        				 if(Gamestart.redsoldier3.getY() != cly[0]) {
+				        				 if(x > clx[i] && x < clx[i+1] && y > cly[j-1] && y < cly[j]) {
+					        				 Gamestart.redsoldier3.setLocation(clx[i],cly[j-1]);		//设置位置
+									         Gamestart.rdClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;
+				        				 }
+			        				 }
+			        				 //判断右走的位置
+			        				 if(Gamestart.redsoldier3.getX() != clx[8]) {
+				        				 if(x > clx[i+1] && x < clx[i+2] && y > cly[j] && y < cly[j+1]) {
+					        				 Gamestart.redsoldier3.setLocation(clx[i+1],cly[j]);		
+									         Gamestart.rdClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;
+				        				 }
+			        				 }
+			        				//判断左走的位置
+			        				 if(Gamestart.redsoldier3.getX() != clx[0]) {
+				        				 if(x > clx[i-1] && x < clx[i-2] && y > cly[j] && y < cly[j+1]) {
+				        					 Gamestart.redsoldier3.setLocation(clx[i-1],cly[j]);		
+									         Gamestart.rdClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;
+				        				 }
+			        				 }
+			        			 }
+			        		 }
+			        	}
+			         }
+				 }
+				 if(Gamestart.rd == 4) {
+			         for(i = 0;i <= 8;i ++) {
+			        	 for(j = 0;j <=9;j ++) {
+			        		 if(Gamestart.redsoldier4.getX() == clx[i] && Gamestart.redsoldier4.getY() == cly[j]) {
+			        			 if(cly[j] > 295) {
+			        				 //过河之前只能向前走
+			        				 if(x > clx[i] && x < clx[i+1] && y > cly[j-1] && y < cly[j]) {
+				        				 Gamestart.redsoldier4.setLocation(clx[i],cly[j-1]);		//设置位置
+								         Gamestart.rdClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;
+			        				 }
+			        			 }else {
+			        				 //判断向前走的位置
+			        				 if(Gamestart.redsoldier4.getY() != cly[0]) {
+				        				 if(x > clx[i] && x < clx[i+1] && y > cly[j-1] && y < cly[j]) {
+					        				 Gamestart.redsoldier4.setLocation(clx[i],cly[j-1]);		//设置位置
+									         Gamestart.rdClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;
+				        				 }
+			        				 }
+			        				 //判断右走的位置
+			        				 if(Gamestart.redsoldier4.getX() != clx[8]) {
+				        				 if(x > clx[i+1] && x < clx[i+2] && y > cly[j] && y < cly[j+1]) {
+					        				 Gamestart.redsoldier4.setLocation(clx[i+1],cly[j]);		
+									         Gamestart.rdClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;
+				        				 }
+			        				 }
+			        				//判断左走的位置
+			        				 if(Gamestart.redsoldier4.getX() != clx[0]) {
+				        				 if(x > clx[i-1] && x < clx[i-2] && y > cly[j] && y < cly[j+1]) {
+				        					 Gamestart.redsoldier4.setLocation(clx[i-1],cly[j]);		
+									         Gamestart.rdClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;
+				        				 }
+			        				 }
+			        			 }
+			        		 }
+			        	}
+			         }
+				 }
+				 if(Gamestart.rd == 5) {
+			         for(i = 0;i <= 8;i ++) {
+			        	 for(j = 0;j <=9;j ++) {
+			        		 if(Gamestart.redsoldier5.getX() == clx[i] && Gamestart.redsoldier5.getY() == cly[j]) {
+			        			 if(cly[j] > 295) {
+			        				 //过河之前只能向前走
+			        				 if(x > clx[i] && x < clx[i+1] && y > cly[j-1] && y < cly[j]) {
+				        				 Gamestart.redsoldier5.setLocation(clx[i],cly[j-1]);		//设置位置
+								         Gamestart.rdClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;
+			        				 }
+			        			 }else {
+			        				 //判断向前走的位置
+			        				 if(Gamestart.redsoldier5.getY() != cly[0]) {
+				        				 if(x > clx[i] && x < clx[i+1] && y > cly[j-1] && y < cly[j]) {
+					        				 Gamestart.redsoldier5.setLocation(clx[i],cly[j-1]);		//设置位置
+									         Gamestart.rdClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;
+				        				 }
+			        				 }
+			        				 //判断右走的位置
+			        				 if(Gamestart.redsoldier5.getX() != clx[8]) {
+				        				 if(x > clx[i+1] && x < clx[i+2] && y > cly[j] && y < cly[j+1]) {
+					        				 Gamestart.redsoldier5.setLocation(clx[i+1],cly[j]);		
+									         Gamestart.rdClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;
+				        				 }
+			        				 }
+			        				//判断左走的位置
+			        				 if(Gamestart.redsoldier5.getX() != clx[0]) {
+				        				 if(x > clx[i-1] && x < clx[i-2] && y > cly[j] && y < cly[j+1]) {
+				        					 Gamestart.redsoldier5.setLocation(clx[i-1],cly[j]);		
+									         Gamestart.rdClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;
+				        				 }
+			        				 }
+			        			 }
+			        		 }
+			        	}
 			         }
 				 }
 			 }else {
