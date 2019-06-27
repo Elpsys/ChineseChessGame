@@ -9,15 +9,12 @@ public class MyFrameMouse implements MouseListener {
 	static int [] clx = {68,126,184,242,300,358,416,474,532};
 	static int [] cly = {87,139,191,243,295,347,399,451,503,555};
 	
-	static int x0,x1,x2,x3,x4,x5,x6,x7,x8;
-	static int y0,y1,y2,y3,y4,y5,y6,y7,y8,y9;
+
 	
 	public void mouseClicked(MouseEvent e) {
 		 int x,y;
 		 int i,j;
 		 Point dp = e.getPoint();//得到点击的位置
-		 x0 = 68;
-		 x1 = 126;
          x=dp.x;
          y=dp.y-35;
          System.out.println(Gamestart.rmove);
@@ -28,7 +25,8 @@ public class MyFrameMouse implements MouseListener {
 			         for(i = 0;i <= 8;i ++) {
 			        	 for(j = 0;j <=9;j ++) {
 			        		 if(Gamestart.redsoldier1.getX() == clx[i] && Gamestart.redsoldier1.getY() == cly[j]) {
-			        			 if(x < clx[4]) {
+			        			 if(cly[j] > 295) {
+			        				 //过河之前只能向前走
 			        				 if(x > clx[i] && x < clx[i+1] && y > cly[j-1] && y < cly[j]) {
 				        				 Gamestart.redsoldier1.setLocation(clx[i],cly[j-1]);		//设置位置
 								         Gamestart.rdClicked = false;
@@ -36,10 +34,29 @@ public class MyFrameMouse implements MouseListener {
 										 Gamestart.bmove = true;
 			        				 }
 			        			 }else {
-			        				 Gamestart.redsoldier1.setLocation(clx[0],cly[5]);		//设置位置
-							         Gamestart.rdClicked = false;
-							         Gamestart.rmove = false;
-									 Gamestart.bmove = true;
+			        				 //判断向前走的位置
+			        			//	 if(Gamestart.redsoldier1.getX() == clx[0])
+			        				 System.out.println("******************************");
+			        				 if(x > clx[i] && x < clx[i+1] && y > cly[j-1] && y < cly[j]) {
+				        				 Gamestart.redsoldier1.setLocation(clx[i],cly[j-1]);		//设置位置
+								         Gamestart.rdClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;
+			        				 }
+			        				 //判断右走的位置
+			        				 if(x > clx[i+1] && x < clx[i+2] && y > cly[j] && y < cly[j+1]) {
+				        				 Gamestart.redsoldier1.setLocation(clx[i+1],cly[j]);		
+								         Gamestart.rdClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;
+			        				 }
+			        				//判断左走的位置
+			        			/*	 if(x > clx[i-1] && x < clx[i-2] && y > cly[j] && y < cly[j+1]) {
+			        					 Gamestart.redsoldier1.setLocation(clx[i-1],cly[j]);		
+								         Gamestart.rdClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;
+			        				 }*/
 			        			 }
 			        		 }
 			        		 
@@ -111,284 +128,10 @@ public class MyFrameMouse implements MouseListener {
          if(Gamestart.rgClicked) {
 			 if(Gamestart.rmove) {
 		        if(Gamestart.rg == 1) {	//判断棋子
-		        	//竖向位置------------------------------------------------------------------------
-		        	if(x > clx[1] && x < clx[2] && y > cly[9] && y < 607) {//设置范围
-			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
-					         Gamestart.Lredgun.setLocation(clx[1],cly[9]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-		        	if(x > clx[1] && x < clx[2] && y > cly[8] && y < cly[9]) {//设置范围
-			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
-					         Gamestart.Lredgun.setLocation(clx[1],cly[8]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[1] && x < clx[2] && y > cly[6] && y < cly[7]) {//设置范围
-			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
-					         Gamestart.Lredgun.setLocation(clx[1],cly[6]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[1] && x < clx[2] && y > cly[5] && y < cly[6]) {//设置范围
-			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
-					         Gamestart.Lredgun.setLocation(clx[1],cly[5]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[1] && x < clx[2] && y > cly[4] && y < cly[5]) {//设置范围
-			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
-					         Gamestart.Lredgun.setLocation(clx[1],cly[4]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[1] && x < clx[2] && y > cly[3] && y < cly[4]) {//设置范围
-			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
-					         Gamestart.Lredgun.setLocation(clx[1],cly[3]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[1] && x < clx[2] && y > cly[2] && y < cly[3]) {//设置范围
-			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
-					         Gamestart.Lredgun.setLocation(clx[1],cly[2]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[1] && x < clx[2] && y > cly[1] && y < cly[2]) {//设置范围
-			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
-					         Gamestart.Lredgun.setLocation(clx[1],cly[1]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[1] && x < clx[2] && y > cly[0] && y < cly[1]) {//设置范围
-			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
-					         Gamestart.Lredgun.setLocation(clx[1],cly[0]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         //横向位置------------------------------------------------------------------------------
-			         if(x > clx[0] && x < clx[1] && y > cly[7] && y < cly[8]) {//设置范围
-			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
-					         Gamestart.Lredgun.setLocation(clx[0],cly[7]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[2] && x < clx[3] && y > cly[7] && y < cly[8]) {//设置范围
-			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
-					         Gamestart.Lredgun.setLocation(clx[2],cly[7]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[3] && x < clx[4] && y > cly[7] && y < cly[8]) {//设置范围
-			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
-					         Gamestart.Lredgun.setLocation(clx[3],cly[7]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[4] && x < clx[5] && y > cly[7] && y < cly[8]) {//设置范围
-			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
-					         Gamestart.Lredgun.setLocation(clx[4],cly[7]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[5] && x < clx[6] && y > cly[7] && y < cly[8]) {//设置范围
-			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
-					         Gamestart.Lredgun.setLocation(clx[5],cly[7]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[6] && x < clx[7] && y > cly[7] && y < cly[8]) {//设置范围
-			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
-					         Gamestart.Lredgun.setLocation(clx[6],cly[7]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[7] && x < clx[8] && y > cly[7] && y < cly[8]) {//设置范围
-			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
-					         Gamestart.Lredgun.setLocation(clx[7],cly[7]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[8] && x < clx[8]+53 && y > cly[7] && y < cly[8]) {//设置范围
-			        	 if(Gamestart.Lredgun.getX() == clx[1] && Gamestart.Lredgun.getY() == cly[7]) {
-					         Gamestart.Lredgun.setLocation(clx[8],cly[7]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
+		        	
 		         }
 		        //-------------------------第二个炮
 		         if(Gamestart.rg == 2) {
-		        	 if(x > clx[7] && x < clx[8] && y > cly[9] && y < 607) {//设置范围
-			        	 if(Gamestart.Rredgun.getX() == clx[7] && Gamestart.Rredgun.getY() == cly[7]) {
-					         Gamestart.Rredgun.setLocation(clx[7],cly[9]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-		        	if(x > clx[7] && x < clx[8] && y > cly[8] && y < cly[9]) {//设置范围
-			        	 if(Gamestart.Rredgun.getX() == clx[7] && Gamestart.Rredgun.getY() == cly[7]) {
-					         Gamestart.Rredgun.setLocation(clx[7],cly[8]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[7] && x < clx[8] && y > cly[6] && y < cly[7]) {//设置范围
-			        	 if(Gamestart.Rredgun.getX() == clx[7] && Gamestart.Rredgun.getY() == cly[7]) {
-					         Gamestart.Rredgun.setLocation(clx[7],cly[6]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[7] && x < clx[8] && y > cly[5] && y < cly[6]) {//设置范围
-			        	 if(Gamestart.Rredgun.getX() == clx[7] && Gamestart.Rredgun.getY() == cly[7]) {
-					         Gamestart.Rredgun.setLocation(clx[7],cly[5]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[7] && x < clx[8] && y > cly[4] && y < cly[5]) {//设置范围
-			        	 if(Gamestart.Rredgun.getX() == clx[7] && Gamestart.Rredgun.getY() == cly[7]) {
-					         Gamestart.Rredgun.setLocation(clx[7],cly[4]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[7] && x < clx[8] && y > cly[3] && y < cly[4]) {//设置范围
-			        	 if(Gamestart.Rredgun.getX() == clx[7] && Gamestart.Rredgun.getY() == cly[7]) {
-					         Gamestart.Rredgun.setLocation(clx[7],cly[3]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[7] && x < clx[8] && y > cly[2] && y < cly[3]) {//设置范围
-			        	 if(Gamestart.Rredgun.getX() == clx[7] && Gamestart.Rredgun.getY() == cly[7]) {
-					         Gamestart.Rredgun.setLocation(clx[7],cly[2]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[7] && x < clx[8] && y > cly[1] && y < cly[2]) {//设置范围
-			        	 if(Gamestart.Rredgun.getX() == clx[7] && Gamestart.Rredgun.getY() == cly[7]) {
-					         Gamestart.Rredgun.setLocation(clx[7],cly[1]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[7] && x < clx[8] && y > cly[0] && y < cly[1]) {//设置范围
-			        	 if(Gamestart.Rredgun.getX() == clx[7] && Gamestart.Rredgun.getY() == cly[7]) {
-					         Gamestart.Rredgun.setLocation(clx[7],cly[0]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         //横向位置------------------------------------------------------------------------------
-			         if(x > clx[0] && x < clx[1] && y > cly[7] && y < cly[8]) {//设置范围
-			        	 if(Gamestart.Rredgun.getX() == clx[7] && Gamestart.Rredgun.getY() == cly[7]) {
-					         Gamestart.Rredgun.setLocation(clx[0],cly[7]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[2] && x < clx[3] && y > cly[7] && y < cly[8]) {//设置范围
-			        	 if(Gamestart.Rredgun.getX() == clx[7] && Gamestart.Rredgun.getY() == cly[7]) {
-					         Gamestart.Rredgun.setLocation(clx[2],cly[7]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[3] && x < clx[4] && y > cly[7] && y < cly[8]) {//设置范围
-			        	 if(Gamestart.Rredgun.getX() == clx[7] && Gamestart.Rredgun.getY() == cly[7]) {
-					         Gamestart.Rredgun.setLocation(clx[3],cly[7]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[4] && x < clx[5] && y > cly[7] && y < cly[8]) {//设置范围
-			        	 if(Gamestart.Rredgun.getX() == clx[7] && Gamestart.Rredgun.getY() == cly[7]) {
-					         Gamestart.Rredgun.setLocation(clx[4],cly[7]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[5] && x < clx[6] && y > cly[7] && y < cly[8]) {//设置范围
-			        	 if(Gamestart.Rredgun.getX() == clx[7] && Gamestart.Rredgun.getY() == cly[7]) {
-					         Gamestart.Rredgun.setLocation(clx[5],cly[7]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[6] && x < clx[7] && y > cly[7] && y < cly[8]) {//设置范围
-			        	 if(Gamestart.Rredgun.getX() == clx[7] && Gamestart.Rredgun.getY() == cly[7]) {
-					         Gamestart.Rredgun.setLocation(clx[6],cly[7]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[7] && x < clx[8] && y > cly[7] && y < cly[8]) {//设置范围
-			        	 if(Gamestart.Rredgun.getX() == clx[7] && Gamestart.Rredgun.getY() == cly[7]) {
-					         Gamestart.Rredgun.setLocation(clx[1],cly[7]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
-			         if(x > clx[8] && x < clx[8]+53 && y > cly[7] && y < cly[8]) {//设置范围
-			        	 if(Gamestart.Rredgun.getX() == clx[7] && Gamestart.Rredgun.getY() == cly[7]) {
-					         Gamestart.Rredgun.setLocation(clx[8],cly[7]);		//设置位置
-					         Gamestart.rgClicked = false;
-					         Gamestart.rmove = false;
-							 Gamestart.bmove = true;
-			        	 }
-			         }
 		         
 		         }
 			 }else {
