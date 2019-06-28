@@ -13,11 +13,10 @@ public class MyFrameMouse implements MouseListener {
 	
 	public void mouseClicked(MouseEvent e) {
 		 int x,y;
-		 int i,j;
+		 int i,j,k;
 		 Point dp = e.getPoint();//得到点击的位置
          x=dp.x;
          y=dp.y-35;
-         System.out.println(Gamestart.rmove);
          //------------红色棋子--------------
          //红兵-----------
          if(Gamestart.rdClicked) {
@@ -26,6 +25,17 @@ public class MyFrameMouse implements MouseListener {
 			         for(i = 0;i <= 8;i ++) {
 			        	 for(j = 0;j <=9;j ++) {
 			        		 if(Gamestart.redsoldier1.getX() == clx[i] && Gamestart.redsoldier1.getY() == cly[j]) {
+			        			 System.out.println(Gamestart.bdClicked);
+			        			 if(Gamestart.bdClicked) {
+			        				 if(Gamestart.bd == 1 && Gamestart.blacksoldier1.getX() == clx[i] && Gamestart.blacksoldier1.getY() == cly[j-1]) {
+			        					 System.out.println("*************************************");
+			        					 Gamestart.blacksoldier1.setLocation(593, 53);
+			        					 Gamestart.redsoldier1.setLocation(clx[i], clx[j-1]);
+			        					 Gamestart.rdClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;
+			        				 }
+			        			 }
 			        			 if(cly[j] > 295) {
 			        				 //过河之前只能向前走
 			        				 if(x > clx[i] && x < clx[i+1] && y > cly[j-1] && y < cly[j]) {
