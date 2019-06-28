@@ -209,7 +209,7 @@ public class MyFrameMouse implements MouseListener {
 			        		 if(Gamestart.redsoldier5.getX() == clx[i] && Gamestart.redsoldier5.getY() == cly[j]) {
 			        			 if(cly[j] > 295) {
 			        				 //过河之前只能向前走
-			        				 if(x > clx[i] && x < clx[i+1] && y > cly[j-1] && y < cly[j]) {
+			        				 if(x > clx[i] && x < clx[i]+52 && y > cly[j-1] && y < cly[j]) {
 				        				 Gamestart.redsoldier5.setLocation(clx[i],cly[j-1]);		//设置位置
 								         Gamestart.rdClicked = false;
 								         Gamestart.rmove = false;
@@ -276,7 +276,6 @@ public class MyFrameMouse implements MouseListener {
 			        		 if(Gamestart.blacksoldier1.getX() == clx[i] && Gamestart.blacksoldier1.getY() == cly[j]) {
 			        			 if(cly[j] < 347) {
 			        				 //过河之前只能向前走
-			        				 System.out.println("---------------------------------");
 			        				 if(x > clx[i] && x < clx[i+1] && y > cly[j+1] && y < cly[j+2]) {
 				        				 Gamestart.blacksoldier1.setLocation(clx[i],cly[j+1]);		//设置位置
 								         Gamestart.bdClicked = false;
@@ -323,7 +322,6 @@ public class MyFrameMouse implements MouseListener {
 			        		 if(Gamestart.blacksoldier2.getX() == clx[i] && Gamestart.blacksoldier2.getY() == cly[j]) {
 			        			 if(cly[j] < 347) {
 			        				 //过河之前只能向前走
-			        				 System.out.println("---------------------------------");
 			        				 if(x > clx[i] && x < clx[i+1] && y > cly[j+1] && y < cly[j+2]) {
 				        				 Gamestart.blacksoldier2.setLocation(clx[i],cly[j+1]);		//设置位置
 								         Gamestart.bdClicked = false;
@@ -370,7 +368,6 @@ public class MyFrameMouse implements MouseListener {
 			        		 if(Gamestart.blacksoldier3.getX() == clx[i] && Gamestart.blacksoldier3.getY() == cly[j]) {
 			        			 if(cly[j] < 347) {
 			        				 //过河之前只能向前走
-			        				 System.out.println("---------------------------------");
 			        				 if(x > clx[i] && x < clx[i+1] && y > cly[j+1] && y < cly[j+2]) {
 				        				 Gamestart.blacksoldier3.setLocation(clx[i],cly[j+1]);		//设置位置
 								         Gamestart.bdClicked = false;
@@ -417,7 +414,6 @@ public class MyFrameMouse implements MouseListener {
 			        		 if(Gamestart.blacksoldier4.getX() == clx[i] && Gamestart.blacksoldier4.getY() == cly[j]) {
 			        			 if(cly[j] < 347) {
 			        				 //过河之前只能向前走
-			        				 System.out.println("---------------------------------");
 			        				 if(x > clx[i] && x < clx[i+1] && y > cly[j+1] && y < cly[j+2]) {
 				        				 Gamestart.blacksoldier4.setLocation(clx[i],cly[j+1]);		//设置位置
 								         Gamestart.bdClicked = false;
@@ -464,8 +460,7 @@ public class MyFrameMouse implements MouseListener {
 			        		 if(Gamestart.blacksoldier5.getX() == clx[i] && Gamestart.blacksoldier5.getY() == cly[j]) {
 			        			 if(cly[j] < 347) {
 			        				 //过河之前只能向前走
-			        				 System.out.println("---------------------------------");
-			        				 if(x > clx[i] && x < clx[i+1] && y > cly[j+1] && y < cly[j+2]) {
+			        				 if(x > clx[i] && x < clx[i]+52 && y > cly[j+1] && y < cly[j+2]) {
 				        				 Gamestart.blacksoldier5.setLocation(clx[i],cly[j+1]);		//设置位置
 								         Gamestart.bdClicked = false;
 								         Gamestart.bmove = false;
