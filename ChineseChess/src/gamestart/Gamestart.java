@@ -32,7 +32,8 @@ public class Gamestart extends JFrame{
 	static int rd,bd,rg,bg,rc,bc,rh,bh,re,be,rk,bk;//判断棋子的不同
 	static int x,y;
 	static int tips = 1;
-	
+	static int [] clx = {68,126,184,242,300,358,416,474,532};
+	static int [] cly = {87,139,191,243,295,347,399,451,503,555};
 	public static void chessboard()
 	{
 		if(tips == 1) {
@@ -331,6 +332,22 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				bdClicked = true;
 				bd = 1;
+				int i,j;
+				if(rdClicked) {
+					for(i = 0;i <= 8;i ++) {
+			        	 for(j = 0;j <=9;j ++) {
+			        		 if(blacksoldier1.getX() == clx[i] && blacksoldier1.getY() == cly[j]) {
+			        			 if(redsoldier1.getX() == clx[i] && redsoldier1.getY() == cly[j+1]) {
+		        					 blacksoldier1.setLocation(593, 53);
+		        					 redsoldier1.setLocation(clx[i], clx[j]);
+		        					 rdClicked = false;
+							         rmove = false;
+									 bmove = true;
+		        				 }
+			        		 }
+			        	 }
+					}
+				}
 			}
 		});
 		//黑方兵2
