@@ -54,7 +54,7 @@ public class MyFrameMouse implements MouseListener {
 			        				 }
 			        				 //判断右走的位置
 			        				 if(Gamestart.redsoldier1.getX() != clx[8]) {
-				        				 if(x > clx[i+1] && x < clx[i+2] && y > cly[j] && y < cly[j+1]) {
+				        				 if(x > clx[i+1] && x < clx[i+1]+58 && y > cly[j] && y < cly[j+1]) {
 					        				 Gamestart.redsoldier1.setLocation(clx[i+1],cly[j]);		
 									         Gamestart.rdClicked = false;
 									         Gamestart.rmove = false;
@@ -91,7 +91,7 @@ public class MyFrameMouse implements MouseListener {
 			        				 }
 			        				 //判断右走的位置
 			        				 if(Gamestart.redsoldier2.getX() != clx[8]) {
-				        				 if(x > clx[i+1] && x < clx[i+2] && y > cly[j] && y < cly[j+1]) {
+				        				 if(x > clx[i+1] && x < clx[i+1]+58 && y > cly[j] && y < cly[j+1]) {
 					        				 Gamestart.redsoldier2.setLocation(clx[i+1],cly[j]);		
 									         Gamestart.rdClicked = false;
 									         Gamestart.rmove = false;
@@ -136,7 +136,7 @@ public class MyFrameMouse implements MouseListener {
 			        				 }
 			        				 //判断右走的位置
 			        				 if(Gamestart.redsoldier3.getX() != clx[8]) {
-				        				 if(x > clx[i+1] && x < clx[i+2] && y > cly[j] && y < cly[j+1]) {
+				        				 if(x > clx[i+1] && x < clx[i+1]+58 && y > cly[j] && y < cly[j+1]) {
 					        				 Gamestart.redsoldier3.setLocation(clx[i+1],cly[j]);		
 									         Gamestart.rdClicked = false;
 									         Gamestart.rmove = false;
@@ -181,7 +181,7 @@ public class MyFrameMouse implements MouseListener {
 			        				 }
 			        				 //判断右走的位置
 			        				 if(Gamestart.redsoldier4.getX() != clx[8]) {
-				        				 if(x > clx[i+1] && x < clx[i+2] && y > cly[j] && y < cly[j+1]) {
+				        				 if(x > clx[i+1] && x < clx[i+1]+58 && y > cly[j] && y < cly[j+1]) {
 					        				 Gamestart.redsoldier4.setLocation(clx[i+1],cly[j]);		
 									         Gamestart.rdClicked = false;
 									         Gamestart.rmove = false;
@@ -226,7 +226,7 @@ public class MyFrameMouse implements MouseListener {
 			        				 }
 			        				 //判断右走的位置
 			        				 if(Gamestart.redsoldier5.getX() != clx[8]) {
-				        				 if(x > clx[i+1] && x < clx[i+1]+52 && y > cly[j] && y < cly[j+1]) {
+				        				 if(x > clx[i+1] && x < clx[i+1]+58 && y > cly[j] && y < cly[j+1]) {
 					        				 Gamestart.redsoldier5.setLocation(clx[i+1],cly[j]);		
 									         Gamestart.rdClicked = false;
 									         Gamestart.rmove = false;
@@ -267,28 +267,6 @@ public class MyFrameMouse implements MouseListener {
          }
 		 //--------------------------黑色棋子----------------------------------
          //黑兵--------------
-/*         if(Gamestart.bdClicked) {
-        	 if(Gamestart.rdClicked) {
-        		 System.out.println("1");
-				 System.out.println("2");
-	        	 for(i = 0;i <= 8;i ++) {
-		        	 for(j = 0;j <=9;j ++) {
-		        		 if(Gamestart.blacksoldier1.getX() == clx[i] && Gamestart.blacksoldier1.getY() == cly[j]) {
-		        			 System.out.println("1");
-	        				 System.out.println("2");
-	        				 if(Gamestart.rd == 1 && Gamestart.redsoldier1.getX() == clx[i] && Gamestart.redsoldier1.getY() == cly[j+1]) {
-	        					 System.out.println("*************************************");
-	        					 Gamestart.blacksoldier1.setLocation(593, 53);
-	        					 Gamestart.redsoldier1.setLocation(clx[i], clx[j]);
-	        					 Gamestart.rdClicked = false;
-						         Gamestart.rmove = false;
-								 Gamestart.bmove = true;
-	        				 } 
-		        		 }
-		        	 }
-	        	 }
-        	 }
-         }*/
          if(Gamestart.bdClicked) {
 			 if(Gamestart.bmove) {
 				 if(Gamestart.bd == 1) {
@@ -324,7 +302,7 @@ public class MyFrameMouse implements MouseListener {
 			        				 }
 			        				 //判断右走的位置
 			        				 if(Gamestart.blacksoldier1.getX() != clx[8]) {
-				        				 if(x > clx[i+1] && x < clx[i+2] && y > cly[j] && y < cly[j+1]) {
+				        				 if(x > clx[i+1] && x < clx[i+1]+58 && y > cly[j] && y < cly[j+1]) {
 					        				 Gamestart.blacksoldier1.setLocation(clx[i+1],cly[j]);		
 									         Gamestart.bdClicked = false;
 									         Gamestart.bmove = false;
@@ -361,7 +339,7 @@ public class MyFrameMouse implements MouseListener {
 			        				 }
 			        				 //判断右走的位置
 			        				 if(Gamestart.blacksoldier2.getX() != clx[8]) {
-				        				 if(x > clx[i+1] && x < clx[i+2] && y > cly[j] && y < cly[j+1]) {
+				        				 if(x > clx[i+1] && x < clx[i+1]+58 && y > cly[j] && y < cly[j+1]) {
 					        				 Gamestart.blacksoldier2.setLocation(clx[i+1],cly[j]);		
 									         Gamestart.bdClicked = false;
 									         Gamestart.bmove = false;
@@ -407,7 +385,7 @@ public class MyFrameMouse implements MouseListener {
 			        				 }
 			        				 //判断右走的位置
 			        				 if(Gamestart.blacksoldier3.getX() != clx[8]) {
-				        				 if(x > clx[i+1] && x < clx[i+2] && y > cly[j] && y < cly[j+1]) {
+				        				 if(x > clx[i+1] && x < clx[i+1]+58 && y > cly[j] && y < cly[j+1]) {
 					        				 Gamestart.blacksoldier3.setLocation(clx[i+1],cly[j]);		
 									         Gamestart.bdClicked = false;
 									         Gamestart.bmove = false;
@@ -453,7 +431,7 @@ public class MyFrameMouse implements MouseListener {
 			        				 }
 			        				 //判断右走的位置
 			        				 if(Gamestart.blacksoldier4.getX() != clx[8]) {
-				        				 if(x > clx[i+1] && x < clx[i+2] && y > cly[j] && y < cly[j+1]) {
+				        				 if(x > clx[i+1] && x < clx[i+1]+58 && y > cly[j] && y < cly[j+1]) {
 					        				 Gamestart.blacksoldier4.setLocation(clx[i+1],cly[j]);		
 									         Gamestart.bdClicked = false;
 									         Gamestart.bmove = false;
@@ -499,7 +477,7 @@ public class MyFrameMouse implements MouseListener {
 			        				 }
 			        				 //判断右走的位置
 			        				 if(Gamestart.blacksoldier5.getX() != clx[8]) {
-				        				 if(x > clx[i+1] && x < clx[i+1]+52 && y > cly[j] && y < cly[j+1]) {
+				        				 if(x > clx[i+1] && x < clx[i+1]+58 && y > cly[j] && y < cly[j+1]) {
 					        				 Gamestart.blacksoldier5.setLocation(clx[i+1],cly[j]);		
 									         Gamestart.bdClicked = false;
 									         Gamestart.bmove = false;
