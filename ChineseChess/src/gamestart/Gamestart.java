@@ -332,21 +332,8 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				bdClicked = true;
 				bd = 1;
-				int i,j;
 				if(rdClicked) {
-					for(i = 0;i <= 8;i ++) {
-			        	 for(j = 0;j <=9;j ++) {
-			        		 if(blacksoldier1.getX() == clx[i] && blacksoldier1.getY() == cly[j]) {
-			        			 if(redsoldier1.getX() == clx[i] && redsoldier1.getY() == cly[j+1]) {
-		        					 blacksoldier1.setLocation(593, 53);
-		        					 redsoldier1.setLocation(clx[i], clx[j]);
-		        					 rdClicked = false;
-							         rmove = false;
-									 bmove = true;
-		        				 }
-			        		 }
-			        	 }
-					}
+					eatchess();
 				}
 			}
 		});
@@ -571,6 +558,22 @@ public class Gamestart extends JFrame{
 	}
 	public static void closeThis() {
 		frame.dispose();
+	}
+	public static void eatchess() {
+		int i,j;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <=9;j ++) {
+				if(blacksoldier1.getX() == clx[i] && blacksoldier1.getY() == cly[j]) {
+					if(redsoldier1.getX() == clx[i] && redsoldier1.getY() == cly[j+1]) {
+						blacksoldier1.setLocation(593, 53);
+						redsoldier1.setLocation(clx[i], clx[j]);
+						rdClicked = false;
+						rmove = false;
+						bmove = true;
+					}
+				}
+			}
+		}
 	}
 
 }

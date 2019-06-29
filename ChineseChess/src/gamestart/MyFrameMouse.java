@@ -226,7 +226,7 @@ public class MyFrameMouse implements MouseListener {
 			        				 }
 			        				 //判断右走的位置
 			        				 if(Gamestart.redsoldier5.getX() != clx[8]) {
-				        				 if(x > clx[i+1] && x < clx[i+2] && y > cly[j] && y < cly[j+1]) {
+				        				 if(x > clx[i+1] && x < clx[i+1]+52 && y > cly[j] && y < cly[j+1]) {
 					        				 Gamestart.redsoldier5.setLocation(clx[i+1],cly[j]);		
 									         Gamestart.rdClicked = false;
 									         Gamestart.rmove = false;
@@ -499,7 +499,7 @@ public class MyFrameMouse implements MouseListener {
 			        				 }
 			        				 //判断右走的位置
 			        				 if(Gamestart.blacksoldier5.getX() != clx[8]) {
-				        				 if(x > clx[i+1] && x < clx[i+2] && y > cly[j] && y < cly[j+1]) {
+				        				 if(x > clx[i+1] && x < clx[i+1]+52 && y > cly[j] && y < cly[j+1]) {
 					        				 Gamestart.blacksoldier5.setLocation(clx[i+1],cly[j]);		
 									         Gamestart.bdClicked = false;
 									         Gamestart.bmove = false;
