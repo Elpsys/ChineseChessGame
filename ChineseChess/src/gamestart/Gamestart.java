@@ -34,6 +34,18 @@ public class Gamestart extends JFrame{
 	static int tips = 1;
 	static int [] clx = {68,126,184,242,300,358,416,474,532};
 	static int [] cly = {87,139,191,243,295,347,399,451,503,555};
+	static int chesslocation [][] = {//ºìÉ«µÄ1¿ªÍ·£¬ºÚÉ«µÄ2¿ªÍ·
+			{211,212,213,214,215,216,217,218,219},   //211ºÚ×ó³µ£¬212ºÚ×óÂí£¬213ºÚ×óÏó£¬214ºÚ×óÊ¿£¬215Ë§£¬26ºÚÅÚ×ó£¬21-25Ð¡±ø
+			{0,0,0,0,0,0,0,0,0},
+			{0,26,0,0,0,0,0,27,0},
+			{21,0,22,0,23,0,24,0,25},
+			{0,0,0,0,0,0,0,0,0},
+			{0,0,0,0,0,0,0,0,0},
+			{11,0,12,0,13,0,14,0,15},
+			{0,16,0,0,0,0,0,17,0},
+			{0,0,0,0,0,0,0,0,0},
+			{111,112,113,114,115,116,117,118,119}	//111ºì×ó³µ£¬112ºì×óÂí£¬113ºì×óÏó£¬114ºì×óÊ¿£¬115Ë§£¬16ºìÅÚ×ó£¬11-15Ð¡±ø
+	};
 	public static void chessboard()
 	{
 		if(tips == 1) {
@@ -565,29 +577,83 @@ public class Gamestart extends JFrame{
 		for(i = 0;i <= 8;i ++) {
 			for(j = 0;j <=9;j ++) {
 				if(blacksoldier1.getX() == clx[i] && blacksoldier1.getY() == cly[j]) {
-					//ºìÉ«±øÔÚºÚ±øºó±ß
-					if(redsoldier1.getX() == clx[i] && redsoldier1.getY() == cly[j+1]) {
-						blacksoldier1.setLocation(593, 53);
-						redsoldier1.setLocation(clx[i], cly[j]);
-						rdClicked = false;
-						rmove = false;
-						bmove = true;
+					if(rd == 1) {
+						//ºìÉ«±øÔÚºÚ±øºó±ß
+						if(redsoldier1.getX() == clx[i] && redsoldier1.getY() == cly[j+1]) {
+							blacksoldier1.setLocation(593, 53);
+							redsoldier1.setLocation(clx[i], cly[j]);
+							rdClicked = false;
+							rmove = false;
+							bmove = true;
+						}
+						//ºì±øÔÚºÚ±øÓÒ±ß
+						if(redsoldier1.getX() == clx[i]+58 && redsoldier1.getY() == cly[j]) {
+							blacksoldier1.setLocation(593, 53);
+							redsoldier1.setLocation(clx[i], cly[j]);
+							rdClicked = false;
+							rmove = false;
+							bmove = true;
+						}
+						//ºì±øÔÚºÚ±ø×ó±ß
+						if(redsoldier1.getX() == clx[i]-58 && redsoldier1.getY() == cly[j]) {
+							blacksoldier1.setLocation(593, 53);
+							redsoldier1.setLocation(clx[i], cly[j]);
+							rdClicked = false;
+							rmove = false;
+							bmove = true;
+						}
 					}
-					//ºì±øÔÚºÚ±øÓÒ±ß
-					if(redsoldier1.getX() == clx[i]+58 && redsoldier1.getY() == cly[j]) {
-						blacksoldier1.setLocation(593, 53);
-						redsoldier1.setLocation(clx[i], cly[j]);
-						rdClicked = false;
-						rmove = false;
-						bmove = true;
+					if(rd == 2) {
+						//ºìÉ«±øÔÚºÚ±øºó±ß
+						if(redsoldier2.getX() == clx[i] && redsoldier2.getY() == cly[j+1]) {
+							blacksoldier1.setLocation(593, 53);
+							redsoldier2.setLocation(clx[i], cly[j]);
+							rdClicked = false;
+							rmove = false;
+							bmove = true;
+						}
+						//ºì±øÔÚºÚ±øÓÒ±ß
+						if(redsoldier2.getX() == clx[i]+58 && redsoldier2.getY() == cly[j]) {
+							blacksoldier1.setLocation(593, 53);
+							redsoldier2.setLocation(clx[i], cly[j]);
+							rdClicked = false;
+							rmove = false;
+							bmove = true;
+						}
+						//ºì±øÔÚºÚ±ø×ó±ß
+						if(redsoldier2.getX() == clx[i]-58 && redsoldier2.getY() == cly[j]) {
+							blacksoldier1.setLocation(593, 53);
+							redsoldier2.setLocation(clx[i], cly[j]);
+							rdClicked = false;
+							rmove = false;
+							bmove = true;
+						}
 					}
-					//ºì±øÔÚºÚ±ø×ó±ß
-					if(redsoldier1.getX() == clx[i]-58 && redsoldier1.getY() == cly[j]) {
-						blacksoldier1.setLocation(593, 53);
-						redsoldier1.setLocation(clx[i], cly[j]);
-						rdClicked = false;
-						rmove = false;
-						bmove = true;
+					if(rd == 3) {
+						//ºìÉ«±øÔÚºÚ±øºó±ß
+						if(redsoldier2.getX() == clx[i] && redsoldier2.getY() == cly[j+1]) {
+							blacksoldier1.setLocation(593, 53);
+							redsoldier2.setLocation(clx[i], cly[j]);
+							rdClicked = false;
+							rmove = false;
+							bmove = true;
+						}
+						//ºì±øÔÚºÚ±øÓÒ±ß
+						if(redsoldier2.getX() == clx[i]+58 && redsoldier2.getY() == cly[j]) {
+							blacksoldier1.setLocation(593, 53);
+							redsoldier2.setLocation(clx[i], cly[j]);
+							rdClicked = false;
+							rmove = false;
+							bmove = true;
+						}
+						//ºì±øÔÚºÚ±ø×ó±ß
+						if(redsoldier2.getX() == clx[i]-58 && redsoldier2.getY() == cly[j]) {
+							blacksoldier1.setLocation(593, 53);
+							redsoldier2.setLocation(clx[i], cly[j]);
+							rdClicked = false;
+							rmove = false;
+							bmove = true;
+						}
 					}
 				}
 			}
