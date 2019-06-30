@@ -655,6 +655,32 @@ public class Gamestart extends JFrame{
 							bmove = true;
 						}
 					}
+					if(rd == 3) {
+						//ºìÉ«±øÔÚºÚ±øºó±ß
+						if(redsoldier2.getX() == clx[i] && redsoldier2.getY() == cly[j+1]) {
+							blacksoldier1.setLocation(593, 53);
+							redsoldier2.setLocation(clx[i], cly[j]);
+							rdClicked = false;
+							rmove = false;
+							bmove = true;
+						}
+						//ºì±øÔÚºÚ±øÓÒ±ß
+						if(redsoldier2.getX() == clx[i]+58 && redsoldier2.getY() == cly[j]) {
+							blacksoldier1.setLocation(593, 53);
+							redsoldier2.setLocation(clx[i], cly[j]);
+							rdClicked = false;
+							rmove = false;
+							bmove = true;
+						}
+						//ºì±øÔÚºÚ±ø×ó±ß
+						if(redsoldier2.getX() == clx[i]-58 && redsoldier2.getY() == cly[j]) {
+							blacksoldier1.setLocation(593, 53);
+							redsoldier2.setLocation(clx[i], cly[j]);
+							rdClicked = false;
+							rmove = false;
+							bmove = true;
+						}
+					}
 				}
 			}
 		}
