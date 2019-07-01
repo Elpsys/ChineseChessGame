@@ -345,7 +345,7 @@ public class Gamestart extends JFrame{
 				bdClicked = true;
 				bd = 1;
 				if(rdClicked) {
-					eatchess();
+					eatchessbd1();
 					
 				}
 			}
@@ -572,7 +572,7 @@ public class Gamestart extends JFrame{
 	public static void closeThis() {
 		frame.dispose();
 	}
-	public static void eatchess() {
+	public static void eatchessbd1() {
 		int i,j;
 		for(i = 0;i <= 8;i ++) {
 			for(j = 0;j <=9;j ++) {
