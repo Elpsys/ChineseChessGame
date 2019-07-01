@@ -631,77 +631,77 @@ public class Gamestart extends JFrame{
 					}
 					if(rd == 3) {
 						//ºìÉ«±øÔÚºÚ±øºó±ß
-						if(redsoldier2.getX() == clx[i] && redsoldier2.getY() == cly[j+1]) {
+						if(redsoldier3.getX() == clx[i] && redsoldier3.getY() == cly[j+1]) {
 							blacksoldier1.setLocation(593, 53);
-							redsoldier2.setLocation(clx[i], cly[j]);
+							redsoldier3.setLocation(clx[i], cly[j]);
 							rdClicked = false;
 							rmove = false;
 							bmove = true;
 						}
 						//ºì±øÔÚºÚ±øÓÒ±ß
-						if(redsoldier2.getX() == clx[i]+58 && redsoldier2.getY() == cly[j]) {
+						if(redsoldier3.getX() == clx[i]+58 && redsoldier3.getY() == cly[j]) {
 							blacksoldier1.setLocation(593, 53);
-							redsoldier2.setLocation(clx[i], cly[j]);
+							redsoldier3.setLocation(clx[i], cly[j]);
 							rdClicked = false;
 							rmove = false;
 							bmove = true;
 						}
 						//ºì±øÔÚºÚ±ø×ó±ß
-						if(redsoldier2.getX() == clx[i]-58 && redsoldier2.getY() == cly[j]) {
+						if(redsoldier3.getX() == clx[i]-58 && redsoldier3.getY() == cly[j]) {
 							blacksoldier1.setLocation(593, 53);
-							redsoldier2.setLocation(clx[i], cly[j]);
+							redsoldier3.setLocation(clx[i], cly[j]);
 							rdClicked = false;
 							rmove = false;
 							bmove = true;
 						}
 					}
-					if(rd == 3) {
+					if(rd == 4) {
 						//ºìÉ«±øÔÚºÚ±øºó±ß
-						if(redsoldier2.getX() == clx[i] && redsoldier2.getY() == cly[j+1]) {
+						if(redsoldier4.getX() == clx[i] && redsoldier4.getY() == cly[j+1]) {
 							blacksoldier1.setLocation(593, 53);
-							redsoldier2.setLocation(clx[i], cly[j]);
+							redsoldier4.setLocation(clx[i], cly[j]);
 							rdClicked = false;
 							rmove = false;
 							bmove = true;
 						}
 						//ºì±øÔÚºÚ±øÓÒ±ß
-						if(redsoldier2.getX() == clx[i]+58 && redsoldier2.getY() == cly[j]) {
+						if(redsoldier4.getX() == clx[i]+58 && redsoldier4.getY() == cly[j]) {
 							blacksoldier1.setLocation(593, 53);
-							redsoldier2.setLocation(clx[i], cly[j]);
+							redsoldier4.setLocation(clx[i], cly[j]);
 							rdClicked = false;
 							rmove = false;
 							bmove = true;
 						}
 						//ºì±øÔÚºÚ±ø×ó±ß
-						if(redsoldier2.getX() == clx[i]-58 && redsoldier2.getY() == cly[j]) {
+						if(redsoldier4.getX() == clx[i]-58 && redsoldier4.getY() == cly[j]) {
 							blacksoldier1.setLocation(593, 53);
-							redsoldier2.setLocation(clx[i], cly[j]);
+							redsoldier4.setLocation(clx[i], cly[j]);
 							rdClicked = false;
 							rmove = false;
 							bmove = true;
 						}
 					}
-					if(rd == 3) {
+					if(rd == 5) {
 						//ºìÉ«±øÔÚºÚ±øºó±ß
-						if(redsoldier2.getX() == clx[i] && redsoldier2.getY() == cly[j+1]) {
+						if(redsoldier5.getX() == clx[i] && redsoldier5.getY() == cly[j+1]) {
 							blacksoldier1.setLocation(593, 53);
-							redsoldier2.setLocation(clx[i], cly[j]);
+							redsoldier5.setLocation(clx[i], cly[j]);
 							rdClicked = false;
 							rmove = false;
 							bmove = true;
 						}
 						//ºì±øÔÚºÚ±øÓÒ±ß
-						if(redsoldier2.getX() == clx[i]+58 && redsoldier2.getY() == cly[j]) {
+						if(redsoldier5.getX() == clx[i]+58 && redsoldier5.getY() == cly[j]) {
 							blacksoldier1.setLocation(593, 53);
-							redsoldier2.setLocation(clx[i], cly[j]);
+							redsoldier5.setLocation(clx[i], cly[j]);
 							rdClicked = false;
 							rmove = false;
 							bmove = true;
 						}
 						//ºì±øÔÚºÚ±ø×ó±ß
-						if(redsoldier2.getX() == clx[i]-58 && redsoldier2.getY() == cly[j]) {
+						if(redsoldier5.getX() == clx[i]-58 && redsoldier5.getY() == cly[j]) {
 							blacksoldier1.setLocation(593, 53);
-							redsoldier2.setLocation(clx[i], cly[j]);
+							redsoldier5.setLocation(clx[i], cly[j]);
 							rdClicked = false;
 							rmove = false;
 							bmove = true;
