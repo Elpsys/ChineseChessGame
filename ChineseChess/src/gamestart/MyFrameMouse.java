@@ -316,7 +316,7 @@ public class MyFrameMouse implements MouseListener {
 			 }
 			  
          }
-       //ºì³µ
+         //ºì³µ
          if(Gamestart.rcClicked) {
 			 if(Gamestart.rmove) {
 		        if(Gamestart.rc == 1) {	//ÅÐ¶ÏÆå×Ó
@@ -375,8 +375,11 @@ public class MyFrameMouse implements MouseListener {
 			        	 }
 		        	 }
 		        }
+			 }else {
+				 ErrorTip.tip();
 			 }
 		 }
+         //ºìÂí
 		 //--------------------------ºÚÉ«Æå×Ó----------------------------------
          //ºÚ±ø--------------
          if(Gamestart.bdClicked) {
@@ -679,6 +682,69 @@ public class MyFrameMouse implements MouseListener {
 				 ErrorTip.tip();
 			 }
          }
+         //ºÚ³µ
+         if(Gamestart.bcClicked) {
+			 if(Gamestart.bmove) {
+		        if(Gamestart.bc == 1) {	//ÅÐ¶ÏÆå×Ó
+		        	for(i = 0;i <= 8;i ++) {
+			        	 for(j = 0;j <=9;j ++) {
+			        		 if(Gamestart.Lblackcar.getX() == clx[i] && Gamestart.Lblackcar.getY() == cly[j]) {
+			        			 if(x > clx[i] && x < clx[i] + 58) {
+			        				 for(k = 0;k <= 9;k ++) {
+			        					 if(y > cly[k] && y < cly[k] + 52) {
+			        						 Gamestart.Lblackcar.setLocation(clx[i],cly[k]);		
+									         Gamestart.bcClicked = false;
+									         Gamestart.bmove = false;
+											 Gamestart.rmove = true;	 
+			        					 }
+			        				 }
+			        			 }
+			        			 if(y > cly[j] && y < cly[j+1]) {
+			        				 for(k = 0;k <= 8;k ++) {
+			        					 if(x > clx[k] && x < clx[k] + 58) {
+			        						 Gamestart.Lblackcar.setLocation(clx[k],cly[j]);		
+									         Gamestart.bcClicked = false;
+									         Gamestart.bmove = false;
+											 Gamestart.rmove = true;	 
+			        					 }
+			        				 }
+			        			 }
+			        		 }
+			        	 }
+		        	}
+		        }
+		        if(Gamestart.bc == 2) {
+		        	 for(i = 0;i <= 8;i ++) {
+			        	 for(j = 0;j <=9;j ++) {
+			        		 if(Gamestart.Rblackcar.getX() == clx[i] && Gamestart.Rblackcar.getY() == cly[j]) {
+			        			 if(x > clx[i] && x < clx[i] + 58) {
+			        				 for(k = 0;k <= 9;k ++) {
+			        					 if(y > cly[k] && y < cly[k] + 52) {
+			        						 Gamestart.Rblackcar.setLocation(clx[i],cly[k]);		
+									         Gamestart.rcClicked = false;
+									         Gamestart.bmove = false;
+											 Gamestart.rmove = true;	 
+			        					 }
+			        				 }
+			        			 }
+			        			 if(y > cly[j] && y < cly[j+1]) {
+			        				 for(k = 0;k <= 8;k ++) {
+			        					 if(x > clx[k] && x < clx[k] + 58) {
+			        						 Gamestart.Rblackcar.setLocation(clx[k],cly[j]);		
+									         Gamestart.rcClicked = false;
+									         Gamestart.bmove = false;
+											 Gamestart.rmove = true;	 
+			        					 }
+			        				 }
+			        			 }
+			        		 }
+			        	 }
+		        	 }
+		        }
+			 }else {
+				 ErrorTip.tip();
+			 }
+		 }
      }
 	@Override
 	public void mouseEntered(MouseEvent e) {
