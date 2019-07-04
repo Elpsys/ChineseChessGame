@@ -258,7 +258,7 @@ public class MyFrameMouse implements MouseListener {
 		        	for(i = 0;i <= 8;i ++) {
 			        	 for(j = 0;j <=9;j ++) {
 			        		 if(Gamestart.Lredgun.getX() == clx[i] && Gamestart.Lredgun.getY() == cly[j]) {
-			        			 if(x > clx[i] && x < clx[i+1]) {
+			        			 if(x > clx[i] && x < clx[i] + 58) {
 			        				 for(k = 0;k <= 9;k ++) {
 			        					 if(y > cly[k] && y < cly[k] + 52) {
 			        						 Gamestart.Lredgun.setLocation(clx[i],cly[k]);		
@@ -287,7 +287,7 @@ public class MyFrameMouse implements MouseListener {
 		        	 for(i = 0;i <= 8;i ++) {
 			        	 for(j = 0;j <=9;j ++) {
 			        		 if(Gamestart.Rredgun.getX() == clx[i] && Gamestart.Rredgun.getY() == cly[j]) {
-			        			 if(x > clx[i] && x < clx[i+1]) {
+			        			 if(x > clx[i] && x < clx[i] + 58) {
 			        				 for(k = 0;k <= 9;k ++) {
 			        					 if(y > cly[k] && y < cly[k] + 52) {
 			        						 Gamestart.Rredgun.setLocation(clx[i],cly[k]);		
@@ -314,7 +314,69 @@ public class MyFrameMouse implements MouseListener {
 			 }else {
 				 ErrorTip.tip();
 			 }
+			  
          }
+       //ºì³µ
+         if(Gamestart.rcClicked) {
+			 if(Gamestart.rmove) {
+		        if(Gamestart.rc == 1) {	//ÅÐ¶ÏÆå×Ó
+		        	for(i = 0;i <= 8;i ++) {
+			        	 for(j = 0;j <=9;j ++) {
+			        		 if(Gamestart.Lredcar.getX() == clx[i] && Gamestart.Lredcar.getY() == cly[j]) {
+			        			 if(x > clx[i] && x < clx[i] + 58) {
+			        				 for(k = 0;k <= 9;k ++) {
+			        					 if(y > cly[k] && y < cly[k] + 52) {
+			        						 Gamestart.Lredcar.setLocation(clx[i],cly[k]);		
+									         Gamestart.rcClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;	 
+			        					 }
+			        				 }
+			        			 }
+			        			 if(y > cly[j] && y < cly[j+1]) {
+			        				 for(k = 0;k <= 8;k ++) {
+			        					 if(x > clx[k] && x < clx[k] + 58) {
+			        						 Gamestart.Lredcar.setLocation(clx[k],cly[j]);		
+									         Gamestart.rcClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;	 
+			        					 }
+			        				 }
+			        			 }
+			        		 }
+			        	 }
+		        	}
+		        }
+		        if(Gamestart.rc == 2) {
+		        	 for(i = 0;i <= 8;i ++) {
+			        	 for(j = 0;j <=9;j ++) {
+			        		 if(Gamestart.Rredcar.getX() == clx[i] && Gamestart.Rredcar.getY() == cly[j]) {
+			        			 if(x > clx[i] && x < clx[i] + 58) {
+			        				 for(k = 0;k <= 9;k ++) {
+			        					 if(y > cly[k] && y < cly[k] + 52) {
+			        						 Gamestart.Rredcar.setLocation(clx[i],cly[k]);		
+									         Gamestart.rcClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;	 
+			        					 }
+			        				 }
+			        			 }
+			        			 if(y > cly[j] && y < cly[j+1]) {
+			        				 for(k = 0;k <= 8;k ++) {
+			        					 if(x > clx[k] && x < clx[k] + 58) {
+			        						 Gamestart.Rredcar.setLocation(clx[k],cly[j]);		
+									         Gamestart.rcClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;	 
+			        					 }
+			        				 }
+			        			 }
+			        		 }
+			        	 }
+		        	 }
+		        }
+			 }
+		 }
 		 //--------------------------ºÚÉ«Æå×Ó----------------------------------
          //ºÚ±ø--------------
          if(Gamestart.bdClicked) {
@@ -549,6 +611,70 @@ public class MyFrameMouse implements MouseListener {
 			        	 }
 			         }
 				 }
+			 }else {
+				 ErrorTip.tip();
+			 }
+         }
+         //ºÚÅÚ
+         if(Gamestart.bgClicked) {
+			 if(Gamestart.bmove) {
+		        if(Gamestart.bg == 1) {	//ÅÐ¶ÏÆå×Ó
+		        	for(i = 0;i <= 8;i ++) {
+			        	 for(j = 0;j <=9;j ++) {
+			        		 if(Gamestart.Lblackgun.getX() == clx[i] && Gamestart.Lblackgun.getY() == cly[j]) {
+			        			 if(x > clx[i] && x < clx[i+1]) {
+			        				 for(k = 0;k <= 9;k ++) {
+			        					 if(y > cly[k] && y < cly[k] + 52) {
+			        						 Gamestart.Lblackgun.setLocation(clx[i],cly[k]);		
+									         Gamestart.bgClicked = false;
+									         Gamestart.bmove = false;
+											 Gamestart.rmove = true;	 
+			        					 }
+			        				 }
+			        			 }
+			        			 if(y > cly[j] && y < cly[j+1]) {
+			        				 for(k = 0;k <= 8;k ++) {
+			        					 if(x > clx[k] && x < clx[k] + 58) {
+			        						 Gamestart.Lblackgun.setLocation(clx[k],cly[j]);		
+									         Gamestart.bgClicked = false;
+									         Gamestart.bmove = false;
+											 Gamestart.rmove = true;	 
+			        					 }
+			        				 }
+			        			 }
+			        		 }
+			        	 }
+		        	}
+		         }
+		        //-------------------------µÚ¶þ¸öÅÚ
+		         if(Gamestart.bg == 2) {
+		        	 for(i = 0;i <= 8;i ++) {
+			        	 for(j = 0;j <=9;j ++) {
+			        		 if(Gamestart.Rblackgun.getX() == clx[i] && Gamestart.Rblackgun.getY() == cly[j]) {
+			        			 if(x > clx[i] && x < clx[i+1]) {
+			        				 for(k = 0;k <= 9;k ++) {
+			        					 if(y > cly[k] && y < cly[k] + 52) {
+			        						 Gamestart.Rblackgun.setLocation(clx[i],cly[k]);		
+									         Gamestart.bgClicked = false;
+									         Gamestart.bmove = false;
+											 Gamestart.rmove = true;	 
+			        					 }
+			        				 }
+			        			 }
+			        			 if(y > cly[j] && y < cly[j+1]) {
+			        				 for(k = 0;k <= 8;k ++) {
+			        					 if(x > clx[k] && x < clx[k] + 58) {
+			        						 Gamestart.Rblackgun.setLocation(clx[k],cly[j]);		
+									         Gamestart.bgClicked = false;
+									         Gamestart.bmove = false;
+											 Gamestart.rmove = true;	 
+			        					 }
+			        				 }
+			        			 }
+			        		 }
+			        	 }
+		        	}
+		         }
 			 }else {
 				 ErrorTip.tip();
 			 }

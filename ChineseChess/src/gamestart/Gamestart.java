@@ -329,7 +329,7 @@ public class Gamestart extends JFrame{
 			}
 		});			
 		
-		//------------------------------------------------------------------------------
+		//ºÚÉ«·½------------------------------------------------------------------------------
 		
 		//ºÚ·½±ø1
 		ImageIcon imagebd;
@@ -413,8 +413,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(Lblackgun);
 		Lblackgun.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				bgClicked = true;
+				bg = 1;
 			}
 		});		
 		//ºÚ·½ÅÚÓÒ
@@ -426,8 +426,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(Rblackgun);
 		Rblackgun.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				bgClicked = true;
+				bg = 2;
 			}
 		});	
 		//ºÚ³µ×ó
@@ -441,8 +441,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(Lblackcar);
 		Lblackcar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				bcClicked = true;
+				bc = 1;
 			}
 		});	
 		//ºÚ³µÓÒ
@@ -454,8 +454,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(Rblackcar);
 		Rblackcar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				bcClicked = true;
+				bc = 2;
 			}
 		});	
 		//ºÚÂí×ó
@@ -469,8 +469,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(Lblackhorse);
 		Lblackhorse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				bhClicked = true;
+				bh = 1;
 			}
 		});		
 		//ºÚÂíÓÒ
@@ -482,8 +482,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(Rblackhorse);
 		Rblackhorse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				bhClicked = true;
+				bh = 2;
 			}
 		});	
 		//ºÚÏó×ó
@@ -497,8 +497,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(Lblackelephant);
 		Lblackelephant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				beClicked = true;
+				be = 1;
 			}
 		});		
 		//ºÚÏóÓÒ
@@ -510,8 +510,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(Rblackelephant);
 		Rblackelephant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				beClicked = true;
+				be = 2;
 			}
 		});	
 		//ºÚÊ¿×ó
@@ -525,8 +525,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(Lblackknight);
 		Lblackknight.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				bkClicked = true;
+				bk = 1;
 			}
 		});		
 		//ºÚÊ¿ÓÒ
@@ -538,8 +538,8 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(Rblackknight);
 		Rblackknight.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				bkClicked = true;
+				bk = 2;
 			}
 		});	
 		//ºÚË§
@@ -553,8 +553,7 @@ public class Gamestart extends JFrame{
 		frame.getContentPane().add(blackcommander);
 		blackcommander.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rdClicked = true;
-				rd = 5;
+				bmClicked = true;
 			}
 		});		
 		frame.addMouseListener(new MyFrameMouse());
