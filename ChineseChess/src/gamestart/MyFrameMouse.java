@@ -255,11 +255,61 @@ public class MyFrameMouse implements MouseListener {
          if(Gamestart.rgClicked) {
 			 if(Gamestart.rmove) {
 		        if(Gamestart.rg == 1) {	//判断棋子
-		        	
+		        	for(i = 0;i <= 8;i ++) {
+			        	 for(j = 0;j <=9;j ++) {
+			        		 if(Gamestart.Lredgun.getX() == clx[i] && Gamestart.Lredgun.getY() == cly[j]) {
+			        			 if(x > clx[i] && x < clx[i+1]) {
+			        				 for(k = 0;k <= 9;k ++) {
+			        					 if(y > cly[k] && y < cly[k] + 52) {
+			        						 Gamestart.Lredgun.setLocation(clx[i],cly[k]);		
+									         Gamestart.rgClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;	 
+			        					 }
+			        				 }
+			        			 }
+			        			 if(y > cly[j] && y < cly[j+1]) {
+			        				 for(k = 0;k <= 8;k ++) {
+			        					 if(x > clx[k] && x < clx[k] + 58) {
+			        						 Gamestart.Lredgun.setLocation(clx[k],cly[j]);		
+									         Gamestart.rgClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;	 
+			        					 }
+			        				 }
+			        			 }
+			        		 }
+			        	 }
+		        	}
 		         }
 		        //-------------------------第二个炮
 		         if(Gamestart.rg == 2) {
-		         
+		        	 for(i = 0;i <= 8;i ++) {
+			        	 for(j = 0;j <=9;j ++) {
+			        		 if(Gamestart.Rredgun.getX() == clx[i] && Gamestart.Rredgun.getY() == cly[j]) {
+			        			 if(x > clx[i] && x < clx[i+1]) {
+			        				 for(k = 0;k <= 9;k ++) {
+			        					 if(y > cly[k] && y < cly[k] + 52) {
+			        						 Gamestart.Rredgun.setLocation(clx[i],cly[k]);		
+									         Gamestart.rgClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;	 
+			        					 }
+			        				 }
+			        			 }
+			        			 if(y > cly[j] && y < cly[j+1]) {
+			        				 for(k = 0;k <= 8;k ++) {
+			        					 if(x > clx[k] && x < clx[k] + 58) {
+			        						 Gamestart.Rredgun.setLocation(clx[k],cly[j]);		
+									         Gamestart.rgClicked = false;
+									         Gamestart.rmove = false;
+											 Gamestart.bmove = true;	 
+			        					 }
+			        				 }
+			        			 }
+			        		 }
+			        	 }
+		        	}
 		         }
 			 }else {
 				 ErrorTip.tip();
