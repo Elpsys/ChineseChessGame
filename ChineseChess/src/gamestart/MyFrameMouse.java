@@ -268,7 +268,7 @@ public class MyFrameMouse implements MouseListener {
 			        					 }
 			        				 }
 			        			 }
-			        			 if(y > cly[j] && y < cly[j+1]) {
+			        			 if(y > cly[j] && y < cly[j] + 52) {
 			        				 for(k = 0;k <= 8;k ++) {
 			        					 if(x > clx[k] && x < clx[k] + 58) {
 			        						 Gamestart.Lredgun.setLocation(clx[k],cly[j]);		
@@ -297,7 +297,7 @@ public class MyFrameMouse implements MouseListener {
 			        					 }
 			        				 }
 			        			 }
-			        			 if(y > cly[j] && y < cly[j+1]) {
+			        			 if(y > cly[j] && y < cly[j] + 52) {
 			        				 for(k = 0;k <= 8;k ++) {
 			        					 if(x > clx[k] && x < clx[k] + 58) {
 			        						 Gamestart.Rredgun.setLocation(clx[k],cly[j]);		
@@ -333,7 +333,7 @@ public class MyFrameMouse implements MouseListener {
 			        					 }
 			        				 }
 			        			 }
-			        			 if(y > cly[j] && y < cly[j+1]) {
+			        			 if(y > cly[j] && y < cly[j] + 52) {
 			        				 for(k = 0;k <= 8;k ++) {
 			        					 if(x > clx[k] && x < clx[k] + 58) {
 			        						 Gamestart.Lredcar.setLocation(clx[k],cly[j]);		
@@ -361,7 +361,7 @@ public class MyFrameMouse implements MouseListener {
 			        					 }
 			        				 }
 			        			 }
-			        			 if(y > cly[j] && y < cly[j+1]) {
+			        			 if(y > cly[j] && y < cly[j] + 52) {
 			        				 for(k = 0;k <= 8;k ++) {
 			        					 if(x > clx[k] && x < clx[k] + 58) {
 			        						 Gamestart.Rredcar.setLocation(clx[k],cly[j]);		
@@ -380,6 +380,160 @@ public class MyFrameMouse implements MouseListener {
 			 }
 		 }
          //红马
+         if(Gamestart.rhClicked) {
+			 if(Gamestart.rmove) {
+		        if(Gamestart.rh == 1) {	//判断棋子
+		        	for(i = 0;i <= 8;i ++) {
+			        	 for(j = 0;j <=9;j ++) {
+			        		 if(Gamestart.Lredhorse.getX() == clx[i] && Gamestart.Lredhorse.getY() == cly[j]) {
+			        			 //左右跳一个格子
+			        			 if(x > clx[i] + 58 && x < clx[i] + 116) {
+			        				 //向右上方跳
+		        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
+		        						 Gamestart.Lredhorse.setLocation(clx[i] + 58,cly[j] - 104);		
+								         Gamestart.rhClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;	 
+		        					 }
+		        					 //右下方跳
+		        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
+		        						 Gamestart.Lredhorse.setLocation(clx[i] + 58,cly[j] + 104);		
+								         Gamestart.rhClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;	 
+		        					 }
+			        			 }
+			        			 if(x > clx[i] - 58 && x < clx[i]) {
+			        				 //向左上方跳
+		        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
+		        						 Gamestart.Lredhorse.setLocation(clx[i] - 58,cly[j] - 104);		
+								         Gamestart.rhClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;	 
+		        					 }
+		        					 //左下方跳
+		        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
+		        						 Gamestart.Lredhorse.setLocation(clx[i] - 58,cly[j] + 104);		
+								         Gamestart.rhClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;	 
+		        					 }
+			        			 }
+			        			//左右跳两个格子
+			        			 if(x > clx[i] + 116 && x < clx[i] + 174) {
+			        				 //向右上方跳
+		        					 if(y > cly[j] - 52 && y < cly[j]) {
+		        						 Gamestart.Lredhorse.setLocation(clx[i] + 116,cly[j] - 52);		
+								         Gamestart.rhClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;	 
+		        					 }
+		        					 //右下方跳
+		        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
+		        						 Gamestart.Lredhorse.setLocation(clx[i] + 116,cly[j] + 52);		
+								         Gamestart.rhClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;	 
+		        					 }
+			        			 }
+			        			 if(x > clx[i] - 116 && x < clx[i]-58) {
+			        				 //向左上方跳
+		        					 if(y > cly[j] - 52 && y < cly[j]) {
+		        						 Gamestart.Lredhorse.setLocation(clx[i] - 116,cly[j] - 52);		
+								         Gamestart.rhClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;	 
+		        					 }
+		        					 //左下方跳
+		        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
+		        						 Gamestart.Lredhorse.setLocation(clx[i] - 116,cly[j] + 52);		
+								         Gamestart.rhClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;	 
+		        					 }
+			        			 }
+			        		 }
+			        	 }
+		        	}
+		        }
+		        if(Gamestart.rh == 2) {
+		        	 for(i = 0;i <= 8;i ++) {
+			        	 for(j = 0;j <=9;j ++) {
+			        		 if(Gamestart.Rredhorse.getX() == clx[i] && Gamestart.Rredhorse.getY() == cly[j]) {
+			        			 //左右跳一个格子
+			        			 if(x > clx[i] + 58 && x < clx[i] + 116) {
+			        				 //向右上方跳
+		        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
+		        						 Gamestart.Rredhorse.setLocation(clx[i] + 58,cly[j] - 104);		
+								         Gamestart.rhClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;	 
+		        					 }
+		        					 //右下方跳
+		        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
+		        						 Gamestart.Rredhorse.setLocation(clx[i] + 58,cly[j] + 104);		
+								         Gamestart.rhClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;	 
+		        					 }
+			        			 }
+			        			 if(x > clx[i] - 58 && x < clx[i]) {
+			        				 //向左上方跳
+		        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
+		        						 Gamestart.Rredhorse.setLocation(clx[i] - 58,cly[j] - 104);		
+								         Gamestart.rhClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;	 
+		        					 }
+		        					 //左下方跳
+		        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
+		        						 Gamestart.Rredhorse.setLocation(clx[i] - 58,cly[j] + 104);		
+								         Gamestart.rhClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;	 
+		        					 }
+			        			 }
+			        			//左右跳两个格子
+			        			 if(x > clx[i] + 116 && x < clx[i] + 174) {
+			        				 //向右上方跳
+		        					 if(y > cly[j] - 52 && y < cly[j]) {
+		        						 Gamestart.Rredhorse.setLocation(clx[i] + 116,cly[j] - 52);		
+								         Gamestart.rhClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;	 
+		        					 }
+		        					 //右下方跳
+		        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
+		        						 Gamestart.Rredhorse.setLocation(clx[i] + 116,cly[j] + 52);		
+								         Gamestart.rhClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;	 
+		        					 }
+			        			 }
+			        			 if(x > clx[i] - 116 && x < clx[i]-58) {
+			        				 //向左上方跳
+		        					 if(y > cly[j] - 52 && y < cly[j]) {
+		        						 Gamestart.Rredhorse.setLocation(clx[i] - 116,cly[j] - 52);		
+								         Gamestart.rhClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;	 
+		        					 }
+		        					 //左下方跳
+		        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
+		        						 Gamestart.Rredhorse.setLocation(clx[i] - 116,cly[j] + 52);		
+								         Gamestart.rhClicked = false;
+								         Gamestart.rmove = false;
+										 Gamestart.bmove = true;	 
+		        					 }
+			        			 }
+			        		 }
+			        	 }
+		        	 }
+		        }
+			 }else {
+				 ErrorTip.tip();
+			 }
+		 }
 		 //--------------------------黑色棋子----------------------------------
          //黑兵--------------
          if(Gamestart.bdClicked) {
