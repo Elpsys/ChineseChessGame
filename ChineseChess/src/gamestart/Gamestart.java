@@ -531,7 +531,7 @@ public class Gamestart extends JFrame{
 		});		
 		//ºÚÊ¿ÓÒ
 		Rblackknight = new JButton(imageknight1);	
-		Rblackknight.setBounds(357, 88, 52, 52);
+		Rblackknight.setBounds(358, 87, 52, 52);
 		Rblackknight.setContentAreaFilled(false);
 		Rblackknight.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 

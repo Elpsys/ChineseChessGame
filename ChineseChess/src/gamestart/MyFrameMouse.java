@@ -630,7 +630,7 @@ public class MyFrameMouse implements MouseListener {
 		        	for(i = 0;i <= 8;i ++) {
 			        	 for(j = 0;j <=9;j ++) {
 			        		 if(Gamestart.Lredknight.getX() == clx[i] && Gamestart.Lredknight.getY() == cly[j]) {
-			        			 if(x > clx[3] && x <= clx[6] && y < cly[9] + 52 && y >=cly[7]) {
+			        			 if(x > clx[3] && x < clx[6] && y < cly[9] + 52 && y > cly[7]) {
 			        				 if(x > clx[i] + 58 && x < clx[i] + 116) {
 				        				 //向右上方跳
 			        					 if(y > cly[j] - 52 && y < cly[j]) {
@@ -672,7 +672,7 @@ public class MyFrameMouse implements MouseListener {
 		        	for(i = 0;i <= 8;i ++) {
 			        	 for(j = 0;j <=9;j ++) {
 			        		 if(Gamestart.Rredknight.getX() == clx[i] && Gamestart.Rredknight.getY() == cly[j]) {
-			        			 if(x > clx[3] && x <= clx[6] && y < cly[9] + 52 && y >=cly[7]) {
+			        			 if(x > clx[3] && x < clx[6] && y < cly[9] + 52 && y > cly[7]) {
 			        				 if(x > clx[i] + 58 && x < clx[i] + 116) {
 				        				 //向右上方跳
 			        					 if(y > cly[j] - 52 && y < cly[j]) {
@@ -710,6 +710,47 @@ public class MyFrameMouse implements MouseListener {
 			        	 }
 		        	}
 		        }
+			 }
+         }
+         //红帅
+         if(Gamestart.rmClicked) {
+			 if(Gamestart.rmove) {
+	        	for(i = 0;i <= 8;i ++) {
+		        	 for(j = 0;j <=9;j ++) {
+		        		 if(Gamestart.redcommander.getX() == clx[i] && Gamestart.redcommander.getY() == cly[j]) {
+		        			 if(x > clx[3] && x < clx[6] && y < cly[9] + 52 && y > cly[7]) {
+		        				//向前走
+		        				 if(x > clx[i] && x < clx[i+1] && y > cly[j-1] && y < cly[j]) {
+			        				 Gamestart.redcommander.setLocation(clx[i],cly[j-1]);		//设置位置
+							         Gamestart.rmClicked = false;
+							         Gamestart.rmove = false;
+									 Gamestart.bmove = true;
+		        				 }
+		        				 //向左走
+		        				 if(x > clx[i-1] && x < clx[i] && y > cly[j] && y < cly[j] + 52) {
+		        					 Gamestart.redcommander.setLocation(clx[i-1],cly[j]);		
+							         Gamestart.rmClicked = false;
+							         Gamestart.rmove = false;
+									 Gamestart.bmove = true;
+		        				 }
+		        				 //向右走
+		        				 if(x > clx[i+1] && x < clx[i+2] && y > cly[j] && y < cly[j] + 52) {
+			        				 Gamestart.redcommander.setLocation(clx[i+1],cly[j]);		
+							         Gamestart.rmClicked = false;
+							         Gamestart.rmove = false;
+									 Gamestart.bmove = true;
+		        				 }
+		        				 //向后走
+		        				 if(x > clx[i] && x < clx[i+1] && y > cly[j] + 52 && y < cly[j] + 104) {
+			        				 Gamestart.redcommander.setLocation(clx[i],cly[j+1]);		
+							         Gamestart.rmClicked = false;
+							         Gamestart.rmove = false;
+									 Gamestart.bmove = true;
+		        				 }
+		        			 }
+		        		 }
+		        	 }
+	        	}
 			 }
          }
 		 //--------------------------黑色棋子----------------------------------
@@ -1328,37 +1369,37 @@ public class MyFrameMouse implements MouseListener {
 		        	for(i = 0;i <= 8;i ++) {
 			        	 for(j = 0;j <=9;j ++) {
 			        		 if(Gamestart.Lblackknight.getX() == clx[i] && Gamestart.Lblackknight.getY() == cly[j]) {
-			        			 if(x > clx[3] && x <= clx[6] && y < cly[9] + 52 && y >=cly[7]) {
+			        			 if(x > clx[3] && x < clx[6] && y > cly[0] && y < cly[3]) {
 			        				 if(x > clx[i] + 58 && x < clx[i] + 116) {
 				        				 //向右上方跳
 			        					 if(y > cly[j] - 52 && y < cly[j]) {
-			        						 Gamestart.Lredknight.setLocation(clx[i] + 58,cly[j] - 52);		
-									         Gamestart.rkClicked = false;
-									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+			        						 Gamestart.Lblackknight.setLocation(clx[i] + 58,cly[j] - 52);		
+									         Gamestart.bkClicked = false;
+									         Gamestart.bmove = false;
+											 Gamestart.rmove = true;	 
 			        					 }
 			        					 //右下方跳
 			        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
-			        						 Gamestart.Lredknight.setLocation(clx[i] + 58,cly[j] + 52);		
-									         Gamestart.rkClicked = false;
-									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+			        						 Gamestart.Lblackknight.setLocation(clx[i] + 58,cly[j] + 52);		
+									         Gamestart.bkClicked = false;
+									         Gamestart.bmove = false;
+											 Gamestart.rmove = true;	 
 			        					 }
 				        			 }
 				        			 if(x > clx[i] - 58 && x < clx[i]) {
 				        				 //向左上方跳
 			        					 if(y > cly[j] - 52 && y < cly[j]) {
-			        						 Gamestart.Lredknight.setLocation(clx[i] - 58,cly[j] - 52);		
-									         Gamestart.rkClicked = false;
-									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+			        						 Gamestart.Lblackknight.setLocation(clx[i] - 58,cly[j] - 52);		
+									         Gamestart.bkClicked = false;
+									         Gamestart.bmove = false;
+											 Gamestart.rmove = true;	 
 			        					 }
 			        					 //左下方跳
 			        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
-			        						 Gamestart.Lredknight.setLocation(clx[i] - 58,cly[j] + 52);		
-									         Gamestart.rkClicked = false;
-									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+			        						 Gamestart.Lblackknight.setLocation(clx[i] - 58,cly[j] + 52);		
+									         Gamestart.bkClicked = false;
+									         Gamestart.bmove = false;
+											 Gamestart.rmove = true;	 
 			        					 }
 				        			 }
 			        			 }
@@ -1366,41 +1407,41 @@ public class MyFrameMouse implements MouseListener {
 			        	 }
 		        	}
 		        }
-		        if(Gamestart.rk == 2) {	//判断棋子
+		        if(Gamestart.bk == 2) {	//判断棋子
 		        	for(i = 0;i <= 8;i ++) {
 			        	 for(j = 0;j <=9;j ++) {
-			        		 if(Gamestart.Rredknight.getX() == clx[i] && Gamestart.Rredknight.getY() == cly[j]) {
-			        			 if(x > clx[3] && x <= clx[6] && y < cly[9] + 52 && y >=cly[7]) {
+			        		 if(Gamestart.Rblackknight.getX() == clx[i] && Gamestart.Rblackknight.getY() == cly[j]) {
+			        			 if(x > clx[3] && x < clx[6] && y > cly[0] && y < cly[3]) {
 			        				 if(x > clx[i] + 58 && x < clx[i] + 116) {
 				        				 //向右上方跳
 			        					 if(y > cly[j] - 52 && y < cly[j]) {
-			        						 Gamestart.Rredknight.setLocation(clx[i] + 58,cly[j] - 52);		
-									         Gamestart.rkClicked = false;
-									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+			        						 Gamestart.Rblackknight.setLocation(clx[i] + 58,cly[j] - 52);		
+									         Gamestart.bkClicked = false;
+									         Gamestart.bmove = false;
+											 Gamestart.rmove = true;	 
 			        					 }
 			        					 //右下方跳
 			        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
-			        						 Gamestart.Rredknight.setLocation(clx[i] + 58,cly[j] + 52);		
-									         Gamestart.rkClicked = false;
-									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+			        						 Gamestart.Rblackknight.setLocation(clx[i] + 58,cly[j] + 52);		
+									         Gamestart.bkClicked = false;
+									         Gamestart.bmove = false;
+											 Gamestart.rmove = true;	 
 			        					 }
 				        			 }
 				        			 if(x > clx[i] - 58 && x < clx[i]) {
 				        				 //向左上方跳
 			        					 if(y > cly[j] - 52 && y < cly[j]) {
-			        						 Gamestart.Rredknight.setLocation(clx[i] - 58,cly[j] - 52);		
-									         Gamestart.rkClicked = false;
-									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+			        						 Gamestart.Rblackknight.setLocation(clx[i] - 58,cly[j] - 52);		
+									         Gamestart.bkClicked = false;
+									         Gamestart.bmove = false;
+											 Gamestart.rmove = true;	 
 			        					 }
 			        					 //左下方跳
 			        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
-			        						 Gamestart.Rredknight.setLocation(clx[i] - 58,cly[j] + 52);		
-									         Gamestart.rkClicked = false;
-									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+			        						 Gamestart.Rblackknight.setLocation(clx[i] - 58,cly[j] + 52);		
+									         Gamestart.bkClicked = false;
+									         Gamestart.bmove = false;
+											 Gamestart.rmove = true;	 
 			        					 }
 				        			 }
 			        			 }
@@ -1409,7 +1450,48 @@ public class MyFrameMouse implements MouseListener {
 		        	}
 		        }
 			 }
-         }         
+         }  
+         //黑帅
+         if(Gamestart.bmClicked) {
+			 if(Gamestart.bmove) {
+	        	for(i = 0;i <= 8;i ++) {
+		        	 for(j = 0;j <=9;j ++) {
+		        		 if(Gamestart.blackcommander.getX() == clx[i] && Gamestart.blackcommander.getY() == cly[j]) {
+		        			 if(x > clx[3] && x < clx[6] && y < cly[3] && y > cly[0]) {
+		        				//向前走
+		        				 if(x > clx[i] && x < clx[i+1] && y > cly[j] - 52 && y < cly[j]) {
+			        				 Gamestart.blackcommander.setLocation(clx[i],cly[j-1]);		//设置位置
+							         Gamestart.bmClicked = false;
+							         Gamestart.bmove = false;
+									 Gamestart.rmove = true;
+		        				 }
+		        				 //向左走
+		        				 if(x > clx[i-1] && x < clx[i] && y > cly[j] && y < cly[j] + 52) {
+		        					 Gamestart.blackcommander.setLocation(clx[i-1],cly[j]);		
+							         Gamestart.bmClicked = false;
+							         Gamestart.bmove = false;
+									 Gamestart.rmove = true;
+		        				 }
+		        				 //向右走
+		        				 if(x > clx[i+1] && x < clx[i+2] && y > cly[j] && y < cly[j] + 52) {
+			        				 Gamestart.blackcommander.setLocation(clx[i+1],cly[j]);		
+							         Gamestart.bmClicked = false;
+							         Gamestart.bmove = false;
+									 Gamestart.rmove = true;
+		        				 }
+		        				 //向后走
+		        				 if(x > clx[i] && x < clx[i+1] && y > cly[j] + 52 && y < cly[j] + 104) {
+			        				 Gamestart.blackcommander.setLocation(clx[i],cly[j+1]);		
+							         Gamestart.bmClicked = false;
+							         Gamestart.bmove = false;
+									 Gamestart.rmove = true;
+		        				 }
+		        			 }
+		        		 }
+		        	 }
+	        	}
+			 }
+         }
      }
 	@Override
 	public void mouseEntered(MouseEvent e) {
