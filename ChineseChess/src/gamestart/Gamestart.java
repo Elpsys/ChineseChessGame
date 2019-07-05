@@ -503,7 +503,7 @@ public class Gamestart extends JFrame{
 		});		
 		//ºÚÏóÓÒ
 		Rblackelephant = new JButton(imageelephant1);	
-		Rblackelephant.setBounds(414, 88, 52, 52);
+		Rblackelephant.setBounds(416, 87, 52, 52);
 		Rblackelephant.setContentAreaFilled(false);
 		Rblackelephant.setBorderPainted(false);
 		frame.getContentPane().setLayout(null); 
