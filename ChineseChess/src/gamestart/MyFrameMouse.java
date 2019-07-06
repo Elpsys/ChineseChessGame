@@ -13,12 +13,13 @@ public class MyFrameMouse implements MouseListener {
 	
 	public void mouseClicked(MouseEvent e) {
 		 int x,y;
-		 int i,j,k;
+		 int i,j,k,m;
 		 Point dp = e.getPoint();//得到点击的位置
          x=dp.x;
          y=dp.y-35;
          //------------红色棋子--------------
          //红兵-----------
+         
          if(Gamestart.rdClicked) {
 			 if(Gamestart.rmove) {
 				 if(Gamestart.rd == 1) {
@@ -32,6 +33,9 @@ public class MyFrameMouse implements MouseListener {
 								         Gamestart.rdClicked = false;
 								         Gamestart.rmove = false;
 										 Gamestart.bmove = true;
+										 m = 8 - i;
+										 Gamestart.chesslocation[m][j] = 0; 
+										 Gamestart.chesslocation[m][j-1] = 1;
 			        				 }
 			        			 }else {
 			        				 //判断向前走的位置
@@ -41,6 +45,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.rdClicked = false;
 									         Gamestart.rmove = false;
 											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m][j-1] = 1;
 				        				 }
 			        				 }
 			        				//判断左走的位置
@@ -50,6 +57,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.rdClicked = false;
 									         Gamestart.rmove = false;
 											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m+1][j] = 1;
 				        				 }
 			        				 }
 			        				 //判断右走的位置
@@ -59,6 +69,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.rdClicked = false;
 									         Gamestart.rmove = false;
 											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m-1][j] = 1;
 				        				 }
 			        				 }
 			        			 }
@@ -78,6 +91,9 @@ public class MyFrameMouse implements MouseListener {
 								         Gamestart.rdClicked = false;
 								         Gamestart.rmove = false;
 										 Gamestart.bmove = true;
+										 m = 8 - i;
+										 Gamestart.chesslocation[m][j] = 0;
+										 Gamestart.chesslocation[m][j-1] = 1;
 			        				 }
 			        			 }else {
 			        				 //判断向前走的位置
@@ -87,6 +103,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.rdClicked = false;
 									         Gamestart.rmove = false;
 											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m][j-1] = 1;
 				        				 }
 			        				 }
 			        				 //判断右走的位置
@@ -96,6 +115,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.rdClicked = false;
 									         Gamestart.rmove = false;
 											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m-1][j] = 1;
 				        				 }
 			        				 }
 			        				//判断左走的位置
@@ -105,6 +127,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.rdClicked = false;
 									         Gamestart.rmove = false;
 											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m+1][j] = 1;
 				        				 }
 			        				 }
 			        			 }
@@ -123,6 +148,9 @@ public class MyFrameMouse implements MouseListener {
 								         Gamestart.rdClicked = false;
 								         Gamestart.rmove = false;
 										 Gamestart.bmove = true;
+										 m = 8 - i;
+										 Gamestart.chesslocation[m][j] = 0;
+										 Gamestart.chesslocation[m][j-1] = 1;
 			        				 }
 			        			 }else {
 			        				 //判断向前走的位置
@@ -132,6 +160,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.rdClicked = false;
 									         Gamestart.rmove = false;
 											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m][j-1] = 1;
 				        				 }
 			        				 }
 			        				 //判断右走的位置
@@ -141,6 +172,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.rdClicked = false;
 									         Gamestart.rmove = false;
 											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m-1][j] = 1;
 				        				 }
 			        				 }
 			        				//判断左走的位置
@@ -150,8 +184,12 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.rdClicked = false;
 									         Gamestart.rmove = false;
 											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m+1][j] = 1;
 				        				 }
 			        				 }
+			        				 
 			        			 }
 			        		 }
 			        	}
@@ -168,6 +206,9 @@ public class MyFrameMouse implements MouseListener {
 								         Gamestart.rdClicked = false;
 								         Gamestart.rmove = false;
 										 Gamestart.bmove = true;
+										 m = 8 - i;
+										 Gamestart.chesslocation[m][j] = 0;
+										 Gamestart.chesslocation[m][j-1] = 1;
 			        				 }
 			        			 }else {
 			        				 //判断向前走的位置
@@ -177,6 +218,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.rdClicked = false;
 									         Gamestart.rmove = false;
 											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m][j-1] = 1;
 				        				 }
 			        				 }
 			        				 //判断右走的位置
@@ -186,6 +230,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.rdClicked = false;
 									         Gamestart.rmove = false;
 											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m-1][j] = 1;
 				        				 }
 			        				 }
 			        				//判断左走的位置
@@ -195,6 +242,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.rdClicked = false;
 									         Gamestart.rmove = false;
 											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m+1][j] = 1;
 				        				 }
 			        				 }
 			        			 }
@@ -213,6 +263,9 @@ public class MyFrameMouse implements MouseListener {
 								         Gamestart.rdClicked = false;
 								         Gamestart.rmove = false;
 										 Gamestart.bmove = true;
+										 m = 8 - i;
+										 Gamestart.chesslocation[m][j] = 0;
+										 Gamestart.chesslocation[m][j-1] = 1;
 			        				 }
 			        			 }else {
 			        				 //判断向前走的位置
@@ -222,6 +275,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.rdClicked = false;
 									         Gamestart.rmove = false;
 											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m][j-1] = 1;
 				        				 }
 			        				 }
 			        				 //判断右走的位置
@@ -231,6 +287,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.rdClicked = false;
 									         Gamestart.rmove = false;
 											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m-1][j] = 1;
 				        				 }
 			        				 }
 			        				//判断左走的位置
@@ -240,6 +299,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.rdClicked = false;
 									         Gamestart.rmove = false;
 											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m+1][j] = 1;
 				        				 }
 			        				 }
 			        			 }
@@ -247,8 +309,6 @@ public class MyFrameMouse implements MouseListener {
 			        	}
 			         }
 				 }
-			 }else {
-				 ErrorTip.tip();
 			 }
          }
          //红炮
@@ -264,7 +324,10 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Lredgun.setLocation(clx[i],cly[k]);		
 									         Gamestart.rgClicked = false;
 									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m][k] = 1;
 			        					 }
 			        				 }
 			        			 }
@@ -274,7 +337,10 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Lredgun.setLocation(clx[k],cly[j]);		
 									         Gamestart.rgClicked = false;
 									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[8-k][j] = 1;
 			        					 }
 			        				 }
 			        			 }
@@ -293,7 +359,10 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Rredgun.setLocation(clx[i],cly[k]);		
 									         Gamestart.rgClicked = false;
 									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m][k] = 1;
 			        					 }
 			        				 }
 			        			 }
@@ -303,7 +372,10 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Rredgun.setLocation(clx[k],cly[j]);		
 									         Gamestart.rgClicked = false;
 									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+											 Gamestart.bmove = true;	
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[8-k][j] = 1;
 			        					 }
 			        				 }
 			        			 }
@@ -311,10 +383,7 @@ public class MyFrameMouse implements MouseListener {
 			        	 }
 		        	}
 		         }
-			 }else {
-				 ErrorTip.tip();
-			 }
-			  
+			 }		  
          }
          //红车
          if(Gamestart.rcClicked) {
@@ -329,7 +398,10 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Lredcar.setLocation(clx[i],cly[k]);		
 									         Gamestart.rcClicked = false;
 									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m][k] = 1;
 			        					 }
 			        				 }
 			        			 }
@@ -339,7 +411,10 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Lredcar.setLocation(clx[k],cly[j]);		
 									         Gamestart.rcClicked = false;
 									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+											 Gamestart.bmove = true;	
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[8-k][j] = 1;
 			        					 }
 			        				 }
 			        			 }
@@ -357,7 +432,10 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Rredcar.setLocation(clx[i],cly[k]);		
 									         Gamestart.rcClicked = false;
 									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+											 Gamestart.bmove = true;	
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m][k] = 1;
 			        					 }
 			        				 }
 			        			 }
@@ -367,7 +445,10 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Rredcar.setLocation(clx[k],cly[j]);		
 									         Gamestart.rcClicked = false;
 									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[8-k][j] = 1;
 			        					 }
 			        				 }
 			        			 }
@@ -375,8 +456,6 @@ public class MyFrameMouse implements MouseListener {
 			        	 }
 		        	 }
 		        }
-			 }else {
-				 ErrorTip.tip();
 			 }
 		 }
          //红马
@@ -389,68 +468,120 @@ public class MyFrameMouse implements MouseListener {
 			        			 //左右跳一个格子
 			        			 if(x > clx[i] + 58 && x < clx[i] + 116) {
 			        				 //向右上方跳
-		        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
-		        						 Gamestart.Lredhorse.setLocation(clx[i] + 58,cly[j] - 104);		
-								         Gamestart.rhClicked = false;
-								         Gamestart.rmove = false;
-										 Gamestart.bmove = true;	 
-		        					 }
+			        				 if(j != 0) {
+					        			 if(Gamestart.chesslocation[8-i][j-1] == 0) {
+				        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
+				        						 Gamestart.Lredhorse.setLocation(clx[i] + 58,cly[j] - 104);		
+										         Gamestart.rhClicked = false;
+										         Gamestart.rmove = false;
+												 Gamestart.bmove = true;
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m-1][j-2] = 1;
+				        					 }
+					        			 }
+			        				 }
 		        					 //右下方跳
-		        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
-		        						 Gamestart.Lredhorse.setLocation(clx[i] + 58,cly[j] + 104);		
-								         Gamestart.rhClicked = false;
-								         Gamestart.rmove = false;
-										 Gamestart.bmove = true;	 
-		        					 }
+			        				 if(j != 9) {
+					        			 if(Gamestart.chesslocation[8-i][j+1] == 0) {
+				        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
+				        						 Gamestart.Lredhorse.setLocation(clx[i] + 58,cly[j] + 104);		
+										         Gamestart.rhClicked = false;
+										         Gamestart.rmove = false;
+												 Gamestart.bmove = true;	
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m-1][j+2] = 1;
+				        					 }
+					        			 }
+			        				 }
 			        			 }
 			        			 if(x > clx[i] - 58 && x < clx[i]) {
 			        				 //向左上方跳
-		        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
-		        						 Gamestart.Lredhorse.setLocation(clx[i] - 58,cly[j] - 104);		
-								         Gamestart.rhClicked = false;
-								         Gamestart.rmove = false;
-										 Gamestart.bmove = true;	 
-		        					 }
+			        				 if(j != 0) {
+					        			 if(Gamestart.chesslocation[8-i][j-1] == 0) {
+				        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
+				        						 Gamestart.Lredhorse.setLocation(clx[i] - 58,cly[j] - 104);		
+										         Gamestart.rhClicked = false;
+										         Gamestart.rmove = false;
+												 Gamestart.bmove = true;
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m+1][j-2] = 1;
+				        					 }
+					        			 }
+			        				 }
 		        					 //左下方跳
-		        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
-		        						 Gamestart.Lredhorse.setLocation(clx[i] - 58,cly[j] + 104);		
-								         Gamestart.rhClicked = false;
-								         Gamestart.rmove = false;
-										 Gamestart.bmove = true;	 
-		        					 }
+			        				 if(j != 9) {
+					        			 if(Gamestart.chesslocation[8-i][j+1] == 0) {
+				        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
+				        						 Gamestart.Lredhorse.setLocation(clx[i] - 58,cly[j] + 104);		
+										         Gamestart.rhClicked = false;
+										         Gamestart.rmove = false;
+												 Gamestart.bmove = true;	
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m+1][j+2] = 1;
+				        					 }
+					        			 }
+			        				 }
 			        			 }
 			        			//左右跳两个格子
 			        			 if(x > clx[i] + 116 && x < clx[i] + 174) {
 			        				 //向右上方跳
-		        					 if(y > cly[j] - 52 && y < cly[j]) {
-		        						 Gamestart.Lredhorse.setLocation(clx[i] + 116,cly[j] - 52);		
-								         Gamestart.rhClicked = false;
-								         Gamestart.rmove = false;
-										 Gamestart.bmove = true;	 
-		        					 }
-		        					 //右下方跳
-		        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
-		        						 Gamestart.Lredhorse.setLocation(clx[i] + 116,cly[j] + 52);		
-								         Gamestart.rhClicked = false;
-								         Gamestart.rmove = false;
-										 Gamestart.bmove = true;	 
-		        					 }
+			        				 if(x != 8) {
+					        			 if(Gamestart.chesslocation[8-i-1][j] == 0) {
+				        					 if(y > cly[j] - 52 && y < cly[j]) {
+				        						 Gamestart.Lredhorse.setLocation(clx[i] + 116,cly[j] - 52);		
+										         Gamestart.rhClicked = false;
+										         Gamestart.rmove = false;
+												 Gamestart.bmove = true;	
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m-2][j-1] = 1;
+				        					 }
+					        			 }
+			        					 //右下方跳
+					        			 if(Gamestart.chesslocation[8-i-1][j] == 0) {
+				        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
+				        						 Gamestart.Lredhorse.setLocation(clx[i] + 116,cly[j] + 52);		
+										         Gamestart.rhClicked = false;
+										         Gamestart.rmove = false;
+												 Gamestart.bmove = true;
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m-2][j+1] = 1;
+				        					 }
+					        			 }
+			        				 }
 			        			 }
 			        			 if(x > clx[i] - 116 && x < clx[i]-58) {
 			        				 //向左上方跳
-		        					 if(y > cly[j] - 52 && y < cly[j]) {
-		        						 Gamestart.Lredhorse.setLocation(clx[i] - 116,cly[j] - 52);		
-								         Gamestart.rhClicked = false;
-								         Gamestart.rmove = false;
-										 Gamestart.bmove = true;	 
-		        					 }
-		        					 //左下方跳
-		        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
-		        						 Gamestart.Lredhorse.setLocation(clx[i] - 116,cly[j] + 52);		
-								         Gamestart.rhClicked = false;
-								         Gamestart.rmove = false;
-										 Gamestart.bmove = true;	 
-		        					 }
+			        				 if(x != 0) {
+				        				 if(Gamestart.chesslocation[8-i+1][j] == 0) {
+				        					 if(y > cly[j] - 52 && y < cly[j]) {
+				        						 Gamestart.Lredhorse.setLocation(clx[i] - 116,cly[j] - 52);		
+										         Gamestart.rhClicked = false;
+										         Gamestart.rmove = false;
+												 Gamestart.bmove = true;	
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m+2][j-1] = 1;
+				        					 }
+				        				 }
+			        					 //左下方跳
+				        				 if(Gamestart.chesslocation[8-i+1][j] == 0) {
+				        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
+				        						 Gamestart.Lredhorse.setLocation(clx[i] - 116,cly[j] + 52);		
+										         Gamestart.rhClicked = false;
+										         Gamestart.rmove = false;
+												 Gamestart.bmove = true;
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m+2][j+1] = 1;
+				        					 }
+				        				 }
+			        				 }
 			        			 }
 			        		 }
 			        	 }
@@ -463,75 +594,125 @@ public class MyFrameMouse implements MouseListener {
 			        			 //左右跳一个格子
 			        			 if(x > clx[i] + 58 && x < clx[i] + 116) {
 			        				 //向右上方跳
-		        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
-		        						 Gamestart.Rredhorse.setLocation(clx[i] + 58,cly[j] - 104);		
-								         Gamestart.rhClicked = false;
-								         Gamestart.rmove = false;
-										 Gamestart.bmove = true;	 
-		        					 }
+			        				 if(j != 0) {
+				        				 if(Gamestart.chesslocation[8-i][j-1] == 0) {
+				        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
+				        						 Gamestart.Rredhorse.setLocation(clx[i] + 58,cly[j] - 104);		
+										         Gamestart.rhClicked = false;
+										         Gamestart.rmove = false;
+												 Gamestart.bmove = true;	
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m-1][j-2] = 1;
+				        					 }
+				        				 }
+			        				 }
 		        					 //右下方跳
-		        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
-		        						 Gamestart.Rredhorse.setLocation(clx[i] + 58,cly[j] + 104);		
-								         Gamestart.rhClicked = false;
-								         Gamestart.rmove = false;
-										 Gamestart.bmove = true;	 
-		        					 }
+			        				 if(j != 9) {
+				        				 if(Gamestart.chesslocation[8-i][j+1] == 0) {
+				        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
+				        						 Gamestart.Rredhorse.setLocation(clx[i] + 58,cly[j] + 104);		
+										         Gamestart.rhClicked = false;
+										         Gamestart.rmove = false;
+												 Gamestart.bmove = true;
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m-1][j+2] = 1;
+				        					 }
+				        				 }
+			        				 }
 			        			 }
 			        			 if(x > clx[i] - 58 && x < clx[i]) {
 			        				 //向左上方跳
-		        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
-		        						 Gamestart.Rredhorse.setLocation(clx[i] - 58,cly[j] - 104);		
-								         Gamestart.rhClicked = false;
-								         Gamestart.rmove = false;
-										 Gamestart.bmove = true;	 
-		        					 }
+			        				 if(j != 0) {
+			        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
+			        						 if(Gamestart.chesslocation[8-i][j-1] == 0) {
+				        						 Gamestart.Rredhorse.setLocation(clx[i] - 58,cly[j] - 104);		
+										         Gamestart.rhClicked = false;
+										         Gamestart.rmove = false;
+												 Gamestart.bmove = true;	
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m+1][j-2] = 1;
+			        						 }
+			        					 }
+			        				 }
 		        					 //左下方跳
-		        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
-		        						 Gamestart.Rredhorse.setLocation(clx[i] - 58,cly[j] + 104);		
-								         Gamestart.rhClicked = false;
-								         Gamestart.rmove = false;
-										 Gamestart.bmove = true;	 
-		        					 }
+			        				 if(j != 9) {
+			        					 if(Gamestart.chesslocation[8-i][j+1] == 0) {
+				        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
+				        						 Gamestart.Rredhorse.setLocation(clx[i] - 58,cly[j] + 104);		
+										         Gamestart.rhClicked = false;
+										         Gamestart.rmove = false;
+												 Gamestart.bmove = true;
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m+1][j+2] = 1;
+				        					 }
+			        					 }
+			        				 }
 			        			 }
 			        			//左右跳两个格子
 			        			 if(x > clx[i] + 116 && x < clx[i] + 174) {
 			        				 //向右上方跳
-		        					 if(y > cly[j] - 52 && y < cly[j]) {
-		        						 Gamestart.Rredhorse.setLocation(clx[i] + 116,cly[j] - 52);		
-								         Gamestart.rhClicked = false;
-								         Gamestart.rmove = false;
-										 Gamestart.bmove = true;	 
-		        					 }
-		        					 //右下方跳
-		        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
-		        						 Gamestart.Rredhorse.setLocation(clx[i] + 116,cly[j] + 52);		
-								         Gamestart.rhClicked = false;
-								         Gamestart.rmove = false;
-										 Gamestart.bmove = true;	 
-		        					 }
+			        				 if(x != 8) {
+				        				 if(Gamestart.chesslocation[8-i-1][j] == 0) {
+				        					 if(y > cly[j] - 52 && y < cly[j]) {
+				        						 Gamestart.Rredhorse.setLocation(clx[i] + 116,cly[j] - 52);		
+										         Gamestart.rhClicked = false;
+										         Gamestart.rmove = false;
+												 Gamestart.bmove = true;	
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m-2][j-1] = 1;
+				        					 }
+				        				 }
+			        					 //右下方跳
+				        				 if(Gamestart.chesslocation[8-i-1][j] == 0) {
+				        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
+				        						 Gamestart.Rredhorse.setLocation(clx[i] + 116,cly[j] + 52);		
+										         Gamestart.rhClicked = false;
+										         Gamestart.rmove = false;
+												 Gamestart.bmove = true;	
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m-2][j+1] = 1;
+				        					 }
+				        				 }
+			        				 }
 			        			 }
 			        			 if(x > clx[i] - 116 && x < clx[i]-58) {
 			        				 //向左上方跳
-		        					 if(y > cly[j] - 52 && y < cly[j]) {
-		        						 Gamestart.Rredhorse.setLocation(clx[i] - 116,cly[j] - 52);		
-								         Gamestart.rhClicked = false;
-								         Gamestart.rmove = false;
-										 Gamestart.bmove = true;	 
-		        					 }
-		        					 //左下方跳
-		        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
-		        						 Gamestart.Rredhorse.setLocation(clx[i] - 116,cly[j] + 52);		
-								         Gamestart.rhClicked = false;
-								         Gamestart.rmove = false;
-										 Gamestart.bmove = true;	 
-		        					 }
+			        				 if(x != 0) {
+				        				 if(Gamestart.chesslocation[8-i+1][j] == 0) {
+				        					 if(y > cly[j] - 52 && y < cly[j]) {
+				        						 Gamestart.Rredhorse.setLocation(clx[i] - 116,cly[j] - 52);		
+										         Gamestart.rhClicked = false;
+										         Gamestart.rmove = false;
+												 Gamestart.bmove = true;	
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m+2][j-1] = 1;
+				        					 }
+				        				 }
+			        					 //左下方跳
+				        				 if(Gamestart.chesslocation[8-i+1][j] == 0) {
+				        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
+				        						 Gamestart.Rredhorse.setLocation(clx[i] - 116,cly[j] + 52);		
+										         Gamestart.rhClicked = false;
+										         Gamestart.rmove = false;
+												 Gamestart.bmove = true;	
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m+2][j+1] = 1;
+				        					 }
+				        				 }
+			        				 }
 			        			 }
 			        		 }
 			        	 }
 		        	 }
 		        }
-			 }else {
-				 ErrorTip.tip();
 			 }
 		 }
          //红象
@@ -544,35 +725,63 @@ public class MyFrameMouse implements MouseListener {
 			        			 if(y > 295) {
 			        				 if(x > clx[i] + 116 && x < clx[i] + 174) {
 				        				 //向右上方跳
-			        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
-			        						 Gamestart.Lredelephant.setLocation(clx[i] + 116,cly[j] - 104);		
-									         Gamestart.reClicked = false;
-									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+			        					 if(j != 0) {
+				        					 if(Gamestart.chesslocation[8-i-1][j-1] == 0) {
+					        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
+					        						 Gamestart.Lredelephant.setLocation(clx[i] + 116,cly[j] - 104);		
+											         Gamestart.reClicked = false;
+											         Gamestart.rmove = false;
+													 Gamestart.bmove = true;	
+													 m = 8 - i;
+													 Gamestart.chesslocation[m][j] = 0;
+													 Gamestart.chesslocation[m-2][j-2] = 1;
+					        					 }
+				        					 }
 			        					 }
 			        					 //右下方跳
-			        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
-			        						 Gamestart.Lredelephant.setLocation(clx[i] + 116,cly[j] + 104);		
-									         Gamestart.reClicked = false;
-									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+			        					 if(j != 9) {
+				        					 if(Gamestart.chesslocation[8-i-1][j+1] == 0) {
+					        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
+					        						 Gamestart.Lredelephant.setLocation(clx[i] + 116,cly[j] + 104);		
+											         Gamestart.reClicked = false;
+											         Gamestart.rmove = false;
+													 Gamestart.bmove = true;	
+													 m = 8 - i;
+													 Gamestart.chesslocation[m][j] = 0;
+													 Gamestart.chesslocation[m-2][j+2] = 1;
+					        					 }
+				        					 }
 			        					 }
 				        			 }
 				        			 if(x > clx[i] - 116 && x < clx[i]-58) {
 				        				 //向左上方跳
-			        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
-			        						 Gamestart.Lredelephant.setLocation(clx[i] - 116,cly[j] - 104);		
-									         Gamestart.reClicked = false;
-									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
-			        					 }
+				        				 if(j != 0) {
+					        				 if(Gamestart.chesslocation[8-i+1][j-1] == 0) {
+					        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
+					        						 Gamestart.Lredelephant.setLocation(clx[i] - 116,cly[j] - 104);		
+											         Gamestart.reClicked = false;
+											         Gamestart.rmove = false;
+													 Gamestart.bmove = true;	
+													 m = 8 - i;
+													 Gamestart.chesslocation[m][j] = 0;
+													 Gamestart.chesslocation[m+2][j-2] = 1;
+					        					 }
+					        				 }
+				        				 }
 			        					 //左下方跳
-			        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
-			        						 Gamestart.Lredelephant.setLocation(clx[i] - 116,cly[j] + 104);		
-									         Gamestart.reClicked = false;
-									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
-			        					 }
+				        				 if(j != 9) {
+					        				 if(Gamestart.chesslocation[8-i+1][j+1] == 0) {
+					        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
+					        						 Gamestart.Lredelephant.setLocation(clx[i] - 116,cly[j] + 104);		
+											         Gamestart.reClicked = false;
+											         Gamestart.rmove = false;
+													 Gamestart.bmove = true;	
+													 m = 8 - i;
+													 Gamestart.chesslocation[m][j] = 0;
+													 Gamestart.chesslocation[m+2][j+2] = 1;
+					        					 }
+					        				 }
+				        				 }
 				        			 }
 			        			 }
 			        		 }
@@ -586,35 +795,63 @@ public class MyFrameMouse implements MouseListener {
 			        			 if(y > 295) {
 			        				 if(x > clx[i] + 116 && x < clx[i] + 174) {
 				        				 //向右上方跳
-			        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
-			        						 Gamestart.Rredelephant.setLocation(clx[i] + 116,cly[j] - 104);		
-									         Gamestart.reClicked = false;
-									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+			        					 if(j != 0) {
+				        					 if(Gamestart.chesslocation[8-i-1][j-1] == 0) {
+					        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
+					        						 Gamestart.Rredelephant.setLocation(clx[i] + 116,cly[j] - 104);		
+											         Gamestart.reClicked = false;
+											         Gamestart.rmove = false;
+													 Gamestart.bmove = true;	
+													 m = 8 - i;
+													 Gamestart.chesslocation[m][j] = 0;
+													 Gamestart.chesslocation[m-2][j-2] = 1;
+					        					 }
+				        					 }
 			        					 }
 			        					 //右下方跳
-			        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
-			        						 Gamestart.Rredelephant.setLocation(clx[i] + 116,cly[j] + 104);		
-									         Gamestart.reClicked = false;
-									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+			        					 if(j != 9) {
+				        					 if(Gamestart.chesslocation[8-i-1][j+1] == 0) {
+					        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
+					        						 Gamestart.Rredelephant.setLocation(clx[i] + 116,cly[j] + 104);		
+											         Gamestart.reClicked = false;
+											         Gamestart.rmove = false;
+													 Gamestart.bmove = true;	
+													 m = 8 - i;
+													 Gamestart.chesslocation[m][j] = 0;
+													 Gamestart.chesslocation[m-2][j+2] = 1;
+					        					 }
+				        					 }
 			        					 }
 				        			 }
 				        			 if(x > clx[i] - 116 && x < clx[i]-58) {
 				        				 //向左上方跳
-			        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
-			        						 Gamestart.Rredelephant.setLocation(clx[i] - 116,cly[j] - 104);		
-									         Gamestart.reClicked = false;
-									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
-			        					 }
+				        				 if(j != 0) {
+					        				 if(Gamestart.chesslocation[8-i+1][j-1] == 0) {
+					        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
+					        						 Gamestart.Rredelephant.setLocation(clx[i] - 116,cly[j] - 104);		
+											         Gamestart.reClicked = false;
+											         Gamestart.rmove = false;
+													 Gamestart.bmove = true;	
+													 m = 8 - i;
+													 Gamestart.chesslocation[m][j] = 0;
+													 Gamestart.chesslocation[m+2][j-2] = 1;
+					        					 }
+					        				 }
+				        				 }
 			        					 //左下方跳
-			        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
-			        						 Gamestart.Rredelephant.setLocation(clx[i] - 116,cly[j] + 104);		
-									         Gamestart.reClicked = false;
-									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
-			        					 }
+				        				 if(j != 9) {
+					        				 if(Gamestart.chesslocation[8-i+1][j+1] == 0) {
+					        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
+					        						 Gamestart.Rredelephant.setLocation(clx[i] - 116,cly[j] + 104);		
+											         Gamestart.reClicked = false;
+											         Gamestart.rmove = false;
+													 Gamestart.bmove = true;
+													 m = 8 - i;
+													 Gamestart.chesslocation[m][j] = 0;
+													 Gamestart.chesslocation[m+2][j+2] = 1;
+					        					 }
+					        				 }
+				        				 }
 				        			 }
 			        			 }
 			        		 }
@@ -637,14 +874,20 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Lredknight.setLocation(clx[i] + 58,cly[j] - 52);		
 									         Gamestart.rkClicked = false;
 									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+											 Gamestart.bmove = true;	
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m-1][j-1] = 1;
 			        					 }
 			        					 //右下方跳
 			        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
 			        						 Gamestart.Lredknight.setLocation(clx[i] + 58,cly[j] + 52);		
 									         Gamestart.rkClicked = false;
 									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m-1][j+1] = 1;
 			        					 }
 				        			 }
 				        			 if(x > clx[i] - 58 && x < clx[i]) {
@@ -653,14 +896,20 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Lredknight.setLocation(clx[i] - 58,cly[j] - 52);		
 									         Gamestart.rkClicked = false;
 									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m+1][j-1] = 1;
 			        					 }
 			        					 //左下方跳
 			        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
 			        						 Gamestart.Lredknight.setLocation(clx[i] - 58,cly[j] + 52);		
 									         Gamestart.rkClicked = false;
 									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m+1][j+1] = 1;
 			        					 }
 				        			 }
 			        			 }
@@ -679,14 +928,20 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Rredknight.setLocation(clx[i] + 58,cly[j] - 52);		
 									         Gamestart.rkClicked = false;
 									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+											 Gamestart.bmove = true;	
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m-1][j-1] = 1;
 			        					 }
 			        					 //右下方跳
 			        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
 			        						 Gamestart.Rredknight.setLocation(clx[i] + 58,cly[j] + 52);		
 									         Gamestart.rkClicked = false;
 									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m-1][j+1] = 1;
 			        					 }
 				        			 }
 				        			 if(x > clx[i] - 58 && x < clx[i]) {
@@ -695,14 +950,20 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Rredknight.setLocation(clx[i] - 58,cly[j] - 52);		
 									         Gamestart.rkClicked = false;
 									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+											 Gamestart.bmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m+1][j-1] = 1;
 			        					 }
 			        					 //左下方跳
 			        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
 			        						 Gamestart.Rredknight.setLocation(clx[i] - 58,cly[j] + 52);		
 									         Gamestart.rkClicked = false;
 									         Gamestart.rmove = false;
-											 Gamestart.bmove = true;	 
+											 Gamestart.bmove = true;	
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m+1][j+1] = 1;
 			        					 }
 				        			 }
 			        			 }
@@ -725,6 +986,9 @@ public class MyFrameMouse implements MouseListener {
 							         Gamestart.rmClicked = false;
 							         Gamestart.rmove = false;
 									 Gamestart.bmove = true;
+									 m = 8 - i;
+									 Gamestart.chesslocation[m][j] = 0;
+									 Gamestart.chesslocation[m][j-1] = 1;
 		        				 }
 		        				 //向左走
 		        				 if(x > clx[i-1] && x < clx[i] && y > cly[j] && y < cly[j] + 52) {
@@ -732,6 +996,9 @@ public class MyFrameMouse implements MouseListener {
 							         Gamestart.rmClicked = false;
 							         Gamestart.rmove = false;
 									 Gamestart.bmove = true;
+									 m = 8 - i;
+									 Gamestart.chesslocation[m][j] = 0;
+									 Gamestart.chesslocation[m+1][j] = 1;
 		        				 }
 		        				 //向右走
 		        				 if(x > clx[i+1] && x < clx[i+2] && y > cly[j] && y < cly[j] + 52) {
@@ -739,6 +1006,9 @@ public class MyFrameMouse implements MouseListener {
 							         Gamestart.rmClicked = false;
 							         Gamestart.rmove = false;
 									 Gamestart.bmove = true;
+									 m = 8 - i;
+									 Gamestart.chesslocation[m][j] = 0;
+									 Gamestart.chesslocation[m-1][j] = 1;
 		        				 }
 		        				 //向后走
 		        				 if(x > clx[i] && x < clx[i+1] && y > cly[j] + 52 && y < cly[j] + 104) {
@@ -746,6 +1016,9 @@ public class MyFrameMouse implements MouseListener {
 							         Gamestart.rmClicked = false;
 							         Gamestart.rmove = false;
 									 Gamestart.bmove = true;
+									 m = 8 - i;
+									 Gamestart.chesslocation[m][j] = 0;
+									 Gamestart.chesslocation[m][j+1] = 1;
 		        				 }
 		        			 }
 		        		 }
@@ -768,6 +1041,9 @@ public class MyFrameMouse implements MouseListener {
 								         Gamestart.bdClicked = false;
 								         Gamestart.bmove = false;
 										 Gamestart.rmove = true;
+										 m = 8 - i;
+										 Gamestart.chesslocation[m][j] = 0;
+										 Gamestart.chesslocation[m][j+1] = 1;
 			        				 }
 			        			 }else {
 			        				 //判断向前走的位置
@@ -777,6 +1053,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.bdClicked = false;
 									         Gamestart.bmove = false;
 											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m][j+1] = 1;
 				        				 }
 			        				 }
 			        				//判断左走的位置
@@ -786,6 +1065,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.bdClicked = false;
 									         Gamestart.bmove = false;
 											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m+1][j] = 1;
 				        				 }
 			        				 }
 			        				 //判断右走的位置
@@ -795,6 +1077,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.bdClicked = false;
 									         Gamestart.bmove = false;
 											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m-1][j] = 1;
 				        				 }
 			        				 }
 			        			 }
@@ -814,6 +1099,9 @@ public class MyFrameMouse implements MouseListener {
 								         Gamestart.bdClicked = false;
 								         Gamestart.bmove = false;
 										 Gamestart.rmove = true;
+										 m = 8 - i;
+										 Gamestart.chesslocation[m][j] = 0;
+										 Gamestart.chesslocation[m][j+1] = 1;
 			        				 }
 			        			 }else {
 			        				 //判断向前走的位置
@@ -823,6 +1111,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.bdClicked = false;
 									         Gamestart.bmove = false;
 											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m][j+1] = 1;
 				        				 }
 			        				 }
 			        				 //判断右走的位置
@@ -832,6 +1123,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.bdClicked = false;
 									         Gamestart.bmove = false;
 											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m-1][j] = 1;
 				        				 }
 			        				 }
 			        				//判断左走的位置
@@ -841,6 +1135,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.bdClicked = false;
 									         Gamestart.bmove = false;
 											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m+1][j] = 1;
 				        				 }
 			        				 }
 			        			 }
@@ -860,6 +1157,9 @@ public class MyFrameMouse implements MouseListener {
 								         Gamestart.bdClicked = false;
 								         Gamestart.bmove = false;
 										 Gamestart.rmove = true;
+										 m = 8 - i;
+										 Gamestart.chesslocation[m][j] = 0;
+										 Gamestart.chesslocation[m][j+1] = 1;
 			        				 }
 			        			 }else {
 			        				 //判断向前走的位置
@@ -869,6 +1169,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.bdClicked = false;
 									         Gamestart.bmove = false;
 											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m][j+1] = 1;
 				        				 }
 			        				 }
 			        				 //判断右走的位置
@@ -878,6 +1181,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.bdClicked = false;
 									         Gamestart.bmove = false;
 											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m-1][j] = 1;
 				        				 }
 			        				 }
 			        				//判断左走的位置
@@ -887,6 +1193,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.bdClicked = false;
 									         Gamestart.bmove = false;
 											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m+1][j] = 1;
 				        				 }
 			        				 }
 			        			 }
@@ -906,6 +1215,9 @@ public class MyFrameMouse implements MouseListener {
 								         Gamestart.bdClicked = false;
 								         Gamestart.bmove = false;
 										 Gamestart.rmove = true;
+										 m = 8 - i;
+										 Gamestart.chesslocation[m][j] = 0;
+										 Gamestart.chesslocation[m][j+1] = 1;
 			        				 }
 			        			 }else {
 			        				 //判断向前走的位置
@@ -915,6 +1227,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.bdClicked = false;
 									         Gamestart.bmove = false;
 											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m][j+1] = 1;
 				        				 }
 			        				 }
 			        				 //判断右走的位置
@@ -924,6 +1239,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.bdClicked = false;
 									         Gamestart.bmove = false;
 											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m-1][j] = 1;
 				        				 }
 			        				 }
 			        				//判断左走的位置
@@ -933,6 +1251,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.bdClicked = false;
 									         Gamestart.bmove = false;
 											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m+1][j] = 1;
 				        				 }
 			        				 }
 			        			 }
@@ -952,6 +1273,9 @@ public class MyFrameMouse implements MouseListener {
 								         Gamestart.bdClicked = false;
 								         Gamestart.bmove = false;
 										 Gamestart.rmove = true;
+										 m = 8 - i;
+										 Gamestart.chesslocation[m][j] = 0;
+										 Gamestart.chesslocation[m][j+1] = 1;
 			        				 }
 			        			 }else {
 			        				 //判断向前走的位置
@@ -961,6 +1285,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.bdClicked = false;
 									         Gamestart.bmove = false;
 											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m][j+1] = 1;
 				        				 }
 			        				 }
 			        				 //判断右走的位置
@@ -970,6 +1297,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.bdClicked = false;
 									         Gamestart.bmove = false;
 											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m-1][j] = 1;
 				        				 }
 			        				 }
 			        				//判断左走的位置
@@ -979,6 +1309,9 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.bdClicked = false;
 									         Gamestart.bmove = false;
 											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m+1][j] = 1;
 				        				 }
 			        				 }
 			        			 }
@@ -987,8 +1320,6 @@ public class MyFrameMouse implements MouseListener {
 			        	 }
 			         }
 				 }
-			 }else {
-				 ErrorTip.tip();
 			 }
          }
          //黑炮
@@ -1004,7 +1335,10 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Lblackgun.setLocation(clx[i],cly[k]);		
 									         Gamestart.bgClicked = false;
 									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
+											 Gamestart.rmove = true;	
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m][k] = 1;
 			        					 }
 			        				 }
 			        			 }
@@ -1015,7 +1349,10 @@ public class MyFrameMouse implements MouseListener {
 									         Gamestart.bgClicked = false;
 									         Gamestart.bmove = false;
 											 Gamestart.rmove = true;	 
-			        					 }
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[8-k][j] = 1;
+			        					 } 
 			        				 }
 			        			 }
 			        		 }
@@ -1033,7 +1370,10 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Rblackgun.setLocation(clx[i],cly[k]);		
 									         Gamestart.bgClicked = false;
 									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
+											 Gamestart.rmove = true;	
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m][k] = 1;
 			        					 }
 			        				 }
 			        			 }
@@ -1043,7 +1383,10 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Rblackgun.setLocation(clx[k],cly[j]);		
 									         Gamestart.bgClicked = false;
 									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
+											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[8-k][j] = 1;
 			        					 }
 			        				 }
 			        			 }
@@ -1051,8 +1394,6 @@ public class MyFrameMouse implements MouseListener {
 			        	 }
 		        	}
 		         }
-			 }else {
-				 ErrorTip.tip();
 			 }
          }
          //黑车
@@ -1068,7 +1409,10 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Lblackcar.setLocation(clx[i],cly[k]);		
 									         Gamestart.bcClicked = false;
 									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
+											 Gamestart.rmove = true;	
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m][k] = 1;
 			        					 }
 			        				 }
 			        			 }
@@ -1078,7 +1422,10 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Lblackcar.setLocation(clx[k],cly[j]);		
 									         Gamestart.bcClicked = false;
 									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
+											 Gamestart.rmove = true;	
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[8-k][j] = 1;
 			        					 }
 			        				 }
 			        			 }
@@ -1096,7 +1443,10 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Rblackcar.setLocation(clx[i],cly[k]);		
 									         Gamestart.rcClicked = false;
 									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
+											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m][k] = 1;
 			        					 }
 			        				 }
 			        			 }
@@ -1106,7 +1456,10 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Rblackcar.setLocation(clx[k],cly[j]);		
 									         Gamestart.rcClicked = false;
 									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
+											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[8-k][j] = 1;
 			        					 }
 			        				 }
 			        			 }
@@ -1114,8 +1467,6 @@ public class MyFrameMouse implements MouseListener {
 			        	 }
 		        	 }
 		        }
-			 }else {
-				 ErrorTip.tip();
 			 }
 		 }
          //黑马
@@ -1128,68 +1479,116 @@ public class MyFrameMouse implements MouseListener {
 			        			 //左右跳一个格子
 			        			 if(x > clx[i] + 58 && x < clx[i] + 116) {
 			        				 //向右上方跳
-		        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
-		        						 Gamestart.Lblackhorse.setLocation(clx[i] + 58,cly[j] - 104);		
-								         Gamestart.bhClicked = false;
-								         Gamestart.bmove = false;
-										 Gamestart.rmove = true;	 
-		        					 }
+			        				 if(j != 0) {
+					        			 if(Gamestart.chesslocation[8-i][j-1] == 0) {
+				        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
+				        						 Gamestart.Lblackhorse.setLocation(clx[i] + 58,cly[j] - 104);		
+										         Gamestart.bhClicked = false;
+										         Gamestart.bmove = false;
+												 Gamestart.rmove = true;	
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m-1][j-2] = 1;
+				        					 }
+					        			 }
+			        				 }
 		        					 //右下方跳
-		        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
-		        						 Gamestart.Lblackhorse.setLocation(clx[i] + 58,cly[j] + 104);		
-								         Gamestart.bhClicked = false;
-								         Gamestart.bmove = false;
-										 Gamestart.rmove = true;	 
-		        					 }
+			        				 if(j != 9) {
+					        			 if(Gamestart.chesslocation[8-i][j+1] == 0) {
+				        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
+				        						 Gamestart.Lblackhorse.setLocation(clx[i] + 58,cly[j] + 104);		
+										         Gamestart.bhClicked = false;
+										         Gamestart.bmove = false;
+												 Gamestart.rmove = true;
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m-1][j+2] = 1;
+				        					 }
+					        			 }
+			        				 }
 			        			 }
 			        			 if(x > clx[i] - 58 && x < clx[i]) {
 			        				 //向左上方跳
-		        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
-		        						 Gamestart.Lblackhorse.setLocation(clx[i] - 58,cly[j] - 104);		
-								         Gamestart.bhClicked = false;
-								         Gamestart.bmove = false;
-										 Gamestart.rmove = true;	 
-		        					 }
+			        				 if(j != 0) {
+					        			 if(Gamestart.chesslocation[8-i][j-1] == 0) {
+				        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
+				        						 Gamestart.Lblackhorse.setLocation(clx[i] - 58,cly[j] - 104);		
+										         Gamestart.bhClicked = false;
+										         Gamestart.bmove = false;
+												 Gamestart.rmove = true;
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m+1][j-2] = 1;
+				        					 }
+					        			 }
+			        				 }
 		        					 //左下方跳
-		        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
-		        						 Gamestart.Lblackhorse.setLocation(clx[i] - 58,cly[j] + 104);		
-								         Gamestart.bhClicked = false;
-								         Gamestart.bmove = false;
-										 Gamestart.rmove = true;	 
-		        					 }
+			        				 if(j != 9) {
+					        			 if(Gamestart.chesslocation[8-i][j+1] == 0) {
+				        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
+				        						 Gamestart.Lblackhorse.setLocation(clx[i] - 58,cly[j] + 104);		
+										         Gamestart.bhClicked = false;
+										         Gamestart.bmove = false;
+												 Gamestart.rmove = true;
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m+1][j+2] = 1;
+				        					 }
+					        			 }
+			        				 }
 			        			 }
 			        			//左右跳两个格子
 			        			 if(x > clx[i] + 116 && x < clx[i] + 174) {
 			        				 //向右上方跳
-		        					 if(y > cly[j] - 52 && y < cly[j]) {
-		        						 Gamestart.Lblackhorse.setLocation(clx[i] + 116,cly[j] - 52);		
-								         Gamestart.bhClicked = false;
-								         Gamestart.bmove = false;
-										 Gamestart.rmove = true;	 
-		        					 }
-		        					 //右下方跳
-		        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
-		        						 Gamestart.Lblackhorse.setLocation(clx[i] + 116,cly[j] + 52);		
-								         Gamestart.bhClicked = false;
-								         Gamestart.bmove = false;
-										 Gamestart.rmove = true;	 
-		        					 }
+			        				 if(x != 8) {
+					        			 if(Gamestart.chesslocation[8-i-1][j] == 0) {
+				        					 if(y > cly[j] - 52 && y < cly[j]) {
+				        						 Gamestart.Lblackhorse.setLocation(clx[i] + 116,cly[j] - 52);		
+										         Gamestart.bhClicked = false;
+										         Gamestart.bmove = false;
+												 Gamestart.rmove = true;
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m-2][j-1] = 1;
+				        					 }
+				        					 //右下方跳
+				        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
+				        						 Gamestart.Lblackhorse.setLocation(clx[i] + 116,cly[j] + 52);		
+										         Gamestart.bhClicked = false;
+										         Gamestart.bmove = false;
+												 Gamestart.rmove = true;
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m-2][j+1] = 1;
+				        					 }
+					        			 }
+			        				 }
 			        			 }
 			        			 if(x > clx[i] - 116 && x < clx[i]-58) {
 			        				 //向左上方跳
-		        					 if(y > cly[j] - 52 && y < cly[j]) {
-		        						 Gamestart.Lblackhorse.setLocation(clx[i] - 116,cly[j] - 52);		
-								         Gamestart.bhClicked = false;
-								         Gamestart.bmove = false;
-										 Gamestart.rmove = true;	 
-		        					 }
-		        					 //左下方跳
-		        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
-		        						 Gamestart.Lblackhorse.setLocation(clx[i] - 116,cly[j] + 52);		
-								         Gamestart.bhClicked = false;
-								         Gamestart.bmove = false;
-										 Gamestart.rmove = true;	 
-		        					 }
+			        				 if(x != 0) {
+					        			 if(Gamestart.chesslocation[8-i+1][j] == 0) {
+				        					 if(y > cly[j] - 52 && y < cly[j]) {
+				        						 Gamestart.Lblackhorse.setLocation(clx[i] - 116,cly[j] - 52);		
+										         Gamestart.bhClicked = false;
+										         Gamestart.bmove = false;
+												 Gamestart.rmove = true;	
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m+2][j-1] = 1;
+				        					 }
+				        					 //左下方跳
+				        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
+				        						 Gamestart.Lblackhorse.setLocation(clx[i] - 116,cly[j] + 52);		
+										         Gamestart.bhClicked = false;
+										         Gamestart.bmove = false;
+												 Gamestart.rmove = true;
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m+2][j+1] = 1;
+				        					 }
+					        			 }
+			        				 }
 			        			 }
 			        		 }
 			        	 }
@@ -1202,77 +1601,122 @@ public class MyFrameMouse implements MouseListener {
 			        			 //左右跳一个格子
 			        			 if(x > clx[i] + 58 && x < clx[i] + 116) {
 			        				 //向右上方跳
-		        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
-		        						 Gamestart.Rblackhorse.setLocation(clx[i] + 58,cly[j] - 104);		
-								         Gamestart.bhClicked = false;
-								         Gamestart.bmove = false;
-										 Gamestart.rmove = true;	 
-		        					 }
+			        				 if(j != 0) {
+					        			 if(Gamestart.chesslocation[8-i][j-1] == 0) {
+				        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
+				        						 Gamestart.Rblackhorse.setLocation(clx[i] + 58,cly[j] - 104);		
+										         Gamestart.bhClicked = false;
+										         Gamestart.bmove = false;
+												 Gamestart.rmove = true;
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m-1][j-2] = 1;
+				        					 }
+					        			 }
+			        				 }
 		        					 //右下方跳
-		        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
-		        						 Gamestart.Rblackhorse.setLocation(clx[i] + 58,cly[j] + 104);		
-								         Gamestart.bhClicked = false;
-								         Gamestart.bmove = false;
-										 Gamestart.rmove = true;	 
-		        					 }
+			        				 if(j != 9) {
+					        			 if(Gamestart.chesslocation[8-i][j+1] == 0) {
+				        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
+				        						 Gamestart.Rblackhorse.setLocation(clx[i] + 58,cly[j] + 104);		
+										         Gamestart.bhClicked = false;
+										         Gamestart.bmove = false;
+												 Gamestart.rmove = true;	
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m-1][j+2] = 1;
+				        					 }
+					        			 }
+			        				 }
 			        			 }
 			        			 if(x > clx[i] - 58 && x < clx[i]) {
 			        				 //向左上方跳
-		        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
-		        						 Gamestart.Rblackhorse.setLocation(clx[i] - 58,cly[j] - 104);		
-								         Gamestart.bhClicked = false;
-								         Gamestart.bmove = false;
-										 Gamestart.rmove = true;	 
-		        					 }
+			        				 if(j != 0) {
+					        			 if(Gamestart.chesslocation[8-i][j-1] == 0) {
+				        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
+				        						 Gamestart.Rblackhorse.setLocation(clx[i] - 58,cly[j] - 104);		
+										         Gamestart.bhClicked = false;
+										         Gamestart.bmove = false;
+												 Gamestart.rmove = true;
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m+1][j-2] = 1;
+				        					 }
+					        			 }
+			        				 }
 		        					 //左下方跳
-		        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
-		        						 Gamestart.Rblackhorse.setLocation(clx[i] - 58,cly[j] + 104);		
-								         Gamestart.bhClicked = false;
-								         Gamestart.bmove = false;
-										 Gamestart.rmove = true;	 
-		        					 }
+			        				 if(j != 9) {
+					        			 if(Gamestart.chesslocation[8-i][j+1] == 0) {
+				        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
+				        						 Gamestart.Rblackhorse.setLocation(clx[i] - 58,cly[j] + 104);		
+										         Gamestart.bhClicked = false;
+										         Gamestart.bmove = false;
+												 Gamestart.rmove = true;	
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m+1][j+2] = 1;
+				        					 }
+					        			 }
+			        				 }
 			        			 }
 			        			//左右跳两个格子
 			        			 if(x > clx[i] + 116 && x < clx[i] + 174) {
 			        				 //向右上方跳
-		        					 if(y > cly[j] - 52 && y < cly[j]) {
-		        						 Gamestart.Rblackhorse.setLocation(clx[i] + 116,cly[j] - 52);		
-								         Gamestart.bhClicked = false;
-								         Gamestart.bmove = false;
-										 Gamestart.rmove = true;	 
-		        					 }
-		        					 //右下方跳
-		        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
-		        						 Gamestart.Rblackhorse.setLocation(clx[i] + 116,cly[j] + 52);		
-								         Gamestart.bhClicked = false;
-								         Gamestart.bmove = false;
-										 Gamestart.rmove = true;	 
-		        					 }
+			        				 if(x != 8) {
+					        			 if(Gamestart.chesslocation[8-i-1][j] == 0) {
+				        					 if(y > cly[j] - 52 && y < cly[j]) {
+				        						 Gamestart.Rblackhorse.setLocation(clx[i] + 116,cly[j] - 52);		
+										         Gamestart.bhClicked = false;
+										         Gamestart.bmove = false;
+												 Gamestart.rmove = true;
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m-2][j-1] = 1;
+				        					 }
+				        					 //右下方跳
+				        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
+				        						 Gamestart.Rblackhorse.setLocation(clx[i] + 116,cly[j] + 52);		
+										         Gamestart.bhClicked = false;
+										         Gamestart.bmove = false;
+												 Gamestart.rmove = true;
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m-2][j+1] = 1;
+				        					 }
+					        			 }
+			        				 }
 			        			 }
 			        			 if(x > clx[i] - 116 && x < clx[i]-58) {
 			        				 //向左上方跳
-		        					 if(y > cly[j] - 52 && y < cly[j]) {
-		        						 Gamestart.Rblackhorse.setLocation(clx[i] - 116,cly[j] - 52);		
-								         Gamestart.bhClicked = false;
-								         Gamestart.bmove = false;
-										 Gamestart.rmove = true;	 
-		        					 }
-		        					 //左下方跳
-		        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
-		        						 Gamestart.Rblackhorse.setLocation(clx[i] - 116,cly[j] + 52);		
-								         Gamestart.bhClicked = false;
-								         Gamestart.bmove = false;
-										 Gamestart.rmove = true;	 
-		        					 }
+			        				 if(x != 8) {
+					        			 if(Gamestart.chesslocation[8-i+1][j] == 0) {
+				        					 if(y > cly[j] - 52 && y < cly[j]) {
+				        						 Gamestart.Rblackhorse.setLocation(clx[i] - 116,cly[j] - 52);		
+										         Gamestart.bhClicked = false;
+										         Gamestart.bmove = false;
+												 Gamestart.rmove = true;
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m+2][j-1] = 1;
+				        					 }
+				        					 //左下方跳
+				        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
+				        						 Gamestart.Rblackhorse.setLocation(clx[i] - 116,cly[j] + 52);		
+										         Gamestart.bhClicked = false;
+										         Gamestart.bmove = false;
+												 Gamestart.rmove = true;
+												 m = 8 - i;
+												 Gamestart.chesslocation[m][j] = 0;
+												 Gamestart.chesslocation[m+2][j+1] = 1;
+				        					 }
+					        			 }
+			        				 }
 			        			 }
 			        		 }
 			        	 }
 		        	 }
 		        }
-			 }else {
-				 ErrorTip.tip();
 			 }
-		 }
          //黑象
          if(Gamestart.beClicked) {
 			 if(Gamestart.bmove) {
@@ -1283,35 +1727,63 @@ public class MyFrameMouse implements MouseListener {
 			        			 if(y < 347) {
 			        				 if(x > clx[i] + 116 && x < clx[i] + 174) {
 				        				 //向右上方跳
-			        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
-			        						 Gamestart.Lblackelephant.setLocation(clx[i] + 116,cly[j] - 104);		
-									         Gamestart.beClicked = false;
-									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
+			        					 if(j != 0) {
+				        					 if(Gamestart.chesslocation[8-i-1][j-1] == 0) {
+					        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
+					        						 Gamestart.Lblackelephant.setLocation(clx[i] + 116,cly[j] - 104);		
+											         Gamestart.beClicked = false;
+											         Gamestart.bmove = false;
+													 Gamestart.rmove = true;	
+													 m = 8 - i;
+													 Gamestart.chesslocation[m][j] = 0;
+													 Gamestart.chesslocation[m-2][j-2] = 1;
+					        					 }
+				        					 }
 			        					 }
 			        					 //右下方跳
-			        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
-			        						 Gamestart.Lblackelephant.setLocation(clx[i] + 116,cly[j] + 104);		
-									         Gamestart.beClicked = false;
-									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
+			        					 if(j != 9) {
+				        					 if(Gamestart.chesslocation[8-i-1][j+1] == 0) {
+					        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
+					        						 Gamestart.Lblackelephant.setLocation(clx[i] + 116,cly[j] + 104);		
+											         Gamestart.beClicked = false;
+											         Gamestart.bmove = false;
+													 Gamestart.rmove = true;
+													 m = 8 - i;
+													 Gamestart.chesslocation[m][j] = 0;
+													 Gamestart.chesslocation[m-2][j+2] = 1;
+					        					 }
+				        					 }
 			        					 }
 				        			 }
 				        			 if(x > clx[i] - 116 && x < clx[i]-58) {
 				        				 //向左上方跳
-			        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
-			        						 Gamestart.Lblackelephant.setLocation(clx[i] - 116,cly[j] - 104);		
-									         Gamestart.beClicked = false;
-									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
-			        					 }
+				        				 if(j != 0) {
+					        				 if(Gamestart.chesslocation[8-i+1][j-1] == 0) {
+					        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
+					        						 Gamestart.Lblackelephant.setLocation(clx[i] - 116,cly[j] - 104);		
+											         Gamestart.beClicked = false;
+											         Gamestart.bmove = false;
+													 Gamestart.rmove = true;
+													 m = 8 - i;
+													 Gamestart.chesslocation[m][j] = 0;
+													 Gamestart.chesslocation[m+2][j-2] = 1;
+					        					 }
+					        				 }
+				        				 }
 			        					 //左下方跳
-			        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
-			        						 Gamestart.Lblackelephant.setLocation(clx[i] - 116,cly[j] + 104);		
-									         Gamestart.beClicked = false;
-									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
-			        					 }
+				        				 if(j != 9) {
+					        				 if(Gamestart.chesslocation[8-i+1][j+1] == 0) {
+					        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
+					        						 Gamestart.Lblackelephant.setLocation(clx[i] - 116,cly[j] + 104);		
+											         Gamestart.beClicked = false;
+											         Gamestart.bmove = false;
+													 Gamestart.rmove = true;
+													 m = 8 - i;
+													 Gamestart.chesslocation[m][j] = 0;
+													 Gamestart.chesslocation[m+2][j+2] = 1;
+					        					 }
+				        					 }
+				        				 }
 				        			 }
 			        			 }
 			        		 }
@@ -1325,35 +1797,63 @@ public class MyFrameMouse implements MouseListener {
 			        			 if(y < 347) {
 			        				 if(x > clx[i] + 116 && x < clx[i] + 174) {
 				        				 //向右上方跳
-			        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
-			        						 Gamestart.Rblackelephant.setLocation(clx[i] + 116,cly[j] - 104);		
-									         Gamestart.beClicked = false;
-									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
+			        					 if(j != 0) {
+				        					 if(Gamestart.chesslocation[8-i-1][j-1] == 0) {
+					        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
+					        						 Gamestart.Rblackelephant.setLocation(clx[i] + 116,cly[j] - 104);		
+											         Gamestart.beClicked = false;
+											         Gamestart.bmove = false;
+													 Gamestart.rmove = true;	
+													 m = 8 - i;
+													 Gamestart.chesslocation[m][j] = 0;
+													 Gamestart.chesslocation[m-2][j-2] = 1;
+					        					 }
+				        					 }
 			        					 }
 			        					 //右下方跳
-			        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
-			        						 Gamestart.Rblackelephant.setLocation(clx[i] + 116,cly[j] + 104);		
-									         Gamestart.beClicked = false;
-									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
+			        					 if(j != 9) {
+				        					 if(Gamestart.chesslocation[8-i-1][j+1] == 0) {
+					        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
+					        						 Gamestart.Rblackelephant.setLocation(clx[i] + 116,cly[j] + 104);		
+											         Gamestart.beClicked = false;
+											         Gamestart.bmove = false;
+													 Gamestart.rmove = true;
+													 m = 8 - i;
+													 Gamestart.chesslocation[m][j] = 0;
+													 Gamestart.chesslocation[m-2][j+2] = 1;
+					        					 }
+				        					 }
 			        					 }
 				        			 }
 				        			 if(x > clx[i] - 116 && x < clx[i]-58) {
 				        				 //向左上方跳
-			        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
-			        						 Gamestart.Rblackelephant.setLocation(clx[i] - 116,cly[j] - 104);		
-									         Gamestart.beClicked = false;
-									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
-			        					 }
+				        				 if(j != 0) {
+					        				 if(Gamestart.chesslocation[8-i+1][j-1] == 0) {
+					        					 if(y > cly[j] - 104 && y < cly[j] - 52) {
+					        						 Gamestart.Rblackelephant.setLocation(clx[i] - 116,cly[j] - 104);		
+											         Gamestart.beClicked = false;
+											         Gamestart.bmove = false;
+													 Gamestart.rmove = true;
+													 m = 8 - i;
+													 Gamestart.chesslocation[m][j] = 0;
+													 Gamestart.chesslocation[m+2][j-2] = 1;
+					        					 }
+					        				 }
+				        				 }
 			        					 //左下方跳
-			        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
-			        						 Gamestart.Rblackelephant.setLocation(clx[i] - 116,cly[j] + 104);		
-									         Gamestart.beClicked = false;
-									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
-			        					 }
+				        				 if(j != 9) {
+					        				 if(Gamestart.chesslocation[8-i-1][j+1] == 0) {
+					        					 if(y > cly[j] + 104 && y < cly[j] + 156) {
+					        						 Gamestart.Rblackelephant.setLocation(clx[i] - 116,cly[j] + 104);		
+											         Gamestart.beClicked = false;
+											         Gamestart.bmove = false;
+													 Gamestart.rmove = true;	
+													 m = 8 - i;
+													 Gamestart.chesslocation[m][j] = 0;
+													 Gamestart.chesslocation[m+2][j+2] = 1;
+					        					 }
+					        				 }
+				        				 }
 				        			 }
 			        			 }
 			        		 }
@@ -1376,14 +1876,20 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Lblackknight.setLocation(clx[i] + 58,cly[j] - 52);		
 									         Gamestart.bkClicked = false;
 									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
+											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m-1][j-1] = 1;
 			        					 }
 			        					 //右下方跳
 			        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
 			        						 Gamestart.Lblackknight.setLocation(clx[i] + 58,cly[j] + 52);		
 									         Gamestart.bkClicked = false;
 									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
+											 Gamestart.rmove = true;	
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m-1][j+1] = 1;
 			        					 }
 				        			 }
 				        			 if(x > clx[i] - 58 && x < clx[i]) {
@@ -1392,14 +1898,20 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Lblackknight.setLocation(clx[i] - 58,cly[j] - 52);		
 									         Gamestart.bkClicked = false;
 									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
+											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m+1][j-1] = 1;
 			        					 }
 			        					 //左下方跳
 			        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
 			        						 Gamestart.Lblackknight.setLocation(clx[i] - 58,cly[j] + 52);		
 									         Gamestart.bkClicked = false;
 									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
+											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m+1][j+1] = 1;
 			        					 }
 				        			 }
 			        			 }
@@ -1418,14 +1930,20 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Rblackknight.setLocation(clx[i] + 58,cly[j] - 52);		
 									         Gamestart.bkClicked = false;
 									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
+											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m-1][j-1] = 1;
 			        					 }
 			        					 //右下方跳
 			        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
 			        						 Gamestart.Rblackknight.setLocation(clx[i] + 58,cly[j] + 52);		
 									         Gamestart.bkClicked = false;
 									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
+											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m-1][j+1] = 1;
 			        					 }
 				        			 }
 				        			 if(x > clx[i] - 58 && x < clx[i]) {
@@ -1434,14 +1952,20 @@ public class MyFrameMouse implements MouseListener {
 			        						 Gamestart.Rblackknight.setLocation(clx[i] - 58,cly[j] - 52);		
 									         Gamestart.bkClicked = false;
 									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
+											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m+1][j-1] = 1;
 			        					 }
 			        					 //左下方跳
 			        					 if(y > cly[j] + 52 && y < cly[j] + 104) {
 			        						 Gamestart.Rblackknight.setLocation(clx[i] - 58,cly[j] + 52);		
 									         Gamestart.bkClicked = false;
 									         Gamestart.bmove = false;
-											 Gamestart.rmove = true;	 
+											 Gamestart.rmove = true;
+											 m = 8 - i;
+											 Gamestart.chesslocation[m][j] = 0;
+											 Gamestart.chesslocation[m+1][j+1] = 1;
 			        					 }
 				        			 }
 			        			 }
@@ -1464,6 +1988,9 @@ public class MyFrameMouse implements MouseListener {
 							         Gamestart.bmClicked = false;
 							         Gamestart.bmove = false;
 									 Gamestart.rmove = true;
+									 m = 8 - i;
+									 Gamestart.chesslocation[m][j] = 0;
+									 Gamestart.chesslocation[m][j-1] = 1;
 		        				 }
 		        				 //向左走
 		        				 if(x > clx[i-1] && x < clx[i] && y > cly[j] && y < cly[j] + 52) {
@@ -1471,6 +1998,9 @@ public class MyFrameMouse implements MouseListener {
 							         Gamestart.bmClicked = false;
 							         Gamestart.bmove = false;
 									 Gamestart.rmove = true;
+									 m = 8 - i;
+									 Gamestart.chesslocation[m][j] = 0;
+									 Gamestart.chesslocation[m+1][j] = 1;
 		        				 }
 		        				 //向右走
 		        				 if(x > clx[i+1] && x < clx[i+2] && y > cly[j] && y < cly[j] + 52) {
@@ -1478,6 +2008,9 @@ public class MyFrameMouse implements MouseListener {
 							         Gamestart.bmClicked = false;
 							         Gamestart.bmove = false;
 									 Gamestart.rmove = true;
+									 m = 8 - i;
+									 Gamestart.chesslocation[m][j] = 0;
+									 Gamestart.chesslocation[m-1][j] = 1;
 		        				 }
 		        				 //向后走
 		        				 if(x > clx[i] && x < clx[i+1] && y > cly[j] + 52 && y < cly[j] + 104) {
@@ -1485,12 +2018,23 @@ public class MyFrameMouse implements MouseListener {
 							         Gamestart.bmClicked = false;
 							         Gamestart.bmove = false;
 									 Gamestart.rmove = true;
+									 m = 8 - i;
+									 Gamestart.chesslocation[m][j] = 0;
+									 Gamestart.chesslocation[m][j+1] = 1;
 		        				 }
 		        			 }
 		        		 }
 		        	 }
 	        	}
 			 }
+         }
+         for(i = 0;i <= 8;i ++) {
+        	 for(j = 0;j <=9;j ++) {
+        		 System.out.print(Gamestart.chesslocation[i][j] + " ");
+        	 }
+        	 System.out.println();
+         }
+         System.out.println();
          }
      }
 	@Override

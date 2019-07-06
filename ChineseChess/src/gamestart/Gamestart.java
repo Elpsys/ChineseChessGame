@@ -24,6 +24,10 @@ import homepage.Homepage;
 
 
 public class Gamestart extends JFrame{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static JFrame frame;
 	static boolean rdClicked,bdClicked,rgClicked,bgClicked,rcClicked,bcClicked,rhClicked,bhClicked,reClicked,beClicked,rkClicked,bkClicked,rmClicked,bmClicked;
 	static boolean rmove,bmove;
@@ -34,17 +38,16 @@ public class Gamestart extends JFrame{
 	static int tips = 1;
 	static int [] clx = {68,126,184,242,300,358,416,474,532};
 	static int [] cly = {87,139,191,243,295,347,399,451,503,555};
-	static int chesslocation [][] = {//ºìÉ«µÄ1¿ªÍ·£¬ºÚÉ«µÄ2¿ªÍ·
-			{211,212,213,214,215,216,217,218,219},   //211ºÚ×ó³µ£¬212ºÚ×óÂí£¬213ºÚ×óÏó£¬214ºÚ×óÊ¿£¬215Ë§£¬26ºÚÅÚ×ó£¬21-25Ð¡±ø
-			{0,0,0,0,0,0,0,0,0},
-			{0,26,0,0,0,0,0,27,0},
-			{21,0,22,0,23,0,24,0,25},
-			{0,0,0,0,0,0,0,0,0},
-			{0,0,0,0,0,0,0,0,0},
-			{11,0,12,0,13,0,14,0,15},
-			{0,16,0,0,0,0,0,17,0},
-			{0,0,0,0,0,0,0,0,0},
-			{111,112,113,114,115,116,117,118,119}	//111ºì×ó³µ£¬112ºì×óÂí£¬113ºì×óÏó£¬114ºì×óÊ¿£¬115Ë§£¬16ºìÅÚ×ó£¬11-15Ð¡±ø
+	static int chesslocation [][] = {
+			{1,0,0,1,0,0,1,0,0,1},   
+			{1,0,1,0,0,0,0,1,0,1},
+			{1,0,0,1,0,0,1,0,0,1},
+			{1,0,0,0,0,0,0,0,0,1},
+			{1,0,0,1,0,0,1,0,0,1},
+			{1,0,0,0,0,0,0,0,0,1},
+			{1,0,0,1,0,0,1,0,0,1},
+			{1,0,1,0,0,0,0,1,0,1},
+			{1,0,0,1,0,0,1,0,0,1}	
 	};
 	public static void chessboard()
 	{
@@ -120,6 +123,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				rdClicked = true;
 				rd = 1;   
+				eatchessrd1();
 			}
 		});
 		//ºì·½±ø2
@@ -133,6 +137,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				rdClicked = true;
 				rd = 2;
+				eatchessrd2();
 			}
 		});
 		//ºì·½±ø3
@@ -146,6 +151,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				rdClicked = true;
 				rd = 3;
+				eatchessrd3();
 			}
 		});
 		//ºì·½±ø4
@@ -159,6 +165,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				rdClicked = true;
 				rd = 4;
+				eatchessrd4();
 			}
 		});
 		//ºì·½±ø5
@@ -172,6 +179,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				rdClicked = true;
 				rd = 5;
+				eatchessrd5();
 			}
 		});
 		//ºì·½ÅÚ×ó
@@ -187,6 +195,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				rgClicked = true;
 				rg = 1;
+				eatchessrg1();
 			}
 		});		
 		//ºì·½ÅÚÓÒ
@@ -200,6 +209,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				rgClicked = true;
 				rg = 2;
+				eatchessrg2();
 			}
 		});	
 		//ºì³µ×ó
@@ -215,6 +225,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				rcClicked = true;
 				rc = 1;
+				eatchessrc1();
 			}
 		});	
 		//ºì³µÓÒ
@@ -228,6 +239,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				rcClicked = true;
 				rc = 2;
+				eatchessrc2();
 			}
 		});	
 		//ºìÂí×ó
@@ -243,6 +255,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				rhClicked = true;
 				rh = 1;
+				eatchessrh1();
 			}
 		});		
 		//ºìÂíÓÒ
@@ -256,6 +269,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				rhClicked = true;
 				rh = 2;
+				eatchessrh2();
 			}
 		});	
 		//ºìÏó×ó
@@ -271,6 +285,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				reClicked = true;
 				re = 1;
+				eatchessre1();
 			}
 		});		
 		//ºìÏóÓÒ
@@ -284,6 +299,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				reClicked = true;
 				re = 2;
+				eatchessre2();
 			}
 		});	
 		//ºìÊ¿×ó
@@ -299,6 +315,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				rkClicked = true;
 				rk = 1;
+				eatchessrk1();
 			}
 		});		
 		//ºìÊ¿ÓÒ
@@ -312,6 +329,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				rkClicked = true;
 				rk = 2;
+				eatchessrk2();
 			}
 		});	
 		//ºìË§
@@ -326,6 +344,10 @@ public class Gamestart extends JFrame{
 		redcommander.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				rmClicked = true;
+				eatchessrm();
+		 		if(Gamestart.redcommander.getX() == 593 && Gamestart.redcommander.getY() == 53) {
+		 			 Victory.blackV();
+		 		}
 			}
 		});			
 		
@@ -344,10 +366,8 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				bdClicked = true;
 				bd = 1;
-				if(rdClicked) {
-					eatchessbd1();
-					
-				}
+				eatchessbd1();
+				
 			}
 		});
 		//ºÚ·½±ø2
@@ -361,6 +381,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				bdClicked = true;
 				bd = 2;
+				eatchessbd2();
 			}
 		});
 		//ºÚ·½±ø3
@@ -374,6 +395,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				bdClicked = true;
 				bd = 3;
+				eatchessbd3();
 			}
 		});
 		//ºÚ·½±ø4
@@ -387,6 +409,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				bdClicked = true;
 				bd = 4;
+				eatchessbd4();
 			}
 		});
 		//ºÚ·½±ø5
@@ -400,6 +423,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				bdClicked = true;
 				bd = 5;
+				eatchessbd5();
 			}
 		});
 		//ºÚ·½ÅÚ×ó
@@ -415,6 +439,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				bgClicked = true;
 				bg = 1;
+				eatchessbg1();
 			}
 		});		
 		//ºÚ·½ÅÚÓÒ
@@ -428,6 +453,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				bgClicked = true;
 				bg = 2;
+				eatchessbg2();
 			}
 		});	
 		//ºÚ³µ×ó
@@ -443,6 +469,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				bcClicked = true;
 				bc = 1;
+				eatchessbc1();
 			}
 		});	
 		//ºÚ³µÓÒ
@@ -456,6 +483,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				bcClicked = true;
 				bc = 2;
+				eatchessbc2();
 			}
 		});	
 		//ºÚÂí×ó
@@ -471,6 +499,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				bhClicked = true;
 				bh = 1;
+				eatchessbh1();
 			}
 		});		
 		//ºÚÂíÓÒ
@@ -484,6 +513,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				bhClicked = true;
 				bh = 2;
+				eatchessbh2();
 			}
 		});	
 		//ºÚÏó×ó
@@ -499,6 +529,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				beClicked = true;
 				be = 1;
+				eatchessbe1();
 			}
 		});		
 		//ºÚÏóÓÒ
@@ -512,6 +543,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				beClicked = true;
 				be = 2;
+				eatchessbe2();
 			}
 		});	
 		//ºÚÊ¿×ó
@@ -527,6 +559,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				bkClicked = true;
 				bk = 1;
+				eatchessbk1();
 			}
 		});		
 		//ºÚÊ¿ÓÒ
@@ -540,6 +573,7 @@ public class Gamestart extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				bkClicked = true;
 				bk = 2;
+				eatchessbk2();
 			}
 		});	
 		//ºÚË§
@@ -554,6 +588,10 @@ public class Gamestart extends JFrame{
 		blackcommander.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bmClicked = true;
+				eatchessbm();
+				if(blackcommander.getX() == 593 && blackcommander.getY() == 53) {
+		 			 Victory.redV();
+		 		}
 			}
 		});		
 		frame.addMouseListener(new MyFrameMouse());
@@ -563,7 +601,7 @@ public class Gamestart extends JFrame{
 			Tip.tip();
 			tips = 2;
 		}
-		
+
 	}
 	public static void main(String[] args) {
 		chessboard();
@@ -572,143 +610,14595 @@ public class Gamestart extends JFrame{
 		frame.dispose();
 	}
 	public static void eatchessbd1() {
-		int i,j;
+		int i,j,k,m;
+		int number = 0;
 		for(i = 0;i <= 8;i ++) {
-			for(j = 0;j <=9;j ++) {
+			for(j = 0;j <= 9;j ++) {
 				if(blacksoldier1.getX() == clx[i] && blacksoldier1.getY() == cly[j]) {
-					if(rd == 1) {
-						//ºìÉ«±øÔÚºÚ±øºó±ß
-						if(redsoldier1.getX() == clx[i] && redsoldier1.getY() == cly[j+1]) {
-							blacksoldier1.setLocation(593, 53);
-							redsoldier1.setLocation(clx[i], cly[j]);
-							rdClicked = false;
-							rmove = false;
-							bmove = true;
+					if(rdClicked) {
+						if(rd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier1.getX() == clx[m] && redsoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier1.setLocation(593, 53);
+											redsoldier1.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
 						}
-						//ºì±øÔÚºÚ±øÓÒ±ß
-						if(redsoldier1.getX() == clx[i]+58 && redsoldier1.getY() == cly[j]) {
-							blacksoldier1.setLocation(593, 53);
-							redsoldier1.setLocation(clx[i], cly[j]);
-							rdClicked = false;
-							rmove = false;
-							bmove = true;
+						if(rd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier2.getX() == clx[m] && redsoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier2.setLocation(593, 53);
+											redsoldier2.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
 						}
-						//ºì±øÔÚºÚ±ø×ó±ß
-						if(redsoldier1.getX() == clx[i]-58 && redsoldier1.getY() == cly[j]) {
-							blacksoldier1.setLocation(593, 53);
-							redsoldier1.setLocation(clx[i], cly[j]);
-							rdClicked = false;
-							rmove = false;
-							bmove = true;
+						if(rd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier3.getX() == clx[m] && redsoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier1.setLocation(593, 53);
+											redsoldier3.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
 						}
-					}
-					if(rd == 2) {
-						//ºìÉ«±øÔÚºÚ±øºó±ß
-						if(redsoldier2.getX() == clx[i] && redsoldier2.getY() == cly[j+1]) {
-							blacksoldier1.setLocation(593, 53);
-							redsoldier2.setLocation(clx[i], cly[j]);
-							rdClicked = false;
-							rmove = false;
-							bmove = true;
+						if(rd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier4.getX() == clx[m] && redsoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier1.setLocation(593, 53);
+											redsoldier4.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
 						}
-						//ºì±øÔÚºÚ±øÓÒ±ß
-						if(redsoldier2.getX() == clx[i]+58 && redsoldier2.getY() == cly[j]) {
-							blacksoldier1.setLocation(593, 53);
-							redsoldier2.setLocation(clx[i], cly[j]);
-							rdClicked = false;
-							rmove = false;
-							bmove = true;
-						}
-						//ºì±øÔÚºÚ±ø×ó±ß
-						if(redsoldier2.getX() == clx[i]-58 && redsoldier2.getY() == cly[j]) {
-							blacksoldier1.setLocation(593, 53);
-							redsoldier2.setLocation(clx[i], cly[j]);
-							rdClicked = false;
-							rmove = false;
-							bmove = true;
-						}
-					}
-					if(rd == 3) {
-						//ºìÉ«±øÔÚºÚ±øºó±ß
-						if(redsoldier3.getX() == clx[i] && redsoldier3.getY() == cly[j+1]) {
-							blacksoldier1.setLocation(593, 53);
-							redsoldier3.setLocation(clx[i], cly[j]);
-							rdClicked = false;
-							rmove = false;
-							bmove = true;
-						}
-						//ºì±øÔÚºÚ±øÓÒ±ß
-						if(redsoldier3.getX() == clx[i]+58 && redsoldier3.getY() == cly[j]) {
-							blacksoldier1.setLocation(593, 53);
-							redsoldier3.setLocation(clx[i], cly[j]);
-							rdClicked = false;
-							rmove = false;
-							bmove = true;
-						}
-						//ºì±øÔÚºÚ±ø×ó±ß
-						if(redsoldier3.getX() == clx[i]-58 && redsoldier3.getY() == cly[j]) {
-							blacksoldier1.setLocation(593, 53);
-							redsoldier3.setLocation(clx[i], cly[j]);
-							rdClicked = false;
-							rmove = false;
-							bmove = true;
-						}
-					}
-					if(rd == 4) {
-						//ºìÉ«±øÔÚºÚ±øºó±ß
-						if(redsoldier4.getX() == clx[i] && redsoldier4.getY() == cly[j+1]) {
-							blacksoldier1.setLocation(593, 53);
-							redsoldier4.setLocation(clx[i], cly[j]);
-							rdClicked = false;
-							rmove = false;
-							bmove = true;
-						}
-						//ºì±øÔÚºÚ±øÓÒ±ß
-						if(redsoldier4.getX() == clx[i]+58 && redsoldier4.getY() == cly[j]) {
-							blacksoldier1.setLocation(593, 53);
-							redsoldier4.setLocation(clx[i], cly[j]);
-							rdClicked = false;
-							rmove = false;
-							bmove = true;
-						}
-						//ºì±øÔÚºÚ±ø×ó±ß
-						if(redsoldier4.getX() == clx[i]-58 && redsoldier4.getY() == cly[j]) {
-							blacksoldier1.setLocation(593, 53);
-							redsoldier4.setLocation(clx[i], cly[j]);
-							rdClicked = false;
-							rmove = false;
-							bmove = true;
+						if(rd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier5.getX() == clx[m] && redsoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier1.setLocation(593, 53);
+											redsoldier5.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
 						}
 					}
-					if(rd == 5) {
-						//ºìÉ«±øÔÚºÚ±øºó±ß
-						if(redsoldier5.getX() == clx[i] && redsoldier5.getY() == cly[j+1]) {
-							blacksoldier1.setLocation(593, 53);
-							redsoldier5.setLocation(clx[i], cly[j]);
-							rdClicked = false;
-							rmove = false;
-							bmove = true;
+					if(rgClicked) {
+						if(rg == 1) {
+							if(Lredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blacksoldier1.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blacksoldier1.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
 						}
-						//ºì±øÔÚºÚ±øÓÒ±ß
-						if(redsoldier5.getX() == clx[i]+58 && redsoldier5.getY() == cly[j]) {
-							blacksoldier1.setLocation(593, 53);
-							redsoldier5.setLocation(clx[i], cly[j]);
-							rdClicked = false;
-							rmove = false;
-							bmove = true;
-						}
-						//ºì±øÔÚºÚ±ø×ó±ß
-						if(redsoldier5.getX() == clx[i]-58 && redsoldier5.getY() == cly[j]) {
-							blacksoldier1.setLocation(593, 53);
-							redsoldier5.setLocation(clx[i], cly[j]);
-							rdClicked = false;
-							rmove = false;
-							bmove = true;
+						if(rg == 2) {
+							if(Rredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blacksoldier1.setLocation(593, 53);
+											Rredgun.setLocation(clx[8-i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blacksoldier1.setLocation(593, 53);
+											Rredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
 						}
 					}
-				}
+					if(rhClicked) {
+						if(rh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredhorse.getX() == clx[m] && Lredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											blacksoldier1.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											blacksoldier1.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredhorse.getX() == clx[m] && Rredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											blacksoldier1.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											blacksoldier1.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rcClicked) {
+						if(rc == 1) {
+							if(Lredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blacksoldier1.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blacksoldier1.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rc == 2) {
+							if(Rredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blacksoldier1.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blacksoldier1.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(reClicked) {
+						if(re == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredelephant.getX() == clx[m] && Lredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											blacksoldier1.setLocation(593, 53);
+											Lredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredelephant.getX() == clx[m] && Rredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											blacksoldier1.setLocation(593, 53);
+											Rredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rkClicked) {
+						if(rk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredknight.getX() == clx[m] && Lredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											blacksoldier1.setLocation(593, 53);
+											Lredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredknight.getX() == clx[m] && Rredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											blacksoldier1.setLocation(593, 53);
+											Rredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(redcommander.getX() == clx[m] && redcommander.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										blacksoldier1.setLocation(593, 53);
+										redcommander.setLocation(clx[i], cly[j]);
+										rmClicked = false;
+										rmove = false;
+										bmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
 			}
 		}
 	}
-
+	public static void eatchessbd2() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(blacksoldier2.getX() == clx[i] && blacksoldier2.getY() == cly[j]) {
+					if(rdClicked) {
+						if(rd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier1.getX() == clx[m] && redsoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier2.setLocation(593, 53);
+											redsoldier1.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier2.getX() == clx[m] && redsoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier2.setLocation(593, 53);
+											redsoldier2.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier3.getX() == clx[m] && redsoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier2.setLocation(593, 53);
+											redsoldier3.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier4.getX() == clx[m] && redsoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier2.setLocation(593, 53);
+											redsoldier4.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier5.getX() == clx[m] && redsoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier2.setLocation(593, 53);
+											redsoldier5.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rgClicked) {
+						if(rg == 1) {
+							if(Lredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blacksoldier2.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blacksoldier2.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rg == 2) {
+							if(Rredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blacksoldier2.setLocation(593, 53);
+											Rredgun.setLocation(clx[8-i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blacksoldier2.setLocation(593, 53);
+											Rredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rhClicked) {
+						if(rh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredhorse.getX() == clx[m] && Lredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											blacksoldier2.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											blacksoldier2.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredhorse.getX() == clx[m] && Rredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											blacksoldier2.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											blacksoldier2.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rcClicked) {
+						if(rc == 1) {
+							if(Lredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blacksoldier2.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blacksoldier2.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rc == 2) {
+							if(Rredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blacksoldier2.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blacksoldier2.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(reClicked) {
+						if(re == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredelephant.getX() == clx[m] && Lredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											blacksoldier2.setLocation(593, 53);
+											Lredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredelephant.getX() == clx[m] && Rredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											blacksoldier2.setLocation(593, 53);
+											Rredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rkClicked) {
+						if(rk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredknight.getX() == clx[m] && Lredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											blacksoldier2.setLocation(593, 53);
+											Lredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredknight.getX() == clx[m] && Rredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											blacksoldier2.setLocation(593, 53);
+											Rredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(redcommander.getX() == clx[m] && redcommander.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										blacksoldier2.setLocation(593, 53);
+										redcommander.setLocation(clx[i], cly[j]);
+										rmClicked = false;
+										rmove = false;
+										bmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessbd3() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(blacksoldier3.getX() == clx[i] && blacksoldier3.getY() == cly[j]) {
+					if(rdClicked) {
+						if(rd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier1.getX() == clx[m] && redsoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier3.setLocation(593, 53);
+											redsoldier1.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier2.getX() == clx[m] && redsoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier3.setLocation(593, 53);
+											redsoldier2.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier3.getX() == clx[m] && redsoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier3.setLocation(593, 53);
+											redsoldier3.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier4.getX() == clx[m] && redsoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier3.setLocation(593, 53);
+											redsoldier4.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier5.getX() == clx[m] && redsoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier3.setLocation(593, 53);
+											redsoldier5.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rgClicked) {
+						if(rg == 1) {
+							if(Lredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blacksoldier3.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blacksoldier3.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rg == 2) {
+							if(Rredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blacksoldier3.setLocation(593, 53);
+											Rredgun.setLocation(clx[8-i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blacksoldier3.setLocation(593, 53);
+											Rredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rhClicked) {
+						if(rh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredhorse.getX() == clx[m] && Lredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											blacksoldier3.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											blacksoldier3.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredhorse.getX() == clx[m] && Rredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											blacksoldier3.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											blacksoldier3.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rcClicked) {
+						if(rc == 1) {
+							if(Lredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blacksoldier3.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blacksoldier3.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rc == 2) {
+							if(Rredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blacksoldier3.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blacksoldier3.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(reClicked) {
+						if(re == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredelephant.getX() == clx[m] && Lredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											blacksoldier3.setLocation(593, 53);
+											Lredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredelephant.getX() == clx[m] && Rredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											blacksoldier3.setLocation(593, 53);
+											Rredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rkClicked) {
+						if(rk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredknight.getX() == clx[m] && Lredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											blacksoldier3.setLocation(593, 53);
+											Lredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredknight.getX() == clx[m] && Rredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											blacksoldier3.setLocation(593, 53);
+											Rredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(redcommander.getX() == clx[m] && redcommander.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										blacksoldier3.setLocation(593, 53);
+										redcommander.setLocation(clx[i], cly[j]);
+										rmClicked = false;
+										rmove = false;
+										bmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessbd4() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(blacksoldier4.getX() == clx[i] && blacksoldier4.getY() == cly[j]) {
+					if(rdClicked) {
+						if(rd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier1.getX() == clx[m] && redsoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier4.setLocation(593, 53);
+											redsoldier1.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier2.getX() == clx[m] && redsoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier4.setLocation(593, 53);
+											redsoldier2.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier3.getX() == clx[m] && redsoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier4.setLocation(593, 53);
+											redsoldier3.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier4.getX() == clx[m] && redsoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier4.setLocation(593, 53);
+											redsoldier4.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier5.getX() == clx[m] && redsoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier4.setLocation(593, 53);
+											redsoldier5.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rgClicked) {
+						if(rg == 1) {
+							if(Lredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blacksoldier4.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blacksoldier4.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rg == 2) {
+							if(Rredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blacksoldier4.setLocation(593, 53);
+											Rredgun.setLocation(clx[8-i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blacksoldier4.setLocation(593, 53);
+											Rredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rhClicked) {
+						if(rh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredhorse.getX() == clx[m] && Lredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											blacksoldier4.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											blacksoldier4.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredhorse.getX() == clx[m] && Rredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											blacksoldier4.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											blacksoldier4.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rcClicked) {
+						if(rc == 1) {
+							if(Lredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blacksoldier4.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blacksoldier4.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rc == 2) {
+							if(Rredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blacksoldier4.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blacksoldier4.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(reClicked) {
+						if(re == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredelephant.getX() == clx[m] && Lredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											blacksoldier4.setLocation(593, 53);
+											Lredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredelephant.getX() == clx[m] && Rredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											blacksoldier4.setLocation(593, 53);
+											Rredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rkClicked) {
+						if(rk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredknight.getX() == clx[m] && Lredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											blacksoldier4.setLocation(593, 53);
+											Lredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredknight.getX() == clx[m] && Rredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											blacksoldier4.setLocation(593, 53);
+											Rredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(redcommander.getX() == clx[m] && redcommander.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										blacksoldier4.setLocation(593, 53);
+										redcommander.setLocation(clx[i], cly[j]);
+										rmClicked = false;
+										rmove = false;
+										bmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessbd5() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(blacksoldier5.getX() == clx[i] && blacksoldier5.getY() == cly[j]) {
+					if(rdClicked) {
+						if(rd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier1.getX() == clx[m] && redsoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier5.setLocation(593, 53);
+											redsoldier1.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier2.getX() == clx[m] && redsoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier5.setLocation(593, 53);
+											redsoldier2.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier3.getX() == clx[m] && redsoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier5.setLocation(593, 53);
+											redsoldier3.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier4.getX() == clx[m] && redsoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier5.setLocation(593, 53);
+											redsoldier4.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier5.getX() == clx[m] && redsoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blacksoldier5.setLocation(593, 53);
+											redsoldier5.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rgClicked) {
+						if(rg == 1) {
+							if(Lredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blacksoldier5.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blacksoldier5.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rg == 2) {
+							if(Rredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blacksoldier5.setLocation(593, 53);
+											Rredgun.setLocation(clx[8-i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blacksoldier5.setLocation(593, 53);
+											Rredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rhClicked) {
+						if(rh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredhorse.getX() == clx[m] && Lredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											blacksoldier5.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											blacksoldier5.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredhorse.getX() == clx[m] && Rredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											blacksoldier5.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											blacksoldier5.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rcClicked) {
+						if(rc == 1) {
+							if(Lredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blacksoldier5.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blacksoldier5.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rc == 2) {
+							if(Rredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blacksoldier5.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blacksoldier5.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(reClicked) {
+						if(re == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredelephant.getX() == clx[m] && Lredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											blacksoldier5.setLocation(593, 53);
+											Lredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredelephant.getX() == clx[m] && Rredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											blacksoldier5.setLocation(593, 53);
+											Rredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rkClicked) {
+						if(rk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredknight.getX() == clx[m] && Lredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											blacksoldier5.setLocation(593, 53);
+											Lredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredknight.getX() == clx[m] && Rredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											blacksoldier5.setLocation(593, 53);
+											Rredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(redcommander.getX() == clx[m] && redcommander.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										blacksoldier5.setLocation(593, 53);
+										redcommander.setLocation(clx[i], cly[j]);
+										rmClicked = false;
+										rmove = false;
+										bmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessbg1() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(Lblackgun.getX() == clx[i] && Lblackgun.getY() == cly[j]) {
+					if(rdClicked) {
+						if(rd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier1.getX() == clx[m] && redsoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackgun.setLocation(593, 53);
+											redsoldier1.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier2.getX() == clx[m] && redsoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackgun.setLocation(593, 53);
+											redsoldier2.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier3.getX() == clx[m] && redsoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackgun.setLocation(593, 53);
+											redsoldier3.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier4.getX() == clx[m] && redsoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackgun.setLocation(593, 53);
+											redsoldier4.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier5.getX() == clx[m] && redsoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackgun.setLocation(593, 53);
+											redsoldier5.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rgClicked) {
+						if(rg == 1) {
+							if(Lredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lblackgun.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lblackgun.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rg == 2) {
+							if(Rredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lblackgun.setLocation(593, 53);
+											Rredgun.setLocation(clx[8-i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lblackgun.setLocation(593, 53);
+											Rredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rhClicked) {
+						if(rh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredhorse.getX() == clx[m] && Lredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Lblackgun.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Lblackgun.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredhorse.getX() == clx[m] && Rredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Lblackgun.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Lblackgun.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rcClicked) {
+						if(rc == 1) {
+							if(Lredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lblackgun.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lblackgun.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rc == 2) {
+							if(Rredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lblackgun.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lblackgun.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(reClicked) {
+						if(re == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredelephant.getX() == clx[m] && Lredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Lblackgun.setLocation(593, 53);
+											Lredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredelephant.getX() == clx[m] && Rredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Lblackgun.setLocation(593, 53);
+											Rredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rkClicked) {
+						if(rk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredknight.getX() == clx[m] && Lredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Lblackgun.setLocation(593, 53);
+											Lredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredknight.getX() == clx[m] && Rredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Lblackgun.setLocation(593, 53);
+											Rredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(redcommander.getX() == clx[m] && redcommander.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										Lblackgun.setLocation(593, 53);
+										redcommander.setLocation(clx[i], cly[j]);
+										rmClicked = false;
+										rmove = false;
+										bmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessbg2() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(Rblackgun.getX() == clx[i] && Rblackgun.getY() == cly[j]) {
+					if(rdClicked) {
+						if(rd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier1.getX() == clx[m] && redsoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackgun.setLocation(593, 53);
+											redsoldier1.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier2.getX() == clx[m] && redsoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackgun.setLocation(593, 53);
+											redsoldier2.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier3.getX() == clx[m] && redsoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackgun.setLocation(593, 53);
+											redsoldier3.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier4.getX() == clx[m] && redsoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackgun.setLocation(593, 53);
+											redsoldier4.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier5.getX() == clx[m] && redsoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackgun.setLocation(593, 53);
+											redsoldier5.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rgClicked) {
+						if(rg == 1) {
+							if(Lredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rblackgun.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rblackgun.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rg == 2) {
+							if(Rredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rblackgun.setLocation(593, 53);
+											Rredgun.setLocation(clx[8-i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rblackgun.setLocation(593, 53);
+											Rredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rhClicked) {
+						if(rh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredhorse.getX() == clx[m] && Lredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Rblackgun.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Rblackgun.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredhorse.getX() == clx[m] && Rredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Rblackgun.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Rblackgun.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rcClicked) {
+						if(rc == 1) {
+							if(Lredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rblackgun.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rblackgun.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rc == 2) {
+							if(Rredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rblackgun.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rblackgun.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(reClicked) {
+						if(re == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredelephant.getX() == clx[m] && Lredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Rblackgun.setLocation(593, 53);
+											Lredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredelephant.getX() == clx[m] && Rredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Rblackgun.setLocation(593, 53);
+											Rredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rkClicked) {
+						if(rk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredknight.getX() == clx[m] && Lredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Rblackgun.setLocation(593, 53);
+											Lredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredknight.getX() == clx[m] && Rredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Rblackgun.setLocation(593, 53);
+											Rredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(redcommander.getX() == clx[m] && redcommander.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										Rblackgun.setLocation(593, 53);
+										redcommander.setLocation(clx[i], cly[j]);
+										rmClicked = false;
+										rmove = false;
+										bmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessbc1() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(Lblackcar.getX() == clx[i] && Lblackcar.getY() == cly[j]) {
+					if(rdClicked) {
+						if(rd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier1.getX() == clx[m] && redsoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackcar.setLocation(593, 53);
+											redsoldier1.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier2.getX() == clx[m] && redsoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackcar.setLocation(593, 53);
+											redsoldier2.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier3.getX() == clx[m] && redsoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackcar.setLocation(593, 53);
+											redsoldier3.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier4.getX() == clx[m] && redsoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackcar.setLocation(593, 53);
+											redsoldier4.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier5.getX() == clx[m] && redsoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackcar.setLocation(593, 53);
+											redsoldier5.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rgClicked) {
+						if(rg == 1) {
+							if(Lredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lblackcar.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lblackcar.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rg == 2) {
+							if(Rredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lblackcar.setLocation(593, 53);
+											Rredgun.setLocation(clx[8-i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lblackcar.setLocation(593, 53);
+											Rredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rhClicked) {
+						if(rh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredhorse.getX() == clx[m] && Lredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Lblackcar.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Lblackcar.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredhorse.getX() == clx[m] && Rredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Lblackcar.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Lblackcar.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rcClicked) {
+						if(rc == 1) {
+							if(Lredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lblackcar.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lblackcar.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rc == 2) {
+							if(Rredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lblackcar.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lblackcar.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(reClicked) {
+						if(re == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredelephant.getX() == clx[m] && Lredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Lblackcar.setLocation(593, 53);
+											Lredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredelephant.getX() == clx[m] && Rredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Lblackcar.setLocation(593, 53);
+											Rredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rkClicked) {
+						if(rk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredknight.getX() == clx[m] && Lredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Lblackcar.setLocation(593, 53);
+											Lredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredknight.getX() == clx[m] && Rredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Lblackcar.setLocation(593, 53);
+											Rredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(redcommander.getX() == clx[m] && redcommander.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										Lblackcar.setLocation(593, 53);
+										redcommander.setLocation(clx[i], cly[j]);
+										rmClicked = false;
+										rmove = false;
+										bmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessbc2() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(Rblackcar.getX() == clx[i] && Rblackcar.getY() == cly[j]) {
+					if(rdClicked) {
+						if(rd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier1.getX() == clx[m] && redsoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackcar.setLocation(593, 53);
+											redsoldier1.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier2.getX() == clx[m] && redsoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackcar.setLocation(593, 53);
+											redsoldier2.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier3.getX() == clx[m] && redsoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackcar.setLocation(593, 53);
+											redsoldier3.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier4.getX() == clx[m] && redsoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackcar.setLocation(593, 53);
+											redsoldier4.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier5.getX() == clx[m] && redsoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackcar.setLocation(593, 53);
+											redsoldier5.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rgClicked) {
+						if(rg == 1) {
+							if(Lredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rblackcar.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rblackcar.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rg == 2) {
+							if(Rredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rblackcar.setLocation(593, 53);
+											Rredgun.setLocation(clx[8-i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rblackcar.setLocation(593, 53);
+											Rredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rhClicked) {
+						if(rh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredhorse.getX() == clx[m] && Lredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Rblackcar.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Rblackcar.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredhorse.getX() == clx[m] && Rredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Rblackcar.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Rblackcar.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rcClicked) {
+						if(rc == 1) {
+							if(Lredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rblackcar.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rblackcar.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rc == 2) {
+							if(Rredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rblackcar.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rblackcar.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(reClicked) {
+						if(re == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredelephant.getX() == clx[m] && Lredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Rblackcar.setLocation(593, 53);
+											Lredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredelephant.getX() == clx[m] && Rredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Rblackcar.setLocation(593, 53);
+											Rredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rkClicked) {
+						if(rk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredknight.getX() == clx[m] && Lredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Rblackcar.setLocation(593, 53);
+											Lredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredknight.getX() == clx[m] && Rredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Rblackcar.setLocation(593, 53);
+											Rredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(redcommander.getX() == clx[m] && redcommander.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										Rblackcar.setLocation(593, 53);
+										redcommander.setLocation(clx[i], cly[j]);
+										rmClicked = false;
+										rmove = false;
+										bmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessbh1() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(Lblackhorse.getX() == clx[i] && Lblackhorse.getY() == cly[j]) {
+					if(rdClicked) {
+						if(rd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier1.getX() == clx[m] && redsoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackhorse.setLocation(593, 53);
+											redsoldier1.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier2.getX() == clx[m] && redsoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackhorse.setLocation(593, 53);
+											redsoldier2.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier3.getX() == clx[m] && redsoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackhorse.setLocation(593, 53);
+											redsoldier3.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier4.getX() == clx[m] && redsoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackhorse.setLocation(593, 53);
+											redsoldier4.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier5.getX() == clx[m] && redsoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackhorse.setLocation(593, 53);
+											redsoldier5.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rgClicked) {
+						if(rg == 1) {
+							if(Lredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lblackhorse.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lblackhorse.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rg == 2) {
+							if(Rredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lblackhorse.setLocation(593, 53);
+											Rredgun.setLocation(clx[8-i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lblackhorse.setLocation(593, 53);
+											Rredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rhClicked) {
+						if(rh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredhorse.getX() == clx[m] && Lredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Lblackhorse.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Lblackhorse.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredhorse.getX() == clx[m] && Rredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Lblackhorse.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Lblackhorse.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rcClicked) {
+						if(rc == 1) {
+							if(Lredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lblackhorse.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lblackhorse.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rc == 2) {
+							if(Rredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lblackhorse.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lblackhorse.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(reClicked) {
+						if(re == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredelephant.getX() == clx[m] && Lredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Lblackhorse.setLocation(593, 53);
+											Lredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredelephant.getX() == clx[m] && Rredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Lblackhorse.setLocation(593, 53);
+											Rredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rkClicked) {
+						if(rk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredknight.getX() == clx[m] && Lredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Lblackhorse.setLocation(593, 53);
+											Lredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredknight.getX() == clx[m] && Rredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Lblackhorse.setLocation(593, 53);
+											Rredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(redcommander.getX() == clx[m] && redcommander.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										Lblackhorse.setLocation(593, 53);
+										redcommander.setLocation(clx[i], cly[j]);
+										rmClicked = false;
+										rmove = false;
+										bmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessbh2() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(Rblackhorse.getX() == clx[i] && Rblackhorse.getY() == cly[j]) {
+					if(rdClicked) {
+						if(rd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier1.getX() == clx[m] && redsoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackhorse.setLocation(593, 53);
+											redsoldier1.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier2.getX() == clx[m] && redsoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackhorse.setLocation(593, 53);
+											redsoldier2.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier3.getX() == clx[m] && redsoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackhorse.setLocation(593, 53);
+											redsoldier3.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier4.getX() == clx[m] && redsoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackhorse.setLocation(593, 53);
+											redsoldier4.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier5.getX() == clx[m] && redsoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackhorse.setLocation(593, 53);
+											redsoldier5.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rgClicked) {
+						if(rg == 1) {
+							if(Lredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rblackhorse.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rblackhorse.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rg == 2) {
+							if(Rredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rblackhorse.setLocation(593, 53);
+											Rredgun.setLocation(clx[8-i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rblackhorse.setLocation(593, 53);
+											Rredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rhClicked) {
+						if(rh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredhorse.getX() == clx[m] && Lredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Rblackhorse.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Rblackhorse.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredhorse.getX() == clx[m] && Rredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Rblackhorse.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Rblackhorse.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rcClicked) {
+						if(rc == 1) {
+							if(Lredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rblackhorse.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rblackhorse.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rc == 2) {
+							if(Rredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rblackhorse.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rblackhorse.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(reClicked) {
+						if(re == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredelephant.getX() == clx[m] && Lredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Rblackhorse.setLocation(593, 53);
+											Lredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredelephant.getX() == clx[m] && Rredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Rblackhorse.setLocation(593, 53);
+											Rredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rkClicked) {
+						if(rk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredknight.getX() == clx[m] && Lredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Rblackhorse.setLocation(593, 53);
+											Lredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredknight.getX() == clx[m] && Rredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Rblackhorse.setLocation(593, 53);
+											Rredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(redcommander.getX() == clx[m] && redcommander.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										Rblackhorse.setLocation(593, 53);
+										redcommander.setLocation(clx[i], cly[j]);
+										rmClicked = false;
+										rmove = false;
+										bmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessbe1() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(Lblackelephant.getX() == clx[i] && Lblackelephant.getY() == cly[j]) {
+					if(rdClicked) {
+						if(rd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier1.getX() == clx[m] && redsoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackelephant.setLocation(593, 53);
+											redsoldier1.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier2.getX() == clx[m] && redsoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackelephant.setLocation(593, 53);
+											redsoldier2.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier3.getX() == clx[m] && redsoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackelephant.setLocation(593, 53);
+											redsoldier3.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier4.getX() == clx[m] && redsoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackelephant.setLocation(593, 53);
+											redsoldier4.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier5.getX() == clx[m] && redsoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackelephant.setLocation(593, 53);
+											redsoldier5.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rgClicked) {
+						if(rg == 1) {
+							if(Lredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lblackelephant.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lblackelephant.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rg == 2) {
+							if(Rredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lblackelephant.setLocation(593, 53);
+											Rredgun.setLocation(clx[8-i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lblackelephant.setLocation(593, 53);
+											Rredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rhClicked) {
+						if(rh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredhorse.getX() == clx[m] && Lredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Lblackelephant.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Lblackelephant.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredhorse.getX() == clx[m] && Rredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Lblackelephant.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Lblackelephant.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rcClicked) {
+						if(rc == 1) {
+							if(Lredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lblackelephant.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lblackelephant.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rc == 2) {
+							if(Rredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lblackelephant.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lblackelephant.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(reClicked) {
+						if(re == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredelephant.getX() == clx[m] && Lredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Lblackelephant.setLocation(593, 53);
+											Lredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredelephant.getX() == clx[m] && Rredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Lblackelephant.setLocation(593, 53);
+											Rredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rkClicked) {
+						if(rk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredknight.getX() == clx[m] && Lredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Lblackelephant.setLocation(593, 53);
+											Lredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredknight.getX() == clx[m] && Rredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Lblackelephant.setLocation(593, 53);
+											Rredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(redcommander.getX() == clx[m] && redcommander.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										Lblackelephant.setLocation(593, 53);
+										redcommander.setLocation(clx[i], cly[j]);
+										rmClicked = false;
+										rmove = false;
+										bmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessbe2() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(Rblackelephant.getX() == clx[i] && Rblackelephant.getY() == cly[j]) {
+					if(rdClicked) {
+						if(rd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier1.getX() == clx[m] && redsoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackelephant.setLocation(593, 53);
+											redsoldier1.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier2.getX() == clx[m] && redsoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackelephant.setLocation(593, 53);
+											redsoldier2.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier3.getX() == clx[m] && redsoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackelephant.setLocation(593, 53);
+											redsoldier3.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier4.getX() == clx[m] && redsoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackelephant.setLocation(593, 53);
+											redsoldier4.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier5.getX() == clx[m] && redsoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackelephant.setLocation(593, 53);
+											redsoldier5.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rgClicked) {
+						if(rg == 1) {
+							if(Lredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rblackelephant.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rblackelephant.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rg == 2) {
+							if(Rredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rblackelephant.setLocation(593, 53);
+											Rredgun.setLocation(clx[8-i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rblackelephant.setLocation(593, 53);
+											Rredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rhClicked) {
+						if(rh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredhorse.getX() == clx[m] && Lredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Rblackelephant.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Rblackelephant.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredhorse.getX() == clx[m] && Rredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Rblackelephant.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Rblackelephant.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rcClicked) {
+						if(rc == 1) {
+							if(Lredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rblackelephant.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rblackelephant.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rc == 2) {
+							if(Rredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rblackelephant.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rblackelephant.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(reClicked) {
+						if(re == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredelephant.getX() == clx[m] && Lredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Rblackelephant.setLocation(593, 53);
+											Lredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredelephant.getX() == clx[m] && Rredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Rblackelephant.setLocation(593, 53);
+											Rredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rkClicked) {
+						if(rk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredknight.getX() == clx[m] && Lredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Rblackelephant.setLocation(593, 53);
+											Lredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredknight.getX() == clx[m] && Rredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Rblackelephant.setLocation(593, 53);
+											Rredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(redcommander.getX() == clx[m] && redcommander.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										Rblackelephant.setLocation(593, 53);
+										redcommander.setLocation(clx[i], cly[j]);
+										rmClicked = false;
+										rmove = false;
+										bmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessbk1() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(Lblackknight.getX() == clx[i] && Lblackknight.getY() == cly[j]) {
+					if(rdClicked) {
+						if(rd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier1.getX() == clx[m] && redsoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackknight.setLocation(593, 53);
+											redsoldier1.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier2.getX() == clx[m] && redsoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackknight.setLocation(593, 53);
+											redsoldier2.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier3.getX() == clx[m] && redsoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackknight.setLocation(593, 53);
+											redsoldier3.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier4.getX() == clx[m] && redsoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackknight.setLocation(593, 53);
+											redsoldier4.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier5.getX() == clx[m] && redsoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lblackknight.setLocation(593, 53);
+											redsoldier5.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rgClicked) {
+						if(rg == 1) {
+							if(Lredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lblackknight.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lblackknight.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rg == 2) {
+							if(Rredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lblackknight.setLocation(593, 53);
+											Rredgun.setLocation(clx[8-i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lblackknight.setLocation(593, 53);
+											Rredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rhClicked) {
+						if(rh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredhorse.getX() == clx[m] && Lredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Lblackknight.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Lblackknight.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredhorse.getX() == clx[m] && Rredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Lblackknight.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Lblackknight.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rcClicked) {
+						if(rc == 1) {
+							if(Lredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lblackknight.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lblackknight.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rc == 2) {
+							if(Rredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lblackknight.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lblackknight.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(reClicked) {
+						if(re == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredelephant.getX() == clx[m] && Lredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Lblackknight.setLocation(593, 53);
+											Lredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredelephant.getX() == clx[m] && Rredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Lblackknight.setLocation(593, 53);
+											Rredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rkClicked) {
+						if(rk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredknight.getX() == clx[m] && Lredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Lblackknight.setLocation(593, 53);
+											Lredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredknight.getX() == clx[m] && Rredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Lblackknight.setLocation(593, 53);
+											Rredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(redcommander.getX() == clx[m] && redcommander.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										Lblackknight.setLocation(593, 53);
+										redcommander.setLocation(clx[i], cly[j]);
+										rmClicked = false;
+										rmove = false;
+										bmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessbk2() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(Rblackknight.getX() == clx[i] && Rblackknight.getY() == cly[j]) {
+					if(rdClicked) {
+						if(rd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier1.getX() == clx[m] && redsoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackknight.setLocation(593, 53);
+											redsoldier1.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier2.getX() == clx[m] && redsoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackknight.setLocation(593, 53);
+											redsoldier2.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier3.getX() == clx[m] && redsoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackknight.setLocation(593, 53);
+											redsoldier3.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier4.getX() == clx[m] && redsoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackknight.setLocation(593, 53);
+											redsoldier4.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier5.getX() == clx[m] && redsoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rblackknight.setLocation(593, 53);
+											redsoldier5.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rgClicked) {
+						if(rg == 1) {
+							if(Lredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rblackknight.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rblackknight.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rg == 2) {
+							if(Rredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rblackknight.setLocation(593, 53);
+											Rredgun.setLocation(clx[8-i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rblackknight.setLocation(593, 53);
+											Rredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rhClicked) {
+						if(rh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredhorse.getX() == clx[m] && Lredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Rblackknight.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Rblackknight.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredhorse.getX() == clx[m] && Rredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Rblackknight.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Rblackknight.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rcClicked) {
+						if(rc == 1) {
+							if(Lredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rblackknight.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rblackknight.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rc == 2) {
+							if(Rredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rblackknight.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rblackknight.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(reClicked) {
+						if(re == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredelephant.getX() == clx[m] && Lredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Rblackknight.setLocation(593, 53);
+											Lredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredelephant.getX() == clx[m] && Rredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Rblackknight.setLocation(593, 53);
+											Rredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rkClicked) {
+						if(rk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredknight.getX() == clx[m] && Lredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Rblackknight.setLocation(593, 53);
+											Lredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredknight.getX() == clx[m] && Rredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Rblackknight.setLocation(593, 53);
+											Rredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(redcommander.getX() == clx[m] && redcommander.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										Rblackknight.setLocation(593, 53);
+										redcommander.setLocation(clx[i], cly[j]);
+										rmClicked = false;
+										rmove = false;
+										bmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessbm() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(blackcommander.getX() == clx[i] && blackcommander.getY() == cly[j]) {
+					if(rdClicked) {
+						if(rd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier1.getX() == clx[m] && redsoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blackcommander.setLocation(593, 53);
+											redsoldier1.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier2.getX() == clx[m] && redsoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blackcommander.setLocation(593, 53);
+											redsoldier2.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier3.getX() == clx[m] && redsoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blackcommander.setLocation(593, 53);
+											redsoldier3.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier4.getX() == clx[m] && redsoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blackcommander.setLocation(593, 53);
+											redsoldier4.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(redsoldier5.getX() == clx[m] && redsoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											blackcommander.setLocation(593, 53);
+											redsoldier5.setLocation(clx[i], cly[j]);
+											rdClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rgClicked) {
+						if(rg == 1) {
+							if(Lredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blackcommander.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blackcommander.setLocation(593, 53);
+											Lredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rg == 2) {
+							if(Rredgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blackcommander.setLocation(593, 53);
+											Rredgun.setLocation(clx[8-i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rredgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											blackcommander.setLocation(593, 53);
+											Rredgun.setLocation(clx[i], cly[j]);
+											rgClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rhClicked) {
+						if(rh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredhorse.getX() == clx[m] && Lredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											blackcommander.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											blackcommander.setLocation(593, 53);
+											Lredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredhorse.getX() == clx[m] && Rredhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											blackcommander.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											blackcommander.setLocation(593, 53);
+											Rredhorse.setLocation(clx[i], cly[j]);
+											rhClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rcClicked) {
+						if(rc == 1) {
+							if(Lredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blackcommander.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blackcommander.setLocation(593, 53);
+											Lredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rc == 2) {
+							if(Rredcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rredcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blackcommander.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rredcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rredcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											blackcommander.setLocation(593, 53);
+											Rredcar.setLocation(clx[i], cly[j]);
+											rcClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(reClicked) {
+						if(re == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredelephant.getX() == clx[m] && Lredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											blackcommander.setLocation(593, 53);
+											Lredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredelephant.getX() == clx[m] && Rredelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											blackcommander.setLocation(593, 53);
+											Rredelephant.setLocation(clx[i], cly[j]);
+											reClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rkClicked) {
+						if(rk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lredknight.getX() == clx[m] && Lredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											blackcommander.setLocation(593, 53);
+											Lredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(rk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rredknight.getX() == clx[m] && Rredknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											blackcommander.setLocation(593, 53);
+											Rredknight.setLocation(clx[i], cly[j]);
+											rkClicked = false;
+											rmove = false;
+											bmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(rmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(redcommander.getX() == clx[m] && redcommander.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										blackcommander.setLocation(593, 53);
+										redcommander.setLocation(clx[i], cly[j]);
+										rmClicked = false;
+										rmove = false;
+										bmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessrd1() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {;
+				if(redsoldier1.getX() == clx[i] && redsoldier1.getY() == cly[j]) {
+					if(bdClicked) {
+						if(bd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier1.getX() == clx[m] && blacksoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier1.setLocation(593, 53);
+											blacksoldier1.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier2.getX() == clx[m] && blacksoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier1.setLocation(593, 53);
+											blacksoldier2.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier3.getX() == clx[m] && blacksoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier1.setLocation(593, 53);
+											blacksoldier3.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier4.getX() == clx[m] && blacksoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier1.setLocation(593, 53);
+											blacksoldier4.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier5.getX() == clx[m] && blacksoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier1.setLocation(593, 53);
+											blacksoldier5.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bgClicked) {
+						if(bg == 1) {
+							if(Lblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redsoldier1.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redsoldier1.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bg == 2) {
+							if(Rblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redsoldier1.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redsoldier1.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bhClicked) {
+						if(bh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackhorse.getX() == clx[m] && Lblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											redsoldier1.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											redsoldier1.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackhorse.getX() == clx[m] && Rblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											redsoldier1.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											redsoldier1.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bcClicked) {
+						if(bc == 1) {
+							if(Lblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redsoldier1.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redsoldier1.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bc == 2) {
+							if(Rblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redsoldier1.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redsoldier1.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(beClicked) {
+						if(be == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackelephant.getX() == clx[m] && Lblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											redsoldier1.setLocation(593, 53);
+											Lblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackelephant.getX() == clx[m] && Rblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											redsoldier1.setLocation(593, 53);
+											Rblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bkClicked) {
+						if(bk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackknight.getX() == clx[m] && Lblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											redsoldier1.setLocation(593, 53);
+											Lblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackknight.getX() == clx[m] && Rblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											redsoldier1.setLocation(593, 53);
+											Rblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(redsoldier1.getX() == clx[m] && redsoldier1.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										redsoldier1.setLocation(593, 53);
+										blackcommander.setLocation(clx[i], cly[j]);
+										bmClicked = false;
+										bmove = false;
+										rmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessrd2() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(redsoldier2.getX() == clx[i] && redsoldier2.getY() == cly[j]) {
+					if(bdClicked) {
+						if(bd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier1.getX() == clx[m] && blacksoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier2.setLocation(593, 53);
+											blacksoldier1.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier2.getX() == clx[m] && blacksoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier2.setLocation(593, 53);
+											blacksoldier2.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier3.getX() == clx[m] && blacksoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier2.setLocation(593, 53);
+											blacksoldier3.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier4.getX() == clx[m] && blacksoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier2.setLocation(593, 53);
+											blacksoldier4.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier5.getX() == clx[m] && blacksoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier2.setLocation(593, 53);
+											blacksoldier5.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bgClicked) {
+						if(bg == 1) {
+							if(Lblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redsoldier2.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redsoldier2.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bg == 2) {
+							if(Rblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redsoldier2.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redsoldier2.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bhClicked) {
+						if(bh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackhorse.getX() == clx[m] && Lblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											redsoldier2.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											redsoldier2.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackhorse.getX() == clx[m] && Rblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											redsoldier2.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											redsoldier2.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bcClicked) {
+						if(bc == 1) {
+							if(Lblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redsoldier2.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redsoldier2.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bc == 2) {
+							if(Rblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redsoldier2.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redsoldier2.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(beClicked) {
+						if(be == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackelephant.getX() == clx[m] && Lblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											redsoldier2.setLocation(593, 53);
+											Lblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackelephant.getX() == clx[m] && Rblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											redsoldier2.setLocation(593, 53);
+											Rblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bkClicked) {
+						if(bk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackknight.getX() == clx[m] && Lblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											redsoldier2.setLocation(593, 53);
+											Lblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackknight.getX() == clx[m] && Rblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											redsoldier2.setLocation(593, 53);
+											Rblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(redsoldier2.getX() == clx[m] && redsoldier2.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										redsoldier2.setLocation(593, 53);
+										blackcommander.setLocation(clx[i], cly[j]);
+										bmClicked = false;
+										bmove = false;
+										rmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessrd3() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(redsoldier3.getX() == clx[i] && redsoldier3.getY() == cly[j]) {
+					if(bdClicked) {
+						if(bd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier1.getX() == clx[m] && blacksoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier3.setLocation(593, 53);
+											blacksoldier1.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier2.getX() == clx[m] && blacksoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier3.setLocation(593, 53);
+											blacksoldier2.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier3.getX() == clx[m] && blacksoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier3.setLocation(593, 53);
+											blacksoldier3.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier4.getX() == clx[m] && blacksoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier3.setLocation(593, 53);
+											blacksoldier4.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier5.getX() == clx[m] && blacksoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier3.setLocation(593, 53);
+											blacksoldier5.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bgClicked) {
+						if(bg == 1) {
+							if(Lblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redsoldier3.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redsoldier3.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bg == 2) {
+							if(Rblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redsoldier3.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redsoldier3.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bhClicked) {
+						if(bh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackhorse.getX() == clx[m] && Lblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											redsoldier3.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											redsoldier3.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackhorse.getX() == clx[m] && Rblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											redsoldier3.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											redsoldier3.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bcClicked) {
+						if(bc == 1) {
+							if(Lblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redsoldier3.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redsoldier3.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bc == 2) {
+							if(Rblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redsoldier3.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redsoldier3.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(beClicked) {
+						if(be == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackelephant.getX() == clx[m] && Lblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											redsoldier3.setLocation(593, 53);
+											Lblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackelephant.getX() == clx[m] && Rblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											redsoldier3.setLocation(593, 53);
+											Rblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bkClicked) {
+						if(bk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackknight.getX() == clx[m] && Lblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											redsoldier3.setLocation(593, 53);
+											Lblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackknight.getX() == clx[m] && Rblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											redsoldier3.setLocation(593, 53);
+											Rblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(redsoldier3.getX() == clx[m] && redsoldier3.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										redsoldier3.setLocation(593, 53);
+										blackcommander.setLocation(clx[i], cly[j]);
+										bmClicked = false;
+										bmove = false;
+										rmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessrd4() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(redsoldier4.getX() == clx[i] && redsoldier4.getY() == cly[j]) {
+					if(bdClicked) {
+						if(bd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier1.getX() == clx[m] && blacksoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier4.setLocation(593, 53);
+											blacksoldier1.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier2.getX() == clx[m] && blacksoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier4.setLocation(593, 53);
+											blacksoldier2.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier3.getX() == clx[m] && blacksoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier4.setLocation(593, 53);
+											blacksoldier3.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier4.getX() == clx[m] && blacksoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier4.setLocation(593, 53);
+											blacksoldier4.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier5.getX() == clx[m] && blacksoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier4.setLocation(593, 53);
+											blacksoldier5.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bgClicked) {
+						if(bg == 1) {
+							if(Lblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redsoldier4.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redsoldier4.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bg == 2) {
+							if(Rblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redsoldier4.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redsoldier4.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bhClicked) {
+						if(bh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackhorse.getX() == clx[m] && Lblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											redsoldier4.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											redsoldier4.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackhorse.getX() == clx[m] && Rblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											redsoldier4.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											redsoldier4.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bcClicked) {
+						if(bc == 1) {
+							if(Lblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redsoldier4.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redsoldier4.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bc == 2) {
+							if(Rblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redsoldier4.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redsoldier4.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(beClicked) {
+						if(be == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackelephant.getX() == clx[m] && Lblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											redsoldier4.setLocation(593, 53);
+											Lblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackelephant.getX() == clx[m] && Rblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											redsoldier4.setLocation(593, 53);
+											Rblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bkClicked) {
+						if(bk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackknight.getX() == clx[m] && Lblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											redsoldier4.setLocation(593, 53);
+											Lblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackknight.getX() == clx[m] && Rblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											redsoldier4.setLocation(593, 53);
+											Rblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(redsoldier4.getX() == clx[m] && redsoldier4.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										redsoldier4.setLocation(593, 53);
+										blackcommander.setLocation(clx[i], cly[j]);
+										bmClicked = false;
+										bmove = false;
+										rmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessrd5() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(redsoldier5.getX() == clx[i] && redsoldier5.getY() == cly[j]) {
+					if(bdClicked) {
+						if(bd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier1.getX() == clx[m] && blacksoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier5.setLocation(593, 53);
+											blacksoldier1.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier2.getX() == clx[m] && blacksoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier5.setLocation(593, 53);
+											blacksoldier2.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier3.getX() == clx[m] && blacksoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier5.setLocation(593, 53);
+											blacksoldier3.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier4.getX() == clx[m] && blacksoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier5.setLocation(593, 53);
+											blacksoldier4.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier5.getX() == clx[m] && blacksoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redsoldier5.setLocation(593, 53);
+											blacksoldier5.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bgClicked) {
+						if(bg == 1) {
+							if(Lblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redsoldier5.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redsoldier5.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bg == 2) {
+							if(Rblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redsoldier5.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redsoldier5.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bhClicked) {
+						if(bh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackhorse.getX() == clx[m] && Lblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											redsoldier5.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											redsoldier5.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackhorse.getX() == clx[m] && Rblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											redsoldier5.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											redsoldier5.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bcClicked) {
+						if(bc == 1) {
+							if(Lblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redsoldier5.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redsoldier5.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bc == 2) {
+							if(Rblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redsoldier5.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redsoldier5.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(beClicked) {
+						if(be == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackelephant.getX() == clx[m] && Lblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											redsoldier5.setLocation(593, 53);
+											Lblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackelephant.getX() == clx[m] && Rblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											redsoldier5.setLocation(593, 53);
+											Rblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bkClicked) {
+						if(bk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackknight.getX() == clx[m] && Lblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											redsoldier5.setLocation(593, 53);
+											Lblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackknight.getX() == clx[m] && Rblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											redsoldier5.setLocation(593, 53);
+											Rblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(redsoldier5.getX() == clx[m] && redsoldier5.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										redsoldier5.setLocation(593, 53);
+										blackcommander.setLocation(clx[i], cly[j]);
+										bmClicked = false;
+										bmove = false;
+										rmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessrg1() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(Lredgun.getX() == clx[i] && Lredgun.getY() == cly[j]) {
+					if(bdClicked) {
+						if(bd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier1.getX() == clx[m] && blacksoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredgun.setLocation(593, 53);
+											blacksoldier1.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier2.getX() == clx[m] && blacksoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredgun.setLocation(593, 53);
+											blacksoldier2.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier3.getX() == clx[m] && blacksoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredgun.setLocation(593, 53);
+											blacksoldier3.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier4.getX() == clx[m] && blacksoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredgun.setLocation(593, 53);
+											blacksoldier4.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier5.getX() == clx[m] && blacksoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredgun.setLocation(593, 53);
+											blacksoldier5.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bgClicked) {
+						if(bg == 1) {
+							if(Lblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lredgun.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lredgun.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bg == 2) {
+							if(Rblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lredgun.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lredgun.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bhClicked) {
+						if(bh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackhorse.getX() == clx[m] && Lblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Lredgun.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Lredgun.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackhorse.getX() == clx[m] && Rblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Lredgun.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Lredgun.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bcClicked) {
+						if(bc == 1) {
+							if(Lblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lredgun.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lredgun.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bc == 2) {
+							if(Rblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lredgun.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lredgun.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(beClicked) {
+						if(be == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackelephant.getX() == clx[m] && Lblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Lredgun.setLocation(593, 53);
+											Lblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackelephant.getX() == clx[m] && Rblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Lredgun.setLocation(593, 53);
+											Rblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bkClicked) {
+						if(bk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackknight.getX() == clx[m] && Lblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Lredgun.setLocation(593, 53);
+											Lblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackknight.getX() == clx[m] && Rblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Lredgun.setLocation(593, 53);
+											Rblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(Lredgun.getX() == clx[m] && Lredgun.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										Lredgun.setLocation(593, 53);
+										blackcommander.setLocation(clx[i], cly[j]);
+										bmClicked = false;
+										bmove = false;
+										rmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessrg2() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(Rredgun.getX() == clx[i] && Rredgun.getY() == cly[j]) {
+					if(bdClicked) {
+						if(bd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier1.getX() == clx[m] && blacksoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredgun.setLocation(593, 53);
+											blacksoldier1.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier2.getX() == clx[m] && blacksoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredgun.setLocation(593, 53);
+											blacksoldier2.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier3.getX() == clx[m] && blacksoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredgun.setLocation(593, 53);
+											blacksoldier3.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier4.getX() == clx[m] && blacksoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredgun.setLocation(593, 53);
+											blacksoldier4.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier5.getX() == clx[m] && blacksoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredgun.setLocation(593, 53);
+											blacksoldier5.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bgClicked) {
+						if(bg == 1) {
+							if(Lblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rredgun.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rredgun.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bg == 2) {
+							if(Rblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rredgun.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rredgun.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bhClicked) {
+						if(bh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackhorse.getX() == clx[m] && Lblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Rredgun.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Rredgun.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackhorse.getX() == clx[m] && Rblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Rredgun.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Rredgun.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bcClicked) {
+						if(bc == 1) {
+							if(Lblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rredgun.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rredgun.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bc == 2) {
+							if(Rblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rredgun.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rredgun.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(beClicked) {
+						if(be == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackelephant.getX() == clx[m] && Lblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Rredgun.setLocation(593, 53);
+											Lblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackelephant.getX() == clx[m] && Rblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Rredgun.setLocation(593, 53);
+											Rblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bkClicked) {
+						if(bk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackknight.getX() == clx[m] && Lblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Rredgun.setLocation(593, 53);
+											Lblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackknight.getX() == clx[m] && Rblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Rredgun.setLocation(593, 53);
+											Rblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(Rredgun.getX() == clx[m] && Rredgun.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										Rredgun.setLocation(593, 53);
+										blackcommander.setLocation(clx[i], cly[j]);
+										bmClicked = false;
+										bmove = false;
+										rmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessrc1() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(Lredcar.getX() == clx[i] && Lredcar.getY() == cly[j]) {
+					if(bdClicked) {
+						if(bd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier1.getX() == clx[m] && blacksoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredcar.setLocation(593, 53);
+											blacksoldier1.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier2.getX() == clx[m] && blacksoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredcar.setLocation(593, 53);
+											blacksoldier2.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier3.getX() == clx[m] && blacksoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredcar.setLocation(593, 53);
+											blacksoldier3.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier4.getX() == clx[m] && blacksoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredcar.setLocation(593, 53);
+											blacksoldier4.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier5.getX() == clx[m] && blacksoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredcar.setLocation(593, 53);
+											blacksoldier5.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bgClicked) {
+						if(bg == 1) {
+							if(Lblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lredcar.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lredcar.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bg == 2) {
+							if(Rblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lredcar.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lredcar.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bhClicked) {
+						if(bh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackhorse.getX() == clx[m] && Lblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Lredcar.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Lredcar.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackhorse.getX() == clx[m] && Rblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Lredcar.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Lredcar.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bcClicked) {
+						if(bc == 1) {
+							if(Lblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lredcar.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lredcar.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bc == 2) {
+							if(Rblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lredcar.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lredcar.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(beClicked) {
+						if(be == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackelephant.getX() == clx[m] && Lblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Lredcar.setLocation(593, 53);
+											Lblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackelephant.getX() == clx[m] && Rblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Lredcar.setLocation(593, 53);
+											Rblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bkClicked) {
+						if(bk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackknight.getX() == clx[m] && Lblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Lredcar.setLocation(593, 53);
+											Lblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackknight.getX() == clx[m] && Rblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Lredcar.setLocation(593, 53);
+											Rblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(Lredcar.getX() == clx[m] && Lredcar.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										Lredcar.setLocation(593, 53);
+										blackcommander.setLocation(clx[i], cly[j]);
+										bmClicked = false;
+										bmove = false;
+										rmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessrc2() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(Rredcar.getX() == clx[i] && Rredcar.getY() == cly[j]) {
+					if(bdClicked) {
+						if(bd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier1.getX() == clx[m] && blacksoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredcar.setLocation(593, 53);
+											blacksoldier1.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier2.getX() == clx[m] && blacksoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredcar.setLocation(593, 53);
+											blacksoldier2.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier3.getX() == clx[m] && blacksoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredcar.setLocation(593, 53);
+											blacksoldier3.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier4.getX() == clx[m] && blacksoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredcar.setLocation(593, 53);
+											blacksoldier4.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier5.getX() == clx[m] && blacksoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredcar.setLocation(593, 53);
+											blacksoldier5.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bgClicked) {
+						if(bg == 1) {
+							if(Lblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rredcar.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rredcar.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bg == 2) {
+							if(Rblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rredcar.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rredcar.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bhClicked) {
+						if(bh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackhorse.getX() == clx[m] && Lblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Rredcar.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Rredcar.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackhorse.getX() == clx[m] && Rblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Rredcar.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Rredcar.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bcClicked) {
+						if(bc == 1) {
+							if(Lblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rredcar.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rredcar.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bc == 2) {
+							if(Rblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rredcar.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rredcar.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(beClicked) {
+						if(be == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackelephant.getX() == clx[m] && Lblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Rredcar.setLocation(593, 53);
+											Lblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackelephant.getX() == clx[m] && Rblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Rredcar.setLocation(593, 53);
+											Rblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bkClicked) {
+						if(bk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackknight.getX() == clx[m] && Lblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Rredcar.setLocation(593, 53);
+											Lblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackknight.getX() == clx[m] && Rblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Rredcar.setLocation(593, 53);
+											Rblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(Rredcar.getX() == clx[m] && Rredcar.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										Rredcar.setLocation(593, 53);
+										blackcommander.setLocation(clx[i], cly[j]);
+										bmClicked = false;
+										bmove = false;
+										rmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessrh1() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(Lredhorse.getX() == clx[i] && Lredhorse.getY() == cly[j]) {
+					if(bdClicked) {
+						if(bd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier1.getX() == clx[m] && blacksoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredhorse.setLocation(593, 53);
+											blacksoldier1.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier2.getX() == clx[m] && blacksoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredhorse.setLocation(593, 53);
+											blacksoldier2.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier3.getX() == clx[m] && blacksoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredhorse.setLocation(593, 53);
+											blacksoldier3.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier4.getX() == clx[m] && blacksoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredhorse.setLocation(593, 53);
+											blacksoldier4.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier5.getX() == clx[m] && blacksoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredhorse.setLocation(593, 53);
+											blacksoldier5.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bgClicked) {
+						if(bg == 1) {
+							if(Lblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lredhorse.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lredhorse.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bg == 2) {
+							if(Rblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lredhorse.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lredhorse.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bhClicked) {
+						if(bh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackhorse.getX() == clx[m] && Lblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Lredhorse.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Lredhorse.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackhorse.getX() == clx[m] && Rblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Lredhorse.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Lredhorse.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bcClicked) {
+						if(bc == 1) {
+							if(Lblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lredhorse.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lredhorse.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bc == 2) {
+							if(Rblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lredhorse.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lredhorse.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(beClicked) {
+						if(be == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackelephant.getX() == clx[m] && Lblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Lredhorse.setLocation(593, 53);
+											Lblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackelephant.getX() == clx[m] && Rblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Lredhorse.setLocation(593, 53);
+											Rblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bkClicked) {
+						if(bk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackknight.getX() == clx[m] && Lblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Lredhorse.setLocation(593, 53);
+											Lblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackknight.getX() == clx[m] && Rblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Lredhorse.setLocation(593, 53);
+											Rblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(Lredhorse.getX() == clx[m] && Lredhorse.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										Lredhorse.setLocation(593, 53);
+										blackcommander.setLocation(clx[i], cly[j]);
+										bmClicked = false;
+										bmove = false;
+										rmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessrh2() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(Rredhorse.getX() == clx[i] && Rredhorse.getY() == cly[j]) {
+					if(bdClicked) {
+						if(bd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier1.getX() == clx[m] && blacksoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredhorse.setLocation(593, 53);
+											blacksoldier1.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier2.getX() == clx[m] && blacksoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredhorse.setLocation(593, 53);
+											blacksoldier2.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier3.getX() == clx[m] && blacksoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredhorse.setLocation(593, 53);
+											blacksoldier3.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier4.getX() == clx[m] && blacksoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredhorse.setLocation(593, 53);
+											blacksoldier4.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier5.getX() == clx[m] && blacksoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredhorse.setLocation(593, 53);
+											blacksoldier5.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bgClicked) {
+						if(bg == 1) {
+							if(Lblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rredhorse.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rredhorse.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bg == 2) {
+							if(Rblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rredhorse.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rredhorse.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bhClicked) {
+						if(bh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackhorse.getX() == clx[m] && Lblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Rredhorse.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Rredhorse.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackhorse.getX() == clx[m] && Rblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Rredhorse.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Rredhorse.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bcClicked) {
+						if(bc == 1) {
+							if(Lblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rredhorse.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rredhorse.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bc == 2) {
+							if(Rblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rredhorse.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rredhorse.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(beClicked) {
+						if(be == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackelephant.getX() == clx[m] && Lblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Rredhorse.setLocation(593, 53);
+											Lblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackelephant.getX() == clx[m] && Rblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Rredhorse.setLocation(593, 53);
+											Rblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bkClicked) {
+						if(bk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackknight.getX() == clx[m] && Lblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Rredhorse.setLocation(593, 53);
+											Lblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackknight.getX() == clx[m] && Rblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Rredhorse.setLocation(593, 53);
+											Rblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(Rredhorse.getX() == clx[m] && Rredhorse.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										Rredhorse.setLocation(593, 53);
+										blackcommander.setLocation(clx[i], cly[j]);
+										bmClicked = false;
+										bmove = false;
+										rmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessre1() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(Lredelephant.getX() == clx[i] && Lredelephant.getY() == cly[j]) {
+					if(bdClicked) {
+						if(bd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier1.getX() == clx[m] && blacksoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredelephant.setLocation(593, 53);
+											blacksoldier1.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier2.getX() == clx[m] && blacksoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredelephant.setLocation(593, 53);
+											blacksoldier2.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier3.getX() == clx[m] && blacksoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredelephant.setLocation(593, 53);
+											blacksoldier3.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier4.getX() == clx[m] && blacksoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredelephant.setLocation(593, 53);
+											blacksoldier4.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier5.getX() == clx[m] && blacksoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredelephant.setLocation(593, 53);
+											blacksoldier5.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bgClicked) {
+						if(bg == 1) {
+							if(Lblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lredelephant.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lredelephant.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bg == 2) {
+							if(Rblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lredelephant.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lredelephant.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bhClicked) {
+						if(bh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackhorse.getX() == clx[m] && Lblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Lredelephant.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Lredelephant.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackhorse.getX() == clx[m] && Rblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Lredelephant.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Lredelephant.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bcClicked) {
+						if(bc == 1) {
+							if(Lblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lredelephant.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lredelephant.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bc == 2) {
+							if(Rblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lredelephant.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lredelephant.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(beClicked) {
+						if(be == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackelephant.getX() == clx[m] && Lblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Lredelephant.setLocation(593, 53);
+											Lblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackelephant.getX() == clx[m] && Rblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Lredelephant.setLocation(593, 53);
+											Rblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bkClicked) {
+						if(bk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackknight.getX() == clx[m] && Lblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Lredelephant.setLocation(593, 53);
+											Lblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackknight.getX() == clx[m] && Rblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Lredelephant.setLocation(593, 53);
+											Rblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(Lredelephant.getX() == clx[m] && Lredelephant.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										Lredelephant.setLocation(593, 53);
+										blackcommander.setLocation(clx[i], cly[j]);
+										bmClicked = false;
+										bmove = false;
+										rmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessre2() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(Rredelephant.getX() == clx[i] && Rredelephant.getY() == cly[j]) {
+					if(bdClicked) {
+						if(bd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier1.getX() == clx[m] && blacksoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredelephant.setLocation(593, 53);
+											blacksoldier1.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier2.getX() == clx[m] && blacksoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredelephant.setLocation(593, 53);
+											blacksoldier2.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier3.getX() == clx[m] && blacksoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredelephant.setLocation(593, 53);
+											blacksoldier3.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier4.getX() == clx[m] && blacksoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredelephant.setLocation(593, 53);
+											blacksoldier4.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier5.getX() == clx[m] && blacksoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredelephant.setLocation(593, 53);
+											blacksoldier5.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bgClicked) {
+						if(bg == 1) {
+							if(Lblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rredelephant.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rredelephant.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bg == 2) {
+							if(Rblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rredelephant.setLocation(593, 53);
+											Rblackgun.setLocation(clx[8-i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rredelephant.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bhClicked) {
+						if(bh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackhorse.getX() == clx[m] && Lblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Rredelephant.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Rredelephant.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackhorse.getX() == clx[m] && Rblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Rredelephant.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Rredelephant.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bcClicked) {
+						if(bc == 1) {
+							if(Lblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rredelephant.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rredelephant.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bc == 2) {
+							if(Rblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rredelephant.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rredelephant.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(beClicked) {
+						if(be == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackelephant.getX() == clx[m] && Lblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Rredelephant.setLocation(593, 53);
+											Lblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackelephant.getX() == clx[m] && Rblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Rredelephant.setLocation(593, 53);
+											Rblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bkClicked) {
+						if(bk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackknight.getX() == clx[m] && Lblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Rredelephant.setLocation(593, 53);
+											Lblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackknight.getX() == clx[m] && Rblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Rredelephant.setLocation(593, 53);
+											Rblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(Rredelephant.getX() == clx[m] && Rredelephant.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										Rredelephant.setLocation(593, 53);
+										blackcommander.setLocation(clx[i], cly[j]);
+										bmClicked = false;
+										bmove = false;
+										rmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessrk1() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(Lredknight.getX() == clx[i] && Lredknight.getY() == cly[j]) {
+					if(bdClicked) {
+						if(bd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier1.getX() == clx[m] && blacksoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredknight.setLocation(593, 53);
+											blacksoldier1.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier2.getX() == clx[m] && blacksoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredknight.setLocation(593, 53);
+											blacksoldier2.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier3.getX() == clx[m] && blacksoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredknight.setLocation(593, 53);
+											blacksoldier3.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier4.getX() == clx[m] && blacksoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredknight.setLocation(593, 53);
+											blacksoldier4.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier5.getX() == clx[m] && blacksoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Lredknight.setLocation(593, 53);
+											blacksoldier5.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bgClicked) {
+						if(bg == 1) {
+							if(Lblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lredknight.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lredknight.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bg == 2) {
+							if(Rblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lredknight.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Lredknight.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bhClicked) {
+						if(bh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackhorse.getX() == clx[m] && Lblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Lredknight.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Lredknight.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackhorse.getX() == clx[m] && Rblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Lredknight.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Lredknight.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bcClicked) {
+						if(bc == 1) {
+							if(Lblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lredknight.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lredknight.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bc == 2) {
+							if(Rblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lredknight.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Lredknight.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(beClicked) {
+						if(be == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackelephant.getX() == clx[m] && Lblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Lredknight.setLocation(593, 53);
+											Lblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackelephant.getX() == clx[m] && Rblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Lredknight.setLocation(593, 53);
+											Rblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bkClicked) {
+						if(bk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackknight.getX() == clx[m] && Lblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Lredknight.setLocation(593, 53);
+											Lblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackknight.getX() == clx[m] && Rblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Lredknight.setLocation(593, 53);
+											Rblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(Lredknight.getX() == clx[m] && Lredknight.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										Lredknight.setLocation(593, 53);
+										blackcommander.setLocation(clx[i], cly[j]);
+										bmClicked = false;
+										bmove = false;
+										rmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessrk2() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(Rredknight.getX() == clx[i] && Rredknight.getY() == cly[j]) {
+					if(bdClicked) {
+						if(bd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier1.getX() == clx[m] && blacksoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredknight.setLocation(593, 53);
+											blacksoldier1.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier2.getX() == clx[m] && blacksoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredknight.setLocation(593, 53);
+											blacksoldier2.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier3.getX() == clx[m] && blacksoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredknight.setLocation(593, 53);
+											blacksoldier3.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier4.getX() == clx[m] && blacksoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredknight.setLocation(593, 53);
+											blacksoldier4.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier5.getX() == clx[m] && blacksoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											Rredknight.setLocation(593, 53);
+											blacksoldier5.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bgClicked) {
+						if(bg == 1) {
+							if(Lblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rredknight.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rredknight.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bg == 2) {
+							if(Rblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rredknight.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											Rredknight.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bhClicked) {
+						if(bh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackhorse.getX() == clx[m] && Lblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Rredknight.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Rredknight.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackhorse.getX() == clx[m] && Rblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											Rredknight.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											Rredknight.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bcClicked) {
+						if(bc == 1) {
+							if(Lblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rredknight.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rredknight.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bc == 2) {
+							if(Rblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rredknight.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											Rredknight.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(beClicked) {
+						if(be == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackelephant.getX() == clx[m] && Lblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Rredknight.setLocation(593, 53);
+											Lblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackelephant.getX() == clx[m] && Rblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											Rredknight.setLocation(593, 53);
+											Rblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bkClicked) {
+						if(bk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackknight.getX() == clx[m] && Lblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Rredknight.setLocation(593, 53);
+											Lblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackknight.getX() == clx[m] && Rblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											Rredknight.setLocation(593, 53);
+											Rblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(Rredknight.getX() == clx[m] && Rredknight.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										Rredknight.setLocation(593, 53);
+										blackcommander.setLocation(clx[i], cly[j]);
+										bmClicked = false;
+										bmove = false;
+										rmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
+	public static void eatchessrm() {
+		int i,j,k,m;
+		int number = 0;
+		for(i = 0;i <= 8;i ++) {
+			for(j = 0;j <= 9;j ++) {
+				if(redcommander.getX() == clx[i] && redcommander.getY() == cly[j]) {
+					if(bdClicked) {
+						if(bd == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier1.getX() == clx[m] && blacksoldier1.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redcommander.setLocation(593, 53);
+											blacksoldier1.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier2.getX() == clx[m] && blacksoldier2.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redcommander.setLocation(593, 53);
+											blacksoldier2.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 3) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier3.getX() == clx[m] && blacksoldier3.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redcommander.setLocation(593, 53);
+											blacksoldier3.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 4) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier4.getX() == clx[m] && blacksoldier4.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redcommander.setLocation(593, 53);
+											blacksoldier4.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bd == 5) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(blacksoldier5.getX() == clx[m] && blacksoldier5.getY() == cly[k]) {
+										if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+											redcommander.setLocation(593, 53);
+											blacksoldier5.setLocation(clx[i], cly[j]);
+											bdClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bgClicked) {
+						if(bg == 1) {
+							if(Lblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redcommander.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackgun.getY() == cly[j]) {
+								
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redcommander.setLocation(593, 53);
+											Lblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bg == 2) {
+							if(Rblackgun.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackgun.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redcommander.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackgun.getY() == cly[j]) {
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackgun.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												System.out.println(m);
+												if(chesslocation[8-m][j] == 1) {
+													number ++;	
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 1) {
+											redcommander.setLocation(593, 53);
+											Rblackgun.setLocation(clx[i], cly[j]);
+											bgClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bhClicked) {
+						if(bh == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackhorse.getX() == clx[m] && Lblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											redcommander.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											redcommander.setLocation(593, 53);
+											Lblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bh == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackhorse.getX() == clx[m] && Rblackhorse.getY() == cly[k]) {
+										if(m == i+1 && k == j-2 || m == i-1 && k == j-2 || m == i+1 && k == j+2 || m == i-1 && k == j+2 ) {
+											redcommander.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+										if(m == i+2 && k == j-1 || m == i-2 && k == j-1 || m == i+2 && k == j+1 || m == i-2 && k == j+1 ) {
+											redcommander.setLocation(593, 53);
+											Rblackhorse.setLocation(clx[i], cly[j]);
+											bhClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bcClicked) {
+						if(bc == 1) {
+							if(Lblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Lblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redcommander.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Lblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Lblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redcommander.setLocation(593, 53);
+											Lblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bc == 2) {
+							if(Rblackcar.getX() == clx[i]){
+								for(k = 0;k <=9;k ++) {
+									if(Rblackcar.getY() == cly[k]) {
+										if(k > j) {
+											m = j + 1;
+											for(m = j+1;m < k;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < j;m ++) {
+												if(chesslocation[8-i][m] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redcommander.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-i][k] = 0;
+										}
+									}
+								}
+							}else if(Rblackcar.getY() == cly[j]) {	
+								for(k = 0;k <= 8;k ++) {
+									if(Rblackcar.getX() == clx[k]) {
+										if(k > i) {
+											for(m = i + 1;m < k;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}else if(k < j){
+											for(m = k + 1;m < i;m ++) {
+												if(chesslocation[8-m][j] == 1) {
+													number ++;
+												}
+											}
+										}
+										if(number == 0) {
+											redcommander.setLocation(593, 53);
+											Rblackcar.setLocation(clx[i], cly[j]);
+											bcClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-k][j] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(beClicked) {
+						if(be == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackelephant.getX() == clx[m] && Lblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											redcommander.setLocation(593, 53);
+											Lblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(re == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackelephant.getX() == clx[m] && Rblackelephant.getY() == cly[k]) {
+										if(m == i+2 && k == j-2 || m == i-1 && k == j-2 || m == i+2 && k == j+2 || m == i-2 && k == j+2 ) {
+											redcommander.setLocation(593, 53);
+											Rblackelephant.setLocation(clx[i], cly[j]);
+											beClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bkClicked) {
+						if(bk == 1) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Lblackknight.getX() == clx[m] && Lblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											redcommander.setLocation(593, 53);
+											Lblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+						if(bk == 2) {
+							for(m = 0;m <= 8;m ++) {
+								for(k = 0;k <= 9;k ++) {
+									if(Rblackknight.getX() == clx[m] && Rblackknight.getY() == cly[k]) {
+										if(m == i+1 && k == j-1 || m == i-1 && k == j-1 || m == i+1 && k == j+1 || m == i-1 && k == j+1 ) {
+											redcommander.setLocation(593, 53);
+											Rblackknight.setLocation(clx[i], cly[j]);
+											bkClicked = false;
+											bmove = false;
+											rmove = true;
+											chesslocation[8-m][k] = 0;
+										}
+									}
+								}
+							}
+						}
+					}
+					if(bmClicked) {
+						for(m = 0;m <= 8;m ++) {
+							for(k = 0;k <= 9;k ++) {
+								if(redcommander.getX() == clx[m] && redcommander.getY() == cly[k]) {
+									if(m == i && k == j-1 || m == i && k == j+1 || m == i+1 && k == j || m == i-1 && k == j ) {
+										redcommander.setLocation(593, 53);
+										blackcommander.setLocation(clx[i], cly[j]);
+										bmClicked = false;
+										bmove = false;
+										rmove = true;
+										chesslocation[8-m][k] = 0;
+									}
+								}
+							}
+						}	
+					}
+				}	
+			}
+		}
+	}
 }
