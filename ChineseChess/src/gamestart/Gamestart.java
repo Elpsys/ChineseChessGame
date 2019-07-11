@@ -34,7 +34,6 @@ public class Gamestart extends JFrame{
 	static JButton redsoldier1,redsoldier2,redsoldier3,redsoldier4,redsoldier5,Lredgun,Rredgun,Lredcar,Rredcar,Lredhorse,Rredhorse,Lredelephant,Rredelephant,Lredknight,Rredknight,redcommander;
 	static JButton blacksoldier1,blacksoldier2,blacksoldier3,blacksoldier4,blacksoldier5,Lblackgun,Rblackgun,Lblackcar,Rblackcar,Lblackhorse,Rblackhorse,Lblackelephant,Rblackelephant,Lblackknight,Rblackknight,blackcommander;
 	static int rd,bd,rg,bg,rc,bc,rh,bh,re,be,rk,bk;//判断棋子的不同
-	static int x,y;
 	static int tips = 1;
 	static int [] clx = {68,126,184,242,300,358,416,474,532};
 	static int [] cly = {87,139,191,243,295,347,399,451,503,555};
